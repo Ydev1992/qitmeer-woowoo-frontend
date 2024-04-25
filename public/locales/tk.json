@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "Cüzdanı Bağlayın",
+    "Marketplace": "Pazaryeri"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "NFT'leri, Koleksiyonları, İçerik Oluşturucuları veya daha fazlasını arayın",
+    "Records": "Kayıtlar",
+    "NFTs": "NFT'ler",
+    "Clear": "Temizlemek",
+    "No Records": "Kayıt yok",
+    "No result found for this search": "Bu arama için sonuç bulunamadı.",
+    "Search NFT more...": "NFT'de daha fazla arama yapın..."
+  },
+  "categories": {
+    "Categories": "Kategoriler",
+    "Under $100": "100$'ın altında",
+    "New Floor Price": "Yeni Taban Fiyat",
+    "Photography": "Fotoğrafçılık",
+    "Cartoon/Anime": "Çizgi Film/Anime",
+    "Music": "Müzik",
+    "Ticket / Pass": "Bilet / Geçiş",
+    "Most Liked": "En çok sevilen",
+    "$100 - $250": "$100 - $250",
+    "PFP": "PFP",
+    "3D": "3 BOYUTLU"
+  },
+  "home": {
+    "Create, Trade, Collect": "Oluştur, Ticaret Yap, Topla",
+    "Woowow Leads the NFT Innovation Road": "Woowow, NFT İnovasyon Yolunun Lideri",
+    "Marketplace For Creators": "Yaratıcılar İçin Pazar Yeri",
+    "Buy & Sell NFTS": "NFTS Al ve Sat",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT Marketplace, gerçekten sahip olabileceğiniz dijital ürünler olan NFT'ler için önde gelen pazar yeridir. Dijital Öğeler uzun zamandır var ama hiçbir zaman böyle olmadı.",
+    "Creators": "Yaratıcılar"
+  },
+  "actions": {
+    "Create NFT": "NFT oluştur",
+    "Load More": "Daha fazla yükle",
+    "Back to top": "Başa dönüş",
+    "Confirm": "Onaylamak",
+    "Create a collection": "Bir koleksiyon oluşturun",
+    "List for sale": "Satılık liste",
+    "Update listing": "Listeyi güncelle",
+    "Approve NFT": "NFT'yi onayla",
+    "Close": "Kapalı",
+    "Place a bid": "Bir teklif yap",
+    "Remove from auction": "Açık artırmadan kaldır",
+    "Remove from listing": "Listeden kaldır",
+    "Buy now": "Şimdi al",
+    "Cancel": "İptal etmek",
+    "Collect Auction Tokens": "Müzayede Jetonları Topla",
+    "Collect Auction Payout": "Müzayede Ödemesi Topla"
+  },
+  "footer": {
+    "All Right Reserved.": "Bütün hakları saklıdır.",
+    "Pricing": "Fiyatlandırma",
+    "Create NFT": "NFT oluştur",
+    "Create a collection": "Bir koleksiyon oluşturun",
+    "My Collection": "Benim koleksiyonum",
+    "Privacy Policy": "Gizlilik Politikası",
+    "Partners": "Ortaklar",
+    "Find us on": "Bizi bulun"
+  },
+  "nft": {
+    "Floor Price": "Taban Fiyat",
+    "Created by": "Tarafından yaratıldı"
+  },
+  "wallet": {
+    "Connect Wallet": "Cüzdanı Bağlayın",
+    "Most Popular Decentralized Wallets": "En Popüler Merkezi Olmayan Cüzdanlar",
+    "Open source decentralized wallet connection protocol": "Açık kaynak merkezi olmayan cüzdan bağlantı protokolü"
+  },
+  "menus": {
+    "Personal data": "Kişisel veri",
+    "My Collection": "Benim koleksiyonum",
+    "Create NFT": "NFT oluştur",
+    "Exit": "Çıkış"
+  },
+  "personalData": {
+    "Photo": "Fotoğraf",
+    "Select photos": "Fotoğrafları seçin",
+    "Supports JPG/PNG, with files smaller than 100MB": "100 MB'tan küçük dosyalarla JPG/PNG'yi destekler",
+    "Nickname": "Takma ad",
+    "Brief introduction": "Kısa tanıtım",
+    "Social media": "Sosyal medya",
+    "Email": "E-posta",
+    "Discord": "Anlaşmazlık",
+    "Telegram": "Telgraf"
+  },
+  "mycollection": {
+    "My collection": "Benim koleksiyonum",
+    "Listed": "Listelenmiş",
+    "Sale": "Satış",
+    "Bid": "Teklif etmek",
+    "Transaction History": "İşlem geçmişi",
+    "Offers made": "Yapılan teklifler",
+    "Offers received": "Alınan teklifler"
+  },
+  "history": {
+    "Tx Hash": "Tx Hash",
+    "NFT": "NFT",
+    "Price": "Fiyat",
+    "Date": "Tarih",
+    "Status": "Durum",
+    "BOUGHT": "SATIN ALINMIŞ",
+    "SOLD": "SATILMIŞ",
+    "PLACED A BID": "TEKLİF VERİLDİ",
+    "CREATED": "OLUŞTURULDU",
+    "COMPLETED": "TAMAMLANMIŞ",
+    "EXPIRED": "GÜNÜ GEÇMİŞ",
+    "CANCELLED": "İPTAL EDİLDİ"
+  },
+  "createNFT": {
+    "Import pictures": "Resimleri indir",
+    "My NFT Name": "NFT Adım",
+    "Description": "Tanım",
+    "Network": "Ağ",
+    "Collection": "Toplamak",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "Projeniz için bir koleksiyon seçin, seçilip yayınlandıktan sonra bu koleksiyon değiştirilemez. Yeni bir koleksiyona ihtiyacınız varsa lütfen bir koleksiyon oluşturun.",
+    "Characteristic": "Karakteristik",
+    "Attribute": "Bağlanmak",
+    "Value": "Değer",
+    "Add attributes?": "Nitelikler eklensin mi?",
+    "Supports JPG/PNG, with files smaller than 2M": "2M'den küçük dosyalarla JPG/PNG'yi destekler"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "Paylaşım ve satış için özel bir NFT serisi oluşturun, planlayın ve yönetin.",
+    "Logo Image": "Logo resmi",
+    "Banner Image": "Banner Resmi",
+    "My Series Name": "Dizimin Adı",
+    "Token symbol": "Jeton sembolü",
+    "The name cannot be changed after creating a collection.": "Koleksiyon oluşturulduktan sonra ad değiştirilemez.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "Sembol, akıllı sözleşmenizi oluşturmak için kullanılacaktır ve koleksiyon oluşturulduktan sonra değiştirilemez. Başkaları akıllı sözleşmenizi görüntülediğinde, token sembolü blok tarayıcıda görüntülenecektir.",
+    "Description": "Tanım",
+    "Classification": "Sınıflandırma",
+    "Royalty": "Kraliyet",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "Bir kullanıcı, orijinal olarak sizin tarafınızdan oluşturulan bir projeyi yeniden sattığında işlem ücreti alın. Koleksiyon oluşturduktan sonra değiştirilemeyecek olan %10'dan daha düşük bir oran ayarlayabilirsiniz.",
+    "Supports JPG/PNG, with files smaller than 2M": "2M'den küçük dosyalarla JPG/PNG'yi destekler"
+  },
+  "loading": {
+    "Uploading Image": "Resim Yükleniyor"
+  },
+  "requireText": {
+    "Please input field": "Lütfen alanı girin",
+    "Name already existed": "Ad zaten mevcut",
+    "Please enter a valid amount.": "Lütfen geçerli bir tutar girin.",
+    "You don't have enough %asset%": "Yeterli %asset%'iniz yok"
+  },
+  "nftDetail": {
+    "Contract address": "Sözleşme adresi",
+    "Token ID": "Jeton Kimliği",
+    "Token standard": "Jeton standardı",
+    "Owner": "Mal sahibi",
+    "Creator": "Yaratıcı"
+  },
+  "listing": {
+    "Sales method": "Satış yöntemi",
+    "listing": "listeleme",
+    "Listing price": "Fiyat listesi",
+    "Duration": "Süre",
+    "Fixed price": "Sabit fiyat",
+    "Auction": "Açık arttırma",
+    "Min amount": "Minimum tutar",
+    "Time buffer": "Zaman arabelleği",
+    "Bid buffer": "Teklif arabelleği",
+    "SELL TO HIGHEST BIDDER": "EN YÜKSEK TEKLİFE SAT",
+    "List NFT and sell NFT in the trading market": "NFT'yi listeleyin ve ticaret pazarında NFT'yi satın",
+    "Days": "Günler"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "Teklif verenin açık artırmaya çıkarılan ürünleri doğrudan satın alabileceği ve sonuç olarak açık artırmayı kapatabileceği toplam teklif tutarı.",
+    "The minimum bid amount for the auction.": "Açık artırma için minimum teklif tutarı.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "Bu bir tampondur, ör. x saniye. Sona Erme Zaman Damgası'na x saniyeden daha kısa süre kala yeni bir kazanan teklif yapılırsa, sona erme Zaman damgası x saniye artırılır.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "Bu, temel noktalardaki bir tampondur; X%. Yeni bir kazanan teklif olarak kabul edilmesi için bir teklifin mevcut kazanan tekliften en az %x daha yüksek olması gerekir."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "Devam etmek istediğine emin misin?",
+    "Confirm purchase": "Satın alma işlemini onaylayın",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "Bu NFT'yi kaldırmak istiyor musunuz？Listeden çıkarıldıktan sonra artık ticaret pazarında görüntülenmeyecek",
+    "Tip": "Uç",
+    "Languages": "Diller"
+  },
+  "notification": {
+    "Transaction submitted": "İşlem gönderildi",
+    "NFT bought successfully": "NFT başarıyla satın alındı",
+    "%asset% approved successfully": "%asset% başarıyla onaylandı",
+    "Listing cancelled": "Listeleme iptal edildi",
+    "NFT approved": "NFT onaylı",
+    "NFT listed": "NFT listelendi",
+    "Placed a bid": "Teklif verildi"
+  }
+}

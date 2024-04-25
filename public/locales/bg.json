@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "Connect Wallet",
+    "Marketplace": "Пазар"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "Търсете NFT, колекции, създатели или повече",
+    "Records": "Записи",
+    "NFTs": "NFTs",
+    "Clear": "Ясно",
+    "No Records": "Няма записи",
+    "No result found for this search": "Няма намерени резултати за това търсене.",
+    "Search NFT more...": "Търсене в NFT още..."
+  },
+  "categories": {
+    "Categories": "Категории",
+    "Under $100": "Под $100",
+    "New Floor Price": "Нова минимална цена",
+    "Photography": "Фотография",
+    "Cartoon/Anime": "Карикатура/Аниме",
+    "Music": "музика",
+    "Ticket / Pass": "Билет / Пропуск",
+    "Most Liked": "Най-харесвани",
+    "$100 - $250": "$100 - $250",
+    "PFP": "PFP",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "Създаване, търговия, събиране",
+    "Woowow Leads the NFT Innovation Road": "Woowow води пътя на иновациите на NFT",
+    "Marketplace For Creators": "Пазар за творци",
+    "Buy & Sell NFTS": "Купувайте и продавайте NFTS",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT Marketplace е водещият пазар за NFT, които са цифрови елементи, които наистина можете да притежавате. Цифровите елементи съществуват от дълго време, но никога по този начин.",
+    "Creators": "Създатели"
+  },
+  "actions": {
+    "Create NFT": "Създайте NFT",
+    "Load More": "Зареди още",
+    "Back to top": "Върнете се в началото",
+    "Confirm": "Потвърдете",
+    "Create a collection": "Създайте колекция",
+    "List for sale": "Списък за продажба",
+    "Update listing": "Актуализиране на списъка",
+    "Approve NFT": "Одобряване на NFT",
+    "Close": "Близо",
+    "Place a bid": "Направете оферта",
+    "Remove from auction": "Премахване от търга",
+    "Remove from listing": "Премахване от списъка",
+    "Buy now": "Купи сега",
+    "Cancel": "Отказ",
+    "Collect Auction Tokens": "Събиране на аукционни токени",
+    "Collect Auction Payout": "Събиране на изплащане от аукцион"
+  },
+  "footer": {
+    "All Right Reserved.": "Всички права са запазени.",
+    "Pricing": "Ценообразуване",
+    "Create NFT": "Създайте NFT",
+    "Create a collection": "Създайте колекция",
+    "My Collection": "Колекцията ми",
+    "Privacy Policy": "Политика за поверителност",
+    "Partners": "Партньори",
+    "Find us on": "Намери ни на"
+  },
+  "nft": {
+    "Floor Price": "Минимална цена",
+    "Created by": "Създадено от"
+  },
+  "wallet": {
+    "Connect Wallet": "Connect Wallet",
+    "Most Popular Decentralized Wallets": "Най-популярните децентрализирани портфейли",
+    "Open source decentralized wallet connection protocol": "Протокол за връзка с децентрализиран портфейл с отворен код"
+  },
+  "menus": {
+    "Personal data": "Лични данни",
+    "My Collection": "Колекцията ми",
+    "Create NFT": "Създайте NFT",
+    "Exit": "Изход"
+  },
+  "personalData": {
+    "Photo": "Снимка",
+    "Select photos": "Изберете снимки",
+    "Supports JPG/PNG, with files smaller than 100MB": "Поддържа JPG/PNG, с файлове по-малки от 100MB",
+    "Nickname": "Псевдоним",
+    "Brief introduction": "Кратко въведение",
+    "Social media": "Социална медия",
+    "Email": "Електронна поща",
+    "Discord": "Discord",
+    "Telegram": "Телеграма"
+  },
+  "mycollection": {
+    "My collection": "Колекцията ми",
+    "Listed": "В списъка",
+    "Sale": "Разпродажба",
+    "Bid": "Предложение",
+    "Transaction History": "История на транзакциите",
+    "Offers made": "Направени оферти",
+    "Offers received": "Получени оферти"
+  },
+  "history": {
+    "Tx Hash": "Tx Hash",
+    "NFT": "NFT",
+    "Price": "Цена",
+    "Date": "Дата",
+    "Status": "Статус",
+    "BOUGHT": "КУПИХ",
+    "SOLD": "ПРОДАДЕНО",
+    "PLACED A BID": "ДАДЕ ОФЕРТА",
+    "CREATED": "СЪЗДАДЕНО",
+    "COMPLETED": "ЗАВЪРШЕНО",
+    "EXPIRED": "ПРОСРОЧЕН",
+    "CANCELLED": "Отменено"
+  },
+  "createNFT": {
+    "Import pictures": "Импортиране на снимки",
+    "My NFT Name": "Моето NFT име",
+    "Description": "Описание",
+    "Network": "мрежа",
+    "Collection": "Колекция",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "Изберете колекция за вашия проект, веднъж избрана и предадена, тя не може да бъде модифицирана. Ако имате нужда от нова колекция, моля, създайте колекция.",
+    "Characteristic": "Характеристика",
+    "Attribute": "Атрибут",
+    "Value": "Стойност",
+    "Add attributes?": "Добавяне на атрибути?",
+    "Supports JPG/PNG, with files smaller than 2M": "Поддържа JPG/PNG, с файлове по-малки от 2M"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "Създавайте, планирайте и управлявайте изключителна NFT серия за споделяне и продажби.",
+    "Logo Image": "Изображение на лого",
+    "Banner Image": "Изображение на банер",
+    "My Series Name": "Моето име на сериала",
+    "Token symbol": "Символ на жетона",
+    "The name cannot be changed after creating a collection.": "Името не може да се променя след създаване на колекция.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "Символът ще се използва за създаване на вашия интелигентен договор и не може да бъде променен след създаването на колекцията. Когато други преглеждат вашия интелигентен договор, символът на токена ще се показва в блоковия браузър.",
+    "Description": "Описание",
+    "Classification": "Класификация",
+    "Royalty": "роялти",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "Начисляване на такса за обработка, когато потребител препродаде проект, първоначално създаден от вас. Можете да зададете съотношение под 10%, което не може да бъде променено след създаване на колекция.",
+    "Supports JPG/PNG, with files smaller than 2M": "Поддържа JPG/PNG, с файлове по-малки от 2M"
+  },
+  "loading": {
+    "Uploading Image": "Качване на изображение"
+  },
+  "requireText": {
+    "Please input field": "Моля, въведете поле",
+    "Name already existed": "Името вече съществува",
+    "Please enter a valid amount.": "Моля, въведете валидна сума.",
+    "You don't have enough %asset%": "Нямате достатъчно %asset%"
+  },
+  "nftDetail": {
+    "Contract address": "Адрес на договора",
+    "Token ID": "ID на токена",
+    "Token standard": "Стандартен токен",
+    "Owner": "Собственик",
+    "Creator": "Създател"
+  },
+  "listing": {
+    "Sales method": "Метод на продажба",
+    "listing": "списък",
+    "Listing price": "Обявена цена",
+    "Duration": "Продължителност",
+    "Fixed price": "Фиксирана цена",
+    "Auction": "Търг",
+    "Min amount": "Минимална сума",
+    "Time buffer": "Времеви буфер",
+    "Bid buffer": "Буфер за оферти",
+    "SELL TO HIGHEST BIDDER": "Продай на най-високата птица.",
+    "List NFT and sell NFT in the trading market": "Избройте NFT и продавайте NFT на пазара за търговия",
+    "Days": "дни"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "Общата сума на наддаването, за която наддаващият може директно да закупи предметите на търга и в резултат на това да затвори търга.",
+    "The minimum bid amount for the auction.": "Минималната сума на офертата за търга.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "Това е буфер, напр. x секунди. Ако нова печеливша оферта е направена по-малко от x секунди преди expirationTimestamp, expirationTimestamp се увеличава с x секунди.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "Това е буфер в базисни точки, напр. х%. За да се счита за нова печеливша оферта, офертата трябва да е поне x% по-голяма от текущата печеливша оферта."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "Сигурен ли си, че искаш да продължиш?",
+    "Confirm purchase": "Потвърдете покупката",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "Искате ли да премахнете този NFT？След премахване, той вече няма да се показва на пазара за търговия",
+    "Tip": "Бакшиш",
+    "Languages": "Езици"
+  },
+  "notification": {
+    "Transaction submitted": "Изпратена транзакция",
+    "NFT bought successfully": "NFT закупен успешно",
+    "%asset% approved successfully": "%asset% одобрен успешно",
+    "Listing cancelled": "Обявата е анулирана",
+    "NFT approved": "NFT одобрен",
+    "NFT listed": "NFT в списъка",
+    "Placed a bid": "Направил наддаване"
+  }
+}

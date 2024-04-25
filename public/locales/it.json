@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "Connetti il portafoglio",
+    "Marketplace": "Mercato"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "Cerca NFT, raccolte, creatori o altro",
+    "Records": "Record",
+    "NFTs": "NFT",
+    "Clear": "Chiaro",
+    "No Records": "Nessuna registrazione",
+    "No result found for this search": "Nessun risultato trovato per questa ricerca.",
+    "Search NFT more...": "Cerca NFT altro..."
+  },
+  "categories": {
+    "Categories": "Categorie",
+    "Under $100": "Meno di $ 100",
+    "New Floor Price": "Nuovo prezzo minimo",
+    "Photography": "Fotografia",
+    "Cartoon/Anime": "Cartoni animati/Anime",
+    "Music": "Musica",
+    "Ticket / Pass": "Biglietto/Pass",
+    "Most Liked": "I più apprezzati",
+    "$100 - $250": "$100 - $250",
+    "PFP": "PFP",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "Crea, Scambia, Raccogli",
+    "Woowow Leads the NFT Innovation Road": "Woowow Guida la Strada dell'Innovazione NFT",
+    "Marketplace For Creators": "Mercato per i creatori",
+    "Buy & Sell NFTS": "Acquista e vendi NTFS",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT Marketplace è il principale mercato per gli NFT, ovvero oggetti digitali che puoi veramente possedere. Gli Oggetti Digitali esistono da molto tempo, ma mai così.",
+    "Creators": "Creatori"
+  },
+  "actions": {
+    "Create NFT": "Crea NFT",
+    "Load More": "Carica altro",
+    "Back to top": "Torna in cima",
+    "Confirm": "Confermare",
+    "Create a collection": "Crea una raccolta",
+    "List for sale": "Elenco in vendita",
+    "Update listing": "Aggiorna elenco",
+    "Approve NFT": "Approva NFT",
+    "Close": "Vicino",
+    "Place a bid": "Fai un'offerta",
+    "Remove from auction": "Rimuovi dall'asta",
+    "Remove from listing": "Rimuovi dall'elenco",
+    "Buy now": "Acquista ora",
+    "Cancel": "Annulla",
+    "Collect Auction Tokens": "Raccogliere Token d'Asta",
+    "Collect Auction Payout": "Raccogliere Pagamento d'Asta"
+  },
+  "footer": {
+    "All Right Reserved.": "Tutti i diritti riservati.",
+    "Pricing": "Prezzi",
+    "Create NFT": "Crea NFT",
+    "Create a collection": "Crea una raccolta",
+    "My Collection": "La mia collezione",
+    "Privacy Policy": "Politica sulla riservatezza",
+    "Partners": "Partner",
+    "Find us on": "Trovaci su"
+  },
+  "nft": {
+    "Floor Price": "Prezzo al piano",
+    "Created by": "Creato da"
+  },
+  "wallet": {
+    "Connect Wallet": "Connetti il portafoglio",
+    "Most Popular Decentralized Wallets": "Portafogli decentralizzati più popolari",
+    "Open source decentralized wallet connection protocol": "Protocollo di connessione al portafoglio decentralizzato open source"
+  },
+  "menus": {
+    "Personal data": "Dati personali",
+    "My Collection": "La mia collezione",
+    "Create NFT": "Crea NFT",
+    "Exit": "Uscita"
+  },
+  "personalData": {
+    "Photo": "Foto",
+    "Select photos": "Seleziona le foto",
+    "Supports JPG/PNG, with files smaller than 100MB": "Supporta JPG/PNG, con file inferiori a 100 MB",
+    "Nickname": "Soprannome",
+    "Brief introduction": "Breve introduzione",
+    "Social media": "Socialmedia",
+    "Email": "E-mail",
+    "Discord": "Discordia",
+    "Telegram": "Telegramma"
+  },
+  "mycollection": {
+    "My collection": "La mia collezione",
+    "Listed": "In elenco",
+    "Sale": "Vendita",
+    "Bid": "Offerta",
+    "Transaction History": "Cronologia delle transazioni",
+    "Offers made": "Offerte fatte",
+    "Offers received": "Offerte ricevute"
+  },
+  "history": {
+    "Tx Hash": "Hash Tx",
+    "NFT": "NFT",
+    "Price": "Prezzo",
+    "Date": "Data",
+    "Status": "Stato",
+    "BOUGHT": "COMPRATO",
+    "SOLD": "VENDUTO",
+    "PLACED A BID": "EFFETTUATO UN'OFFERTA",
+    "CREATED": "CREATO",
+    "COMPLETED": "COMPLETATO",
+    "EXPIRED": "SCADUTO",
+    "CANCELLED": "Annullato"
+  },
+  "createNFT": {
+    "Import pictures": "Importa immagini",
+    "My NFT Name": "Il mio nome NFT",
+    "Description": "Descrizione",
+    "Network": "Rete",
+    "Collection": "Collezione",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "Seleziona una raccolta per il tuo progetto. Una volta selezionato e trasmesso, non potrà essere modificato. Se hai bisogno di una nuova raccolta, crea una raccolta.",
+    "Characteristic": "Caratteristica",
+    "Attribute": "Attributo",
+    "Value": "Valore",
+    "Add attributes?": "Aggiungere attributi?",
+    "Supports JPG/PNG, with files smaller than 2M": "Supporta JPG/PNG, con file più piccoli di 2 milioni"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "Crea, pianifica e gestisci una serie NFT esclusiva per la condivisione e la vendita.",
+    "Logo Image": "Immagine del logo",
+    "Banner Image": "Immagine del banner",
+    "My Series Name": "Nome della mia serie",
+    "Token symbol": "Simbolo del gettone",
+    "The name cannot be changed after creating a collection.": "Il nome non può essere modificato dopo aver creato una raccolta.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "Il simbolo verrà utilizzato per creare il tuo contratto intelligente e non potrà essere modificato dopo aver creato la raccolta. Quando altri visualizzeranno il tuo contratto intelligente, il simbolo del token verrà visualizzato sul browser a blocchi.",
+    "Description": "Descrizione",
+    "Classification": "Classificazione",
+    "Royalty": "Famiglia reale",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "Addebita una commissione di gestione quando un utente rivende un progetto originariamente creato da te. Puoi impostare un rapporto inferiore al 10%, che non può essere modificato dopo aver creato una raccolta.",
+    "Supports JPG/PNG, with files smaller than 2M": "Supporta JPG/PNG, con file più piccoli di 2 milioni"
+  },
+  "loading": {
+    "Uploading Image": "Caricamento immagine"
+  },
+  "requireText": {
+    "Please input field": "Inserisci il campo",
+    "Name already existed": "Nome già esistente",
+    "Please enter a valid amount.": "Inserisci un importo valido.",
+    "You don't have enough %asset%": "Non hai abbastanza %asset%"
+  },
+  "nftDetail": {
+    "Contract address": "Indirizzo del contratto",
+    "Token ID": "ID token",
+    "Token standard": "Standard del gettone",
+    "Owner": "Proprietario",
+    "Creator": "Creatore"
+  },
+  "listing": {
+    "Sales method": "Metodo di vendita",
+    "listing": "elenco",
+    "Listing price": "Prezzo di listino",
+    "Duration": "Durata",
+    "Fixed price": "Prezzo fisso",
+    "Auction": "Asta",
+    "Min amount": "Importo minimo",
+    "Time buffer": "Buffer temporale",
+    "Bid buffer": "Buffer di offerta",
+    "SELL TO HIGHEST BIDDER": "VENDI AL MIGLIOR OFFERENTE",
+    "List NFT and sell NFT in the trading market": "Elenca NFT e vendi NFT nel mercato di trading",
+    "Days": "Giorni"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "L'importo totale dell'offerta per il quale l'offerente può acquistare direttamente gli oggetti messi all'asta e di conseguenza chiudere l'asta.",
+    "The minimum bid amount for the auction.": "L'importo minimo dell'offerta per l'asta.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "Questo è un buffer, ad es. x secondi. Se una nuova offerta vincente viene effettuata meno di x secondi prima dell'expirationTimestamp, l'expirationTimestamp viene aumentato di x secondi.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "Questo è un buffer in punti base, ad es. X%. Per essere considerata una nuova offerta vincente, un'offerta deve essere superiore almeno del x% rispetto all'offerta vincente corrente."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "Sei sicuro di voler continuare?",
+    "Confirm purchase": "Confermare l'acquisto",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "Vuoi rimuovere questo NFT? Dopo la rimozione dalla quotazione, non verrà più visualizzato nel mercato di trading",
+    "Tip": "Mancia",
+    "Languages": "Le lingue"
+  },
+  "notification": {
+    "Transaction submitted": "Transazione inviata",
+    "NFT bought successfully": "NFT acquistato con successo",
+    "%asset% approved successfully": "%asset% approvato con successo",
+    "Listing cancelled": "Annuncio cancellato",
+    "NFT approved": "Approvato NFT",
+    "NFT listed": "NFT elencato",
+    "Placed a bid": "Ho fatto un'offerta"
+  }
+}

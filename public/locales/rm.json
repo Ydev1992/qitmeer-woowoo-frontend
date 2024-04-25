@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "Connect Wallet",
+    "Marketplace": "Piata de desfacere"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "Căutați NFT-uri, colecții, creatori sau mai mulți",
+    "Records": "Înregistrări",
+    "NFTs": "NFT-uri",
+    "Clear": "Clar",
+    "No Records": "Fără înregistrări",
+    "No result found for this search": "Nu a fost găsit niciun rezultat pentru această căutare.",
+    "Search NFT more...": "Căutați mai multe NFT..."
+  },
+  "categories": {
+    "Categories": "Categorii",
+    "Under $100": "Sub 100 USD",
+    "New Floor Price": "Pret etaj nou",
+    "Photography": "Fotografie",
+    "Cartoon/Anime": "Desen animat/Anime",
+    "Music": "Muzica",
+    "Ticket / Pass": "Bilet / abonament",
+    "Most Liked": "Cele mai apreciate",
+    "$100 - $250": "100 USD - 250 USD",
+    "PFP": "PFP",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "Creați, Comerțați, Colectați",
+    "Woowow Leads the NFT Innovation Road": "Woowow Conduce Drumul Inovației NFT",
+    "Marketplace For Creators": "Piață pentru creatori",
+    "Buy & Sell NFTS": "Cumpărați și vindeți NFTS",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT Marketplace este piața principală pentru NFT, care sunt articole digitale pe care le puteți deține cu adevărat. Articolele digitale există de multă vreme, dar niciodată așa.",
+    "Creators": "Creatori"
+  },
+  "actions": {
+    "Create NFT": "Creați NFT",
+    "Load More": "Incarca mai mult",
+    "Back to top": "Inapoi sus",
+    "Confirm": "A confirma",
+    "Create a collection": "Creați o colecție",
+    "List for sale": "Lista de vânzare",
+    "Update listing": "Actualizați lista",
+    "Approve NFT": "Aprobați NFT",
+    "Close": "Închide",
+    "Place a bid": "Faceți o ofertă",
+    "Remove from auction": "Eliminați de la licitație",
+    "Remove from listing": "Eliminați din listă",
+    "Buy now": "Cumpără acum",
+    "Cancel": "Anulare",
+    "Collect Auction Tokens": "Colectați Token-uri de Licitație",
+    "Collect Auction Payout": "Colectați Plata pentru Licitație"
+  },
+  "footer": {
+    "All Right Reserved.": "Toate drepturile rezervate.",
+    "Pricing": "Prețuri",
+    "Create NFT": "Creați NFT",
+    "Create a collection": "Creați o colecție",
+    "My Collection": "Colectia mea",
+    "Privacy Policy": "Politica de confidențialitate",
+    "Partners": "Parteneri",
+    "Find us on": "Găsiți-ne pe"
+  },
+  "nft": {
+    "Floor Price": "Preț la etaj",
+    "Created by": "Creat de"
+  },
+  "wallet": {
+    "Connect Wallet": "Connect Wallet",
+    "Most Popular Decentralized Wallets": "Cele mai populare portofele descentralizate",
+    "Open source decentralized wallet connection protocol": "Protocol de conectare la portofel descentralizat cu sursă deschisă"
+  },
+  "menus": {
+    "Personal data": "Date personale",
+    "My Collection": "Colectia mea",
+    "Create NFT": "Creați NFT",
+    "Exit": "Ieșire"
+  },
+  "personalData": {
+    "Photo": "Fotografie",
+    "Select photos": "Selectează fotografii",
+    "Supports JPG/PNG, with files smaller than 100MB": "Acceptă JPG/PNG, cu fișiere mai mici de 100 MB",
+    "Nickname": "Poreclă",
+    "Brief introduction": "Scurta introducere",
+    "Social media": "Rețele sociale",
+    "Email": "E-mail",
+    "Discord": "Discordia",
+    "Telegram": "Telegram"
+  },
+  "mycollection": {
+    "My collection": "Colectia mea",
+    "Listed": "Listat",
+    "Sale": "Vânzare",
+    "Bid": "Licit",
+    "Transaction History": "Istoricul tranzactiilor",
+    "Offers made": "Ofertele facute",
+    "Offers received": "Ofertele primite"
+  },
+  "history": {
+    "Tx Hash": "Tx Hash",
+    "NFT": "NFT",
+    "Price": "Preț",
+    "Date": "Data",
+    "Status": "Stare",
+    "BOUGHT": "CUMPARAT",
+    "SOLD": "VÂNDUT",
+    "PLACED A BID": "A PLASAT O OFERTA",
+    "CREATED": "CREATĂ",
+    "COMPLETED": "EFECTUAT",
+    "EXPIRED": "EXPIRAT",
+    "CANCELLED": "ANULAT"
+  },
+  "createNFT": {
+    "Import pictures": "Importați imagini",
+    "My NFT Name": "Numele meu NFT",
+    "Description": "Descriere",
+    "Network": "Rețea",
+    "Collection": "Colectie",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "Selectați o colecție pentru proiectul dvs., odată selectată și distribuită, aceasta nu poate fi modificată. Dacă aveți nevoie de o nouă colecție, creați o colecție.",
+    "Characteristic": "Caracteristic",
+    "Attribute": "Atribut",
+    "Value": "Valoare",
+    "Add attributes?": "Adăugați atribute?",
+    "Supports JPG/PNG, with files smaller than 2M": "Acceptă JPG/PNG, cu fișiere mai mici de 2M"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "Creați, planificați și gestionați o serie NFT exclusivă pentru partajare și vânzare.",
+    "Logo Image": "Imagine logo",
+    "Banner Image": "Imagine banner",
+    "My Series Name": "Numele seriei mele",
+    "Token symbol": "Simbol simbol",
+    "The name cannot be changed after creating a collection.": "Numele nu poate fi schimbat după crearea unei colecții.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "Simbolul va fi folosit pentru a vă crea contractul inteligent și nu poate fi modificat după crearea colecției. Când alții văd contractul inteligent, simbolul simbolului va fi afișat în browserul de blocuri.",
+    "Description": "Descriere",
+    "Classification": "Clasificare",
+    "Royalty": "Drepturi de autor",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "Percepe o taxă de gestionare atunci când un utilizator revinde un proiect creat inițial de tine. Puteți seta un raport mai mic de 10%, care nu poate fi modificat după crearea unei colecții.",
+    "Supports JPG/PNG, with files smaller than 2M": "Acceptă JPG/PNG, cu fișiere mai mici de 2M"
+  },
+  "loading": {
+    "Uploading Image": "Se încarcă imaginea"
+  },
+  "requireText": {
+    "Please input field": "Vă rugăm să introduceți câmpul",
+    "Name already existed": "Numele exista deja",
+    "Please enter a valid amount.": "Introduceți o sumă validă.",
+    "You don't have enough %asset%": "Nu aveți suficient %asset%"
+  },
+  "nftDetail": {
+    "Contract address": "Adresa contractului",
+    "Token ID": "ID token",
+    "Token standard": "Token standard",
+    "Owner": "Proprietar",
+    "Creator": "Creator"
+  },
+  "listing": {
+    "Sales method": "Metoda de vânzare",
+    "listing": "listare",
+    "Listing price": "Preț de listare",
+    "Duration": "Durată",
+    "Fixed price": "Preț fix",
+    "Auction": "Licitație",
+    "Min amount": "Sumă minimă",
+    "Time buffer": "Timp tampon",
+    "Bid buffer": "tampon de sume licitate",
+    "SELL TO HIGHEST BIDDER": "VINDE LA CEL MAI MARE OFERTANT",
+    "List NFT and sell NFT in the trading market": "Listați NFT și vindeți NFT pe piața de tranzacționare",
+    "Days": "zile"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "Valoarea totală a ofertei pentru care ofertantul poate achiziționa direct articolele licitate și, ca urmare, poate închide licitația.",
+    "The minimum bid amount for the auction.": "Suma licitată minimă pentru licitație.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "Acesta este un buffer de ex. x secunde. Dacă o nouă sumă licitată câștigătoare este făcută cu mai puțin de x secunde înainte de expirationTimestamp, expirationTimestamp este mărită cu x secunde.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "Acesta este un tampon în puncte de bază, de ex. X%. Pentru a fi considerată o nouă sumă licitată câștigătoare, o sumă licitată trebuie să fie cu cel puțin x% mai mare decât suma licitată câștigătoare actuală."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "Esti sigur ca vrei sa continui?",
+    "Confirm purchase": "Confirma achiziția",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "Doriți să eliminați acest NFT? După eliminare, acesta nu va mai fi afișat pe piața de tranzacționare",
+    "Tip": "Bacsis",
+    "Languages": "Limbi"
+  },
+  "notification": {
+    "Transaction submitted": "Tranzacție trimisă",
+    "NFT bought successfully": "NFT cumpărat cu succes",
+    "%asset% approved successfully": "%asset% aprobat cu succes",
+    "Listing cancelled": "Listare anulată",
+    "NFT approved": "Aprobat NFT",
+    "NFT listed": "NFT listat",
+    "Placed a bid": "A plasat o ofertă"
+  }
+}

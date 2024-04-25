@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "वॉलेट कनेक्ट करें",
+    "Marketplace": "बाज़ार"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "एनएफटी, संग्रह, निर्माता या अधिक खोजें",
+    "Records": "रिकॉर्ड्स",
+    "NFTs": "एनएफटी",
+    "Clear": "स्पष्ट",
+    "No Records": "कोई रिकॉर्ड नहीं",
+    "No result found for this search": "इस खोज का कोई परिणाम नहीं मिला।",
+    "Search NFT more...": "एनएफटी अधिक खोजें..."
+  },
+  "categories": {
+    "Categories": "श्रेणियाँ",
+    "Under $100": "$100 से कम",
+    "New Floor Price": "नई मंजिल की कीमत",
+    "Photography": "फोटोग्राफी",
+    "Cartoon/Anime": "कार्टून/एनीमे",
+    "Music": "संगीत",
+    "Ticket / Pass": "टिकट/पास",
+    "Most Liked": "सबसे ज्यादा पसंद",
+    "$100 - $250": "$100 - $250",
+    "PFP": "पीएफपी",
+    "3D": "3डी"
+  },
+  "home": {
+    "Create, Trade, Collect": "बनाएं, व्यापार करें, जमा करें",
+    "Woowow Leads the NFT Innovation Road": "Woowow एनएफटी नवाचार मार्ग का मार्गदर्शन करता है",
+    "Marketplace For Creators": "रचनाकारों के लिए बाज़ार",
+    "Buy & Sell NFTS": "एनएफटीएस खरीदें और बेचें",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "एनएफटी मार्केटप्लेस एनएफटी के लिए प्रमुख मार्केटप्लेस है, जो डिजिटल आइटम हैं जिन्हें आप वास्तव में अपना सकते हैं। डिजिटल आइटम लंबे समय से अस्तित्व में हैं, लेकिन ऐसा कभी नहीं हुआ।",
+    "Creators": "रचनाकार"
+  },
+  "actions": {
+    "Create NFT": "एनएफटी बनाएं",
+    "Load More": "और लोड करें",
+    "Back to top": "वापस शीर्ष पर",
+    "Confirm": "पुष्टि करना",
+    "Create a collection": "एक संग्रह बनाएं",
+    "List for sale": "बिक्री हेतु सूची",
+    "Update listing": "अद्यतन सूची",
+    "Approve NFT": "एनएफटी को मंजूरी दें",
+    "Close": "बंद करना",
+    "Place a bid": "बोली लगाओ",
+    "Remove from auction": "नीलामी से हटाएँ",
+    "Remove from listing": "सूची से हटाएँ",
+    "Buy now": "अभी खरीदें",
+    "Cancel": "रद्द करना",
+    "Collect Auction Tokens": "नीलाम टोकन जमा करें",
+    "Collect Auction Payout": "नीलाम वितरण जमा करें"
+  },
+  "footer": {
+    "All Right Reserved.": "सर्वाधिकार सुरक्षित।",
+    "Pricing": "मूल्य निर्धारण",
+    "Create NFT": "एनएफटी बनाएं",
+    "Create a collection": "एक संग्रह बनाएं",
+    "My Collection": "मेरा संग्रह",
+    "Privacy Policy": "गोपनीयता नीति",
+    "Partners": "साझेदार",
+    "Find us on": "हमें यहाँ तलाशें"
+  },
+  "nft": {
+    "Floor Price": "न्यूनतम मूल्य",
+    "Created by": "के द्वारा बनाई गई"
+  },
+  "wallet": {
+    "Connect Wallet": "वॉलेट कनेक्ट करें",
+    "Most Popular Decentralized Wallets": "सर्वाधिक लोकप्रिय विकेंद्रीकृत वॉलेट",
+    "Open source decentralized wallet connection protocol": "ओपन सोर्स विकेन्द्रीकृत वॉलेट कनेक्शन प्रोटोकॉल"
+  },
+  "menus": {
+    "Personal data": "व्यक्तिगत डेटा",
+    "My Collection": "मेरा संग्रह",
+    "Create NFT": "एनएफटी बनाएं",
+    "Exit": "बाहर निकलना"
+  },
+  "personalData": {
+    "Photo": "तस्वीर",
+    "Select photos": "फ़ोटो चुनें",
+    "Supports JPG/PNG, with files smaller than 100MB": "जेपीजी/पीएनजी का समर्थन करता है, 100एमबी से छोटी फ़ाइलों के साथ",
+    "Nickname": "उपनाम",
+    "Brief introduction": "संक्षिप्त परिचय",
+    "Social media": "सामाजिक मीडिया",
+    "Email": "ईमेल",
+    "Discord": "कलह",
+    "Telegram": "तार"
+  },
+  "mycollection": {
+    "My collection": "मेरा संग्रह",
+    "Listed": "सूचीबद्ध",
+    "Sale": "बिक्री करना",
+    "Bid": "बोली लगाना",
+    "Transaction History": "ट्रांजेक्शन इतिहास",
+    "Offers made": "प्रस्ताव दिए गए",
+    "Offers received": "प्रस्ताव प्राप्त हुए"
+  },
+  "history": {
+    "Tx Hash": "टीएक्स हैश",
+    "NFT": "एनएफटी",
+    "Price": "कीमत",
+    "Date": "तारीख",
+    "Status": "स्थिति",
+    "BOUGHT": "खरीदा",
+    "SOLD": "बिका हुआ",
+    "PLACED A BID": "बोली लगाई",
+    "CREATED": "बनाया था",
+    "COMPLETED": "पुरा होना",
+    "EXPIRED": "खत्म हो चुका",
+    "CANCELLED": "रद्द"
+  },
+  "createNFT": {
+    "Import pictures": "चित्र आयात करे",
+    "My NFT Name": "मेरा एनएफटी नाम",
+    "Description": "विवरण",
+    "Network": "नेटवर्क",
+    "Collection": "संग्रह",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "अपने प्रोजेक्ट के लिए एक संग्रह चुनें, एक बार चयन और कास्ट करने के बाद, इसे संशोधित नहीं किया जा सकता है। यदि आपको नए संग्रह की आवश्यकता है, तो कृपया एक संग्रह बनाएं। ",
+    "Characteristic": "विशेषता",
+    "Attribute": "गुण",
+    "Value": "कीमत",
+    "Add attributes?": "विशेषताएँ जोड़ें?",
+    "Supports JPG/PNG, with files smaller than 2M": "2एम से छोटी फ़ाइलों के साथ जेपीजी/पीएनजी का समर्थन करता है"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "साझाकरण और बिक्री के लिए एक विशेष एनएफटी श्रृंखला बनाएं, योजना बनाएं और प्रबंधित करें।",
+    "Logo Image": "लोगो छवि",
+    "Banner Image": "बैनर छवि",
+    "My Series Name": "मेरी सीरीज का नाम",
+    "Token symbol": "टोकन चिह्न",
+    "The name cannot be changed after creating a collection.": "संग्रह बनाने के बाद नाम नहीं बदला जा सकता।",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "प्रतीक का उपयोग आपके स्मार्ट अनुबंध को बनाने के लिए किया जाएगा और संग्रह बनाने के बाद इसे बदला नहीं जा सकता है। जब अन्य लोग आपके स्मार्ट अनुबंध को देखेंगे, तो टोकन प्रतीक ब्लॉकब्राउज़र पर प्रदर्शित होगा। ",
+    "Description": "विवरण",
+    "Classification": "वर्गीकरण",
+    "Royalty": "रॉयल्टी",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "जब कोई उपयोगकर्ता मूल रूप से आपके द्वारा बनाए गए प्रोजेक्ट को दोबारा बेचता है तो हैंडलिंग शुल्क लें। आप 10% से कम का अनुपात निर्धारित कर सकते हैं, जिसे संग्रह बनाने के बाद बदला नहीं जा सकता।",
+    "Supports JPG/PNG, with files smaller than 2M": "2एम से छोटी फ़ाइलों के साथ जेपीजी/पीएनजी का समर्थन करता है"
+  },
+  "loading": {
+    "Uploading Image": "छवि अपलोड करना"
+  },
+  "requireText": {
+    "Please input field": "कृपया फ़ील्ड इनपुट करें",
+    "Name already existed": "नाम पहले से मौजूद है",
+    "Please enter a valid amount.": "कृपया एक वैध राशि दर्ज करें।",
+    "You don't have enough %asset%": "आपके पास पर्याप्त %संपत्ति% नहीं है"
+  },
+  "nftDetail": {
+    "Contract address": "अनुबंध का पता",
+    "Token ID": "टोकन आईडी",
+    "Token standard": "टोकन मानक",
+    "Owner": "मालिक",
+    "Creator": "निर्माता"
+  },
+  "listing": {
+    "Sales method": "बिक्री पद्धति",
+    "listing": "लिस्टिंग",
+    "Listing price": "लिस्टिंग मूल्य",
+    "Duration": "अवधि",
+    "Fixed price": "एक ही दाम",
+    "Auction": "नीलामी",
+    "Min amount": "न्यूनतम राशि",
+    "Time buffer": "समय बफर",
+    "Bid buffer": "बोली बफ़र",
+    "SELL TO HIGHEST BIDDER": "सबसे उच्च बोलीदाता को बेचें",
+    "List NFT and sell NFT in the trading market": "एनएफटी को सूचीबद्ध करें और ट्रेडिंग बाजार में एनएफटी बेचें",
+    "Days": "दिन"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "कुल बोली राशि जिसके लिए बोलीदाता सीधे नीलाम की गई वस्तुओं को खरीद सकता है और परिणामस्वरूप नीलामी बंद कर सकता है।",
+    "The minimum bid amount for the auction.": "नीलामी के लिए न्यूनतम बोली राशि.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "यह एक बफ़र है उदा. x सेकंड. यदि एक नई विजेता बोली समाप्ति टाइमस्टैम्प से x सेकंड से कम समय पहले लगाई जाती है, तो समाप्ति टाइमस्टैम्प x सेकंड से बढ़ जाता है।",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "यह आधार बिंदुओं में एक बफर है उदा। एक्स%। नई विजेता बोली माने जाने के लिए, बोली वर्तमान विजेता बोली से कम से कम x% अधिक होनी चाहिए।"
+  },
+  "modal": {
+    "Are you sure you want to continue?": "क्या आप वाकई जारी रखना चाहते हैं?",
+    "Confirm purchase": "खरीदी की पुष्टि करें",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "क्या आप इस एनएफटी को हटाना चाहते हैं？डीलिस्टिंग के बाद, यह अब ट्रेडिंग मार्केट में प्रदर्शित नहीं होगा",
+    "Tip": "बख्शीश",
+    "Languages": "भाषाएँ"
+  },
+  "notification": {
+    "Transaction submitted": "लेनदेन सबमिट किया गया ",
+    "NFT bought successfully": "एनएफटी सफलतापूर्वक खरीदा गया",
+    "%asset% approved successfully": "%संपत्ति% सफलतापूर्वक स्वीकृत",
+    "Listing cancelled": "सूची रद्द",
+    "NFT approved": "एनएफटी स्वीकृत",
+    "NFT listed": "एनएफटी सूचीबद्ध",
+    "Placed a bid": "बोली लगाई"
+  }
+}

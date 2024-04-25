@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "ウォレットを接続する ",
+    "Marketplace": "マーケットプレイス"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "NFT、コレクション、クリエイターなどを検索",
+    "Records": "記録",
+    "NFTs": "NFT",
+    "Clear": "クリア",
+    "No Records": "記録なし",
+    "No result found for this search": "この検索では結果が見つかりませんでした。",
+    "Search NFT more...": "NFT をさらに検索..."
+  },
+  "categories": {
+    "Categories": "カテゴリ",
+    "Under $100": "100 ドル未満",
+    "New Floor Price": "新しいフロア価格 ",
+    "Photography": "写真 ",
+    "Cartoon/Anime": "漫画/アニメ ",
+    "Music": "音楽",
+    "Ticket / Pass": "チケット/パス",
+    "Most Liked": "最も気に入った商品",
+    "$100 - $250": "$100 - $250",
+    "PFP": "PFP",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "作成、取引、収集",
+    "Woowow Leads the NFT Innovation Road": "WoowowはNFT革新の道をリードします",
+    "Marketplace For Creators": "クリエイター向けマーケットプレイス",
+    "Buy & Sell NFTS": "NFTS の売買",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT マーケットプレイスは、真に所有できるデジタル アイテムである NFT の最高のマーケットプレイスです。 デジタル アイテムは長い間存在していましたが、このようなものはありませんでした。",
+    "Creators": "クリエイター"
+  },
+  "actions": {
+    "Create NFT": "NFT を作成する",
+    "Load More": "もっと読み込む",
+    "Back to top": "トップに戻る",
+    "Confirm": "確認する",
+    "Create a collection": "コレクションを作成する",
+    "List for sale": "販売リスト",
+    "Update listing": "リストを更新",
+    "Approve NFT": "NFT を承認する",
+    "Close": "近い",
+    "Place a bid": "入札する ",
+    "Remove from auction": "オークションから削除",
+    "Remove from listing": "リストから削除",
+    "Buy now": "今すぐ購入",
+    "Cancel": "キャンセル",
+    "Collect Auction Tokens": "オークショントークンを受け取る",
+    "Collect Auction Payout": "オークション支払いを受け取る"
+  },
+  "footer": {
+    "All Right Reserved.": "無断転載禁止。",
+    "Pricing": "価格",
+    "Create NFT": "NFT を作成する",
+    "Create a collection": "コレクションを作成する",
+    "My Collection": "私のコレクション",
+    "Privacy Policy": "プライバシーポリシー",
+    "Partners": "パートナー",
+    "Find us on": "で私たちをみつけて"
+  },
+  "nft": {
+    "Floor Price": "フロア価格 ",
+    "Created by": "によって作成された"
+  },
+  "wallet": {
+    "Connect Wallet": "ウォレットを接続する ",
+    "Most Popular Decentralized Wallets": "最も人気のある分散型ウォレット",
+    "Open source decentralized wallet connection protocol": "オープンソースの分散型ウォレット接続プロトコル "
+  },
+  "menus": {
+    "Personal data": "個人データ",
+    "My Collection": "私のコレクション",
+    "Create NFT": "NFT を作成する",
+    "Exit": "出口"
+  },
+  "personalData": {
+    "Photo": "写真",
+    "Select photos": "写真を選択してください ",
+    "Supports JPG/PNG, with files smaller than 100MB": "JPG/PNG をサポートしており、ファイルは 100MB 未満です",
+    "Nickname": "ニックネーム",
+    "Brief introduction": "簡単な紹介",
+    "Social media": "ソーシャルメディア",
+    "Email": "Eメール",
+    "Discord": "ディスコード",
+    "Telegram": "電報"
+  },
+  "mycollection": {
+    "My collection": "私のコレクション",
+    "Listed": "リストに掲載されました ",
+    "Sale": "セール",
+    "Bid": "入札",
+    "Transaction History": "取引履歴",
+    "Offers made": "行われたオファー",
+    "Offers received": "受け取ったオファー"
+  },
+  "history": {
+    "Tx Hash": "送信ハッシュ",
+    "NFT": "NFT",
+    "Price": "価格",
+    "Date": "日付",
+    "Status": "状態",
+    "BOUGHT": "買った",
+    "SOLD": "販売済み",
+    "PLACED A BID": "入札しました ",
+    "CREATED": "作成した",
+    "COMPLETED": "完了しました ",
+    "EXPIRED": "期限切れ",
+    "CANCELLED": "キャンセル済み"
+  },
+  "createNFT": {
+    "Import pictures": "画像のインポート",
+    "My NFT Name": "私のNFT名",
+    "Description": "説明",
+    "Network": "通信網",
+    "Collection": "コレクション",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "プロジェクトのコレクションを選択します。選択してキャストすると、変更できません。新しいコレクションが必要な場合は、コレクションを作成してください。",
+    "Characteristic": "特性",
+    "Attribute": "属性",
+    "Value": "価値",
+    "Add attributes?": "属性を追加しますか?",
+    "Supports JPG/PNG, with files smaller than 2M": "JPG/PNG をサポート、ファイルサイズは 2M 未満です"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "共有と販売のための独占的な NFT シリーズを作成、計画、管理します。",
+    "Logo Image": "ロゴイメージ",
+    "Banner Image": "バナー画像",
+    "My Series Name": "私のシリーズ名",
+    "Token symbol": "トークン記号 ",
+    "The name cannot be changed after creating a collection.": "コレクションの作成後に名前を変更することはできません。",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "シンボルはスマート コントラクトの作成に使用され、コレクションの作成後に変更することはできません。他の人がスマート コントラクトを表示すると、トークン シンボルがブロックブラウザに表示されます。",
+    "Description": "説明",
+    "Classification": "分類",
+    "Royalty": "ロイヤルティ",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "あなたが作成したプロジェクトをユーザーが再販する場合、手数料を請求します。 10% 未満の比率を設定できますが、コレクションの作成後に変更することはできません。",
+    "Supports JPG/PNG, with files smaller than 2M": "JPG/PNG をサポート、ファイルサイズは 2M 未満です"
+  },
+  "loading": {
+    "Uploading Image": "画像のアップロード"
+  },
+  "requireText": {
+    "Please input field": "フィールドに入力してください ",
+    "Name already existed": "名前はすでに存在します",
+    "Please enter a valid amount.": "有効な金額を入力してください。",
+    "You don't have enough %asset%": "十分な %asset% がありません"
+  },
+  "nftDetail": {
+    "Contract address": "契約住所",
+    "Token ID": "トークン ID",
+    "Token standard": "トークン標準",
+    "Owner": "所有者",
+    "Creator": "クリエイター"
+  },
+  "listing": {
+    "Sales method": "販売方法",
+    "listing": "リスト",
+    "Listing price": "表示価格",
+    "Duration": "間隔",
+    "Fixed price": "固定価格",
+    "Auction": "競売",
+    "Min amount": "最小金額",
+    "Time buffer": "時間バッファー",
+    "Bid buffer": "入札バッファー",
+    "SELL TO HIGHEST BIDDER": "最高入札者に売却する",
+    "List NFT and sell NFT in the trading market": "NFT を上場し、取引市場で NFT を販売する",
+    "Days": "日々"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "入札者がオークション商品を直接購入し、その結果オークションを終了できる合計入札金額。",
+    "The minimum bid amount for the auction.": "オークションの最低入札額。",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "これはバッファです。 x秒。 新しい落札がexpirationTimestampのx秒前に行われた場合、expirationTimestampはx秒増加します。",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "これはベーシスポイントのバッファです。 バツ％。 新しい落札価格とみなされるには、入札価格が現在の落札価格より少なくとも x% 高い必要があります。"
+  },
+  "modal": {
+    "Are you sure you want to continue?": "続行してもよろしいですか?",
+    "Confirm purchase": "購入を確認します",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "このNFTを削除しますか?上場廃止後は取引市場に表示されなくなります",
+    "Tip": "ヒント",
+    "Languages": "言語"
+  },
+  "notification": {
+    "Transaction submitted": "トランザクションが送信されました ",
+    "NFT bought successfully": "NFT は正常に購入されました ",
+    "%asset% approved successfully": "%asset% が正常に承認されました",
+    "Listing cancelled": "出品はキャンセルされました ",
+    "NFT approved": "NFT が承認されました ",
+    "NFT listed": "NFT が上場されました ",
+    "Placed a bid": "入札しました "
+  }
+}

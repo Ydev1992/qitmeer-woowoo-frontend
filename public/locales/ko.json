@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "월렛 연결",
+    "Marketplace": "마켓플레이스"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "NFT, 컬렉션, 창작자 등 검색",
+    "Records": "기록",
+    "NFTs": "NFT",
+    "Clear": "분명한",
+    "No Records": "기록 없음",
+    "No result found for this search": "이 검색에 대한 결과를 찾을 수 없습니다.",
+    "Search NFT more...": "NFT 검색 더보기..."
+  },
+  "categories": {
+    "Categories": "카테고리",
+    "Under $100": "100달러 미만",
+    "New Floor Price": "새 하한 가격",
+    "Photography": "사진",
+    "Cartoon/Anime": "만화/애니메이션",
+    "Music": "음악",
+    "Ticket / Pass": "티켓/패스",
+    "Most Liked": "가장 좋아하는 것",
+    "$100 - $250": "$100 - $250",
+    "PFP": "PFP",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "생성, 거래, 수집",
+    "Woowow Leads the NFT Innovation Road": "Woowow가 NFT 혁신의 길을 이끕니다",
+    "Marketplace For Creators": "창작자를 위한 마켓플레이스",
+    "Buy & Sell NFTS": "NFTS 구매 및 판매",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT 마켓플레이스는 실제로 소유할 수 있는 디지털 아이템인 NFT를 위한 최고의 마켓플레이스입니다. 디지털 아이템은 오랫동안 존재해 왔지만 이렇지는 않았습니다.",
+    "Creators": "크리에이터"
+  },
+  "actions": {
+    "Create NFT": "NFT 생성",
+    "Load More": "더 로드하기",
+    "Back to top": "맨 위로",
+    "Confirm": "확인하다",
+    "Create a collection": "컬렉션 만들기",
+    "List for sale": "판매 목록",
+    "Update listing": "업데이트 목록",
+    "Approve NFT": "NFT 승인",
+    "Close": "닫다",
+    "Place a bid": "입찰하기",
+    "Remove from auction": "경매에서 제거",
+    "Remove from listing": "목록에서 제거",
+    "Buy now": "지금 구매",
+    "Cancel": "취소",
+    "Collect Auction Tokens": "경매 토큰 수집",
+    "Collect Auction Payout": "경매 지급 수집"
+  },
+  "footer": {
+    "All Right Reserved.": "모든 권리 보유.",
+    "Pricing": "가격",
+    "Create NFT": "NFT 생성",
+    "Create a collection": "컬렉션 만들기",
+    "My Collection": "내 컬렉션",
+    "Privacy Policy": "개인 정보 정책",
+    "Partners": "파트너",
+    "Find us on": "에서 찾아주세요"
+  },
+  "nft": {
+    "Floor Price": "최저 가격",
+    "Created by": "작성자"
+  },
+  "wallet": {
+    "Connect Wallet": "월렛 연결",
+    "Most Popular Decentralized Wallets": "가장 인기 있는 분산형 지갑",
+    "Open source decentralized wallet connection protocol": "오픈소스 탈중앙화 지갑 연결 프로토콜"
+  },
+  "menus": {
+    "Personal data": "개인 정보",
+    "My Collection": "내 컬렉션",
+    "Create NFT": "NFT 생성",
+    "Exit": "출구"
+  },
+  "personalData": {
+    "Photo": "사진",
+    "Select photos": "사진 선택",
+    "Supports JPG/PNG, with files smaller than 100MB": "100MB 미만의 파일로 JPG/PNG를 지원합니다",
+    "Nickname": "닉네임",
+    "Brief introduction": "간략한 소개",
+    "Social media": "소셜 미디어",
+    "Email": "이메일",
+    "Discord": "불화",
+    "Telegram": "텔레그램"
+  },
+  "mycollection": {
+    "My collection": "내 컬렉션",
+    "Listed": "상장",
+    "Sale": "판매",
+    "Bid": "입찰",
+    "Transaction History": "거래 내역",
+    "Offers made": "제안된 내용",
+    "Offers received": "제안을 받았습니다"
+  },
+  "history": {
+    "Tx Hash": "Tx 해시",
+    "NFT": "NFT",
+    "Price": "가격",
+    "Date": "날짜",
+    "Status": "상태",
+    "BOUGHT": "구입했다",
+    "SOLD": "판매된",
+    "PLACED A BID": "입찰됨",
+    "CREATED": "만들어진",
+    "COMPLETED": "완전한",
+    "EXPIRED": "만료됨",
+    "CANCELLED": "취소됨"
+  },
+  "createNFT": {
+    "Import pictures": "사진 가져오기",
+    "My NFT Name": "내 NFT 이름",
+    "Description": "설명",
+    "Network": "네트워크",
+    "Collection": "수집",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "프로젝트에 대한 컬렉션을 선택하세요. 일단 선택하고 전송하면 수정할 수 없습니다. 새 컬렉션이 필요한 경우 컬렉션을 생성하세요.",
+    "Characteristic": "특징",
+    "Attribute": "기인하다",
+    "Value": "값",
+    "Add attributes?": "속성을 추가하시겠습니까?",
+    "Supports JPG/PNG, with files smaller than 2M": "2M 이하의 파일로 JPG/PNG를 지원합니다"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "공유 및 판매를 위한 독점 NFT 시리즈를 생성, 계획 및 관리합니다.",
+    "Logo Image": "로고 이미지",
+    "Banner Image": "배너 이미지",
+    "My Series Name": "내 시리즈 이름",
+    "Token symbol": "토큰 심볼",
+    "The name cannot be changed after creating a collection.": "컬렉션을 생성한 후에는 이름을 변경할 수 없습니다.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "기호는 스마트 계약을 생성하는 데 사용되며 컬렉션을 생성한 후에는 변경할 수 없습니다. 다른 사람이 스마트 계약을 볼 때 토큰 기호가 블록 브라우저에 표시됩니다.",
+    "Description": "설명",
+    "Classification": "분류",
+    "Royalty": "왕족",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "귀하가 처음 만든 프로젝트를 사용자가 재판매하는 경우 처리 수수료가 부과됩니다. 10% 미만의 비율로 설정할 수 있으며 컬렉션 생성 후에는 변경할 수 없습니다.",
+    "Supports JPG/PNG, with files smaller than 2M": "2M 이하의 파일로 JPG/PNG를 지원합니다"
+  },
+  "loading": {
+    "Uploading Image": "이미지 업로드 중"
+  },
+  "requireText": {
+    "Please input field": "입력란을 입력해주세요",
+    "Name already existed": "이미 존재하는 이름",
+    "Please enter a valid amount.": "유효한 금액을 입력하세요.",
+    "You don't have enough %asset%": "%asset%%이(가) 충분하지 않습니다"
+  },
+  "nftDetail": {
+    "Contract address": "계약서 주소",
+    "Token ID": "토큰 ID",
+    "Token standard": "토큰 표준",
+    "Owner": "소유자",
+    "Creator": "크리에이터"
+  },
+  "listing": {
+    "Sales method": "판매방법",
+    "listing": "목록",
+    "Listing price": "상장 가격",
+    "Duration": "지속",
+    "Fixed price": "고정 가격",
+    "Auction": "경매",
+    "Min amount": "최소 금액",
+    "Time buffer": "시간 버퍼",
+    "Bid buffer": "입찰 버퍼",
+    "SELL TO HIGHEST BIDDER": " 최고 입찰자에게 판매하기",
+    "List NFT and sell NFT in the trading market": "NFT 상장 및 거래시장에서 NFT 판매",
+    "Days": "날"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "입찰자가 경매 물품을 직접 구매하고 결과적으로 경매를 종료할 수 있는 총 입찰 금액입니다.",
+    "The minimum bid amount for the auction.": "경매에 대한 최소 입찰 금액입니다.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "이것은 버퍼입니다. x 초. ExpirationTimestamp가 x초 이내에 새로운 낙찰 입찰이 이루어진 경우,expirationTimestamp는 x초만큼 증가합니다.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "이것은 베이시스 포인트의 버퍼입니다. 엑스%. 새로운 낙찰가로 간주되려면 입찰가가 현재 낙찰가보다 최소 x% 높아야 합니다."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "너 정말 계속하고 싶니?",
+    "Confirm purchase": "구매 확인",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "이 NFT를 삭제하시겠습니까? 상장 폐지 후에는 더 이상 거래 시장에 표시되지 않습니다",
+    "Tip": "팁",
+    "Languages": "언어"
+  },
+  "notification": {
+    "Transaction submitted": "거래가 제출되었습니다",
+    "NFT bought successfully": "NFT 구매 성공",
+    "%asset% approved successfully": "%asset%이(가) 성공적으로 승인되었습니다",
+    "Listing cancelled": "상장이 취소되었습니다",
+    "NFT approved": "NFT 승인",
+    "NFT listed": "NFT 상장",
+    "Placed a bid": "입찰"
+  }
+}

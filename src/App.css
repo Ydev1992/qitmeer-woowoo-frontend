@@ -1,0 +1,226 @@
+html,
+body,
+#root {
+  font-family: "Montserrat";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+  min-height: 100vh;
+  color: white;
+  letter-spacing: 0.9px;
+  /* line-height: 140%; */
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.gradient-border-hover:hover {
+  background: linear-gradient(130deg, #4fc0ff 0%, #c23fff 100%),
+    linear-gradient(130deg, #4fc0ff 0%, #c23fff 100%);
+  background-position: 0px 11px, 100% 11px;
+  background-repeat: no-repeat;
+  background-size: 2px calc(100% - 11px - 11px) ;  
+  border-radius: 12px;
+  border: none;
+}
+.gradient-border-hover:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height:12px;
+  top: 0;
+  left: 0px;
+  border: 2px solid #4fc0ff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-color: transparent;
+  z-index: 10;
+}
+.gradient-border-hover:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height:12px;
+  bottom: 0px;
+  left: 0px;
+  border: 2px solid #c23fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-color: transparent;
+  z-index: 10;
+}
+
+.gradient-border-hover:hover {
+  box-shadow: 0px 0px 20px 0px rgba(194, 63, 255, 0.5);
+}
+.nftcard-hover-effect:hover > div:nth-child(1) > a:nth-child(5) {
+  opacity: 1;
+}
+.footerlink {
+  transition: 0.3s all;
+}
+.footerlink:hover {
+  color: white;
+}
+
+.react-multi-carousel-item {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(130deg, #4fc0ff 0%, #c23fff 100%);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.apexcharts-toolbar {
+  display: none !important;
+}
+.apexcharts-yaxis-texts-g > text {
+  font-family: "Montserrat" !important;
+  fill: white !important;
+  font-size: 14px !important;
+}
+.apexcharts-xaxis-texts-g > text {
+  font-family: "Montserrat" !important;
+  fill: white !important;
+  font-size: 14px !important;
+}
+.apexcharts-grid-borders > line {
+  stroke: #656565 !important;
+  stroke-width: 0.5px !important;
+}
+.apexcharts-gridlines-horizontal > line {
+  stroke: #656565 !important;
+  stroke-width: 0.5px !important;
+}
+.apexcharts-inner > line {
+  display: none !important;
+}
+.apexcharts-tooltip.apexcharts-theme-light {
+  background: #4fc1ff79 !important;
+}
+
+.apexcharts-tooltip-title {
+  display: none !important;
+}
+.apexcharts-xaxistooltip {
+  display: none !important;
+}
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: none !important;
+}
+.apexcharts-tooltip-text-y-label {
+  display: none !important;
+}
+
+.Toastify__toast {
+  padding: 0 !important;
+  background: transparent !important;
+  min-height: auto !important;
+  font-family: unset !important;
+}
+.Toastify__toast-body {
+  padding: 0 !important;
+  height: 100% !important;
+}
+.Toastify__close-button {
+  display: none !important;
+}
+.Toastify__toast-container {
+  width: 320px !important;
+}
+
+.ReactModal__Overlay {
+  z-index: 10 !important;
+  background: #11000066 !important;
+  backdrop-filter: blur(8px);
+}
+.react-datepicker__day {
+  color: white !important;
+}
+.react-datepicker__day-name {
+  color: white !important;
+}
+.react-datepicker {
+  background: black !important;
+}
+.react-datepicker__day--disabled {
+  color: #86909c !important;
+}
+.react-datepicker__current-month {
+  color: white !important;
+  font-weight: 400 !important;
+  margin-bottom: 10px !important;
+}
+.react-datepicker__day:hover {
+  border-radius: 50% !important;
+  color: black !important;
+}
+.react-datepicker__day--selected {
+  border-radius: 50% !important;
+  background: linear-gradient(97deg, #4fc0ff 3.79%, #c23fff 93.93%);
+}
+
+.react-datepicker__header {
+  background-color: black !important;
+}
+
+.white-scroll::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  display: block !important;
+}
+
+.white-scroll::-webkit-scrollbar-thumb:vertical {
+  border: 6px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.603);
+}
+
+.react-tooltip {
+  z-index: 100;
+  font-size: 12px !important;
+  line-height: 125%;
+  opacity: 1;
+  border-radius: 8px !important;
+  max-width: 320px;
+  text-align: center;
+}
+
+.react-datepicker-popper {
+  z-index: 100 !important;
+}
+
+.yellowScroll::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  display: block !important;
+}
+.yellowScroll::-webkit-scrollbar-thumb:vertical {
+  border: 6px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-image: linear-gradient(97deg, #4fc0ff 3.79%, #c23fff 93.93%);
+}

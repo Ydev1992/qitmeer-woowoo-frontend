@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "Portemonnee verbinden",
+    "Marketplace": "Marktplaats"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "Zoek NFT's, collecties, makers of meer",
+    "Records": "Records",
+    "NFTs": "NFT's",
+    "Clear": "Duidelijk",
+    "No Records": "Geen records",
+    "No result found for this search": "Geen resultaat gevonden voor deze zoekopdracht.",
+    "Search NFT more...": "Zoek NFT meer..."
+  },
+  "categories": {
+    "Categories": "Categorieën",
+    "Under $100": "Minder dan $ 100",
+    "New Floor Price": "Nieuwe minimumprijs",
+    "Photography": "Fotografie",
+    "Cartoon/Anime": "Tekenfilm/anime",
+    "Music": "Muziek",
+    "Ticket / Pass": "Ticket/pas",
+    "Most Liked": "Meest leuk gevonden",
+    "$100 - $250": "$100 - $250",
+    "PFP": "PFP",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "Creëren, Handelen, Verzamelen",
+    "Woowow Leads the NFT Innovation Road": "Woowow Leidt de NFT Innovatie Weg",
+    "Marketplace For Creators": "Marktplaats voor makers",
+    "Buy & Sell NFTS": "Koop en verkoop NFTS",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT Marketplace is de belangrijkste marktplaats voor NFT's, dit zijn digitale items die je echt kunt bezitten. Digitale items bestaan al heel lang, maar nog nooit zo.",
+    "Creators": "Makers"
+  },
+  "actions": {
+    "Create NFT": "NFT maken",
+    "Load More": "Meer laden",
+    "Back to top": "Terug naar boven",
+    "Confirm": "Bevestigen",
+    "Create a collection": "Maak een collectie",
+    "List for sale": "Lijst te koop",
+    "Update listing": "Lijst bijwerken",
+    "Approve NFT": "NFT goedkeuren",
+    "Close": "Dichtbij",
+    "Place a bid": "Een bod plaatsen",
+    "Remove from auction": "Verwijderen uit veiling",
+    "Remove from listing": "Verwijderen uit lijst",
+    "Buy now": "Koop nu",
+    "Cancel": "Annuleren",
+    "Collect Auction Tokens": "Veilingtokens verzamelen",
+    "Collect Auction Payout": "Veilinguitbetaling verzamelen"
+  },
+  "footer": {
+    "All Right Reserved.": "Alle rechten voorbehouden.",
+    "Pricing": "Prijzen",
+    "Create NFT": "NFT maken",
+    "Create a collection": "Maak een collectie",
+    "My Collection": "Mijn collectie",
+    "Privacy Policy": "Privacybeleid",
+    "Partners": "Partners",
+    "Find us on": "Vind ons op"
+  },
+  "nft": {
+    "Floor Price": "Bodemprijs",
+    "Created by": "Gemaakt door"
+  },
+  "wallet": {
+    "Connect Wallet": "Portemonnee verbinden",
+    "Most Popular Decentralized Wallets": "Populairste gedecentraliseerde portemonnees",
+    "Open source decentralized wallet connection protocol": "Open source gedecentraliseerd portemonnee-verbindingsprotocol"
+  },
+  "menus": {
+    "Personal data": "Persoonlijke gegevens",
+    "My Collection": "Mijn collectie",
+    "Create NFT": "NFT maken",
+    "Exit": "Uitgang"
+  },
+  "personalData": {
+    "Photo": "Foto",
+    "Select photos": "Selecteer foto's",
+    "Supports JPG/PNG, with files smaller than 100MB": "Ondersteunt JPG/PNG, met bestanden kleiner dan 100 MB",
+    "Nickname": "Bijnaam",
+    "Brief introduction": "Korte introductie",
+    "Social media": "Sociale media",
+    "Email": "E-mail",
+    "Discord": "Meningsverschil",
+    "Telegram": "Telegram"
+  },
+  "mycollection": {
+    "My collection": "Mijn collectie",
+    "Listed": "Vermeld",
+    "Sale": "Verkoop",
+    "Bid": "Bied",
+    "Transaction History": "Transactie Geschiedenis",
+    "Offers made": "Angebote gemacht",
+    "Offers received": "Angebote erhalten"
+  },
+  "history": {
+    "Tx Hash": "Tx-hash",
+    "NFT": "NFT",
+    "Price": "Prijs",
+    "Date": "Datum",
+    "Status": "Toestand",
+    "BOUGHT": "GEKOCHT",
+    "SOLD": "VERKOCHT",
+    "PLACED A BID": "EEN BOD GEPLAATST",
+    "CREATED": "GEMAAKT",
+    "COMPLETED": "VOLTOOID",
+    "EXPIRED": "ABGELAUFEN",
+    "CANCELLED": "GEANNULEERD"
+  },
+  "createNFT": {
+    "Import pictures": "Afbeeldingen importeren",
+    "My NFT Name": "Mijn NFT-naam",
+    "Description": "Beschrijving",
+    "Network": "Netwerk",
+    "Collection": "Collectie",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "Selecteer een collectie voor uw project. Eenmaal geselecteerd en gecast, kan deze niet meer worden gewijzigd. Als u een nieuwe collectie nodig heeft, maak dan een collectie aan.",
+    "Characteristic": "Kenmerk",
+    "Attribute": "Kenmerk",
+    "Value": "Waarde",
+    "Add attributes?": "Kenmerken toevoegen?",
+    "Supports JPG/PNG, with files smaller than 2M": "Ondersteunt JPG/PNG, met bestanden kleiner dan 2M"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "Creëer, plan en beheer een exclusieve NFT-serie voor delen en verkopen.",
+    "Logo Image": "Logo afbeelding",
+    "Banner Image": "Bannerafbeelding",
+    "My Series Name": "Mijn serienaam",
+    "Token symbol": "Token-symbool",
+    "The name cannot be changed after creating a collection.": "De naam kan niet worden gewijzigd na het maken van een collectie.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "Het symbool wordt gebruikt om uw slimme contract aan te maken en kan niet worden gewijzigd nadat de collectie is aangemaakt. Wanneer anderen uw slimme contract bekijken, wordt het tokensymbool weergegeven in de blockbrowser.",
+    "Description": "Beschrijving",
+    "Classification": "Classificatie",
+    "Royalty": "Royalty",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "Breng administratiekosten in rekening wanneer een gebruiker een project dat oorspronkelijk door u is gemaakt, doorverkoopt. U kunt een verhouding instellen van minder dan 10%, die niet meer kan worden gewijzigd nadat u een collectie heeft aangemaakt.",
+    "Supports JPG/PNG, with files smaller than 2M": "Ondersteunt JPG/PNG, met bestanden kleiner dan 2M"
+  },
+  "loading": {
+    "Uploading Image": "Afbeelding uploaden"
+  },
+  "requireText": {
+    "Please input field": "Vul veld in",
+    "Name already existed": "Naam bestond al",
+    "Please enter a valid amount.": "Voer een geldig bedrag in.",
+    "You don't have enough %asset%": "Je hebt niet genoeg %asset%"
+  },
+  "nftDetail": {
+    "Contract address": "Contractadres",
+    "Token ID": "Token-ID",
+    "Token standard": "Tokenstandaard",
+    "Owner": "Eigenaar",
+    "Creator": "Schepper"
+  },
+  "listing": {
+    "Sales method": "Verkoopmethode",
+    "listing": "vermelding",
+    "Listing price": "Advertentieprijs",
+    "Duration": "Duur",
+    "Fixed price": "Vaste prijs",
+    "Auction": "Veiling",
+    "Min amount": "Min. bedrag",
+    "Time buffer": "Tijdbuffer",
+    "Bid buffer": "Biedbuffer",
+    "SELL TO HIGHEST BIDDER": "VERKOOP AAN DE HOOGSTE BIEDER",
+    "List NFT and sell NFT in the trading market": "Maak een lijst van NFT en verkoop NFT op de handelsmarkt",
+    "Days": "Dagen"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "Het totale biedbedrag waarvoor de bieder de geveilde items direct kan kopen en daardoor de veiling kan sluiten.",
+    "The minimum bid amount for the auction.": "Het minimale bodbedrag voor de veiling.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "Dit is een buffer, b.v. x seconden. Als er minder dan x seconden vóór expirationTimestamp een nieuw winnend bod wordt uitgebracht, wordt de expirationTimestamp met x seconden verhoogd.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "Dit is een buffer in basispunten, b.v. X%. Om als een nieuw winnend bod te worden beschouwd, moet een bod minimaal x% hoger zijn dan het huidige winnende bod."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "Weet je zeker dat je door wilt gaan?",
+    "Confirm purchase": "Bevestig aankoop",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "Wilt u deze NFT verwijderen？Na verwijdering wordt deze niet langer weergegeven op de handelsmarkt",
+    "Tip": "Tip",
+    "Languages": "Talen"
+  },
+  "notification": {
+    "Transaction submitted": "Transactie ingediend",
+    "NFT bought successfully": "NFT succesvol gekocht",
+    "%asset% approved successfully": "%asset% succesvol goedgekeurd",
+    "Listing cancelled": "Advertentie geannuleerd",
+    "NFT approved": "NFT goedgekeurd",
+    "NFT listed": "NFT vermeld",
+    "Placed a bid": "Een bod geplaatst"
+  }
+}

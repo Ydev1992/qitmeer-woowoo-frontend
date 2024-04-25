@@ -1,0 +1,192 @@
+{
+  "topbar": {
+    "Connect Wallet": "Подключить кошелек",
+    "Marketplace": "Торговая площадка"
+  },
+  "searchInput": {
+    "Search NFTs,Collections,Creators or more": "Поиск NFT, коллекций, авторов и т. д. ",
+    "Records": "Записи",
+    "NFTs": "НФТ",
+    "Clear": "Прозрачный",
+    "No Records": "Нет записей",
+    "No result found for this search": "По этому запросу ничего не найдено.",
+    "Search NFT more...": "Ищите NFT еще..."
+  },
+  "categories": {
+    "Categories": "Категории",
+    "Under $100": "Менее 100 долларов",
+    "New Floor Price": "Новая минимальная цена",
+    "Photography": "Фотография",
+    "Cartoon/Anime": "Мультфильм/Аниме",
+    "Music": "Музыка",
+    "Ticket / Pass": "Билет/Пропуск",
+    "Most Liked": "Больше всего понравилось",
+    "$100 - $250": "100–250 долларов США",
+    "PFP": "ПФП",
+    "3D": "3D"
+  },
+  "home": {
+    "Create, Trade, Collect": "Создавать, Торговать, Собирать",
+    "Woowow Leads the NFT Innovation Road": "Woowow Ведет Путь Инноваций в NFT",
+    "Marketplace For Creators": "Торговая площадка для авторов",
+    "Buy & Sell NFTS": "Купить и продать NFTS",
+    "NFT Marketplace is the premier marketplace for NFTs, which are digital items you can truly own. Digital Items have existed for a long time, but never like this.": "NFT Marketplace — это ведущая торговая площадка для NFT, то есть цифровых предметов, которыми вы действительно можете владеть. Цифровые предметы существуют уже давно, но никогда не были такими.",
+    "Creators": "Создатели"
+  },
+  "actions": {
+    "Create NFT": "Создать NFT",
+    "Load More": "Загрузи больше",
+    "Back to top": "Вернуться к началу",
+    "Confirm": "Подтверждать",
+    "Create a collection": "Создать коллекцию",
+    "List for sale": "Список на продажу",
+    "Update listing": "Обновить список",
+    "Approve NFT": "Утвердить NFT",
+    "Close": "Закрывать",
+    "Place a bid": "Сделать ставку",
+    "Remove from auction": "Удалить с аукциона",
+    "Remove from listing": "Удалить из списка",
+    "Buy now": "Купить сейчас",
+    "Cancel": "Отмена",
+    "Collect Auction Tokens": "Собрать Токены Аукциона",
+    "Collect Auction Payout": "Собрать Выплату с Аукциона"
+  },
+  "footer": {
+    "All Right Reserved.": "Все права защищены.",
+    "Pricing": "Цены",
+    "Create NFT": "Создать NFT",
+    "Create a collection": "Создать коллекцию",
+    "My Collection": "Моя коллекция",
+    "Privacy Policy": "Политика конфиденциальности",
+    "Partners": "Партнеры",
+    "Find us on": "Найти нас на"
+  },
+  "nft": {
+    "Floor Price": "Минимальная цена",
+    "Created by": "Сделано"
+  },
+  "wallet": {
+    "Connect Wallet": "Подключить кошелек",
+    "Most Popular Decentralized Wallets": "Самые популярные децентрализованные кошельки",
+    "Open source decentralized wallet connection protocol": "Протокол подключения децентрализованного кошелька с открытым исходным кодом"
+  },
+  "menus": {
+    "Personal data": "Личные данные",
+    "My Collection": "Моя коллекция",
+    "Create NFT": "Создать NFT",
+    "Exit": "Выход"
+  },
+  "personalData": {
+    "Photo": "Фото",
+    "Select photos": "Выберите фотографии",
+    "Supports JPG/PNG, with files smaller than 100MB": "Поддерживает файлы JPG/PNG размером менее 100 МБ",
+    "Nickname": "Псевдоним",
+    "Brief introduction": "Краткое введение",
+    "Social media": "Социальные медиа",
+    "Email": "Электронная почта",
+    "Discord": "Дискорд",
+    "Telegram": "Телеграм"
+  },
+  "mycollection": {
+    "My collection": "Моя коллекция",
+    "Listed": "В списке",
+    "Sale": "Распродажа",
+    "Bid": "Делать ставку",
+    "Transaction History": "История транзакций",
+    "Offers made": "Предложения сделаны",
+    "Offers received": "Предложения получены"
+  },
+  "history": {
+    "Tx Hash": "Хэш передачи",
+    "NFT": "НФТ",
+    "Price": "Цена",
+    "Date": "Дата",
+    "Status": "Положение дел",
+    "BOUGHT": "КУПИЛ",
+    "SOLD": "ПРОДАЛ",
+    "PLACED A BID": "РАЗМЕСТИЛ СТАВКУ",
+    "CREATED": "СОЗДАННЫЙ",
+    "COMPLETED": "ЗАВЕРШЕННЫЙ",
+    "EXPIRED": "ИСТЕКШИЙ",
+    "CANCELLED": "ОТМЕНЕНО"
+  },
+  "createNFT": {
+    "Import pictures": "Импорт изображений",
+    "My NFT Name": "Мое имя NFT",
+    "Description": "Описание",
+    "Network": "Сеть",
+    "Collection": "Коллекция",
+    "Select a collection for your project, once selected and cast, it cannot be modified.If you need a new collection, please create a collection.": "Выберите коллекцию для своего проекта. После выбора и приведения ее нельзя будет изменить. Если вам нужна новая коллекция, создайте ее.",
+    "Characteristic": "Характеристика",
+    "Attribute": "Атрибут",
+    "Value": "Ценить",
+    "Add attributes?": "Добавить атрибуты?",
+    "Supports JPG/PNG, with files smaller than 2M": "Поддержка JPG/PNG с файлами размером менее 2M"
+  },
+  "createCollection": {
+    "Create, plan, and manage an exclusive NFT series for sharing and sales.": "Создавайте, планируйте и управляйте эксклюзивной серией NFT для обмена и продаж.",
+    "Logo Image": "Изображение логотипа",
+    "Banner Image": "Изображение баннера",
+    "My Series Name": "Название моей серии",
+    "Token symbol": "Символ токена",
+    "The name cannot be changed after creating a collection.": "Имя нельзя изменить после создания коллекции.",
+    "The symbol will be used to create your smart contract and cannot be changed after creating the collection.When others view your smart contract, the token symbol will be displayed on the blockbrowser.": "Символ будет использоваться для создания вашего смарт-контракта и не может быть изменен после создания коллекции. Когда другие просматривают ваш смарт-контракт, символ токена будет отображаться в браузере блоков.",
+    "Description": "Описание",
+    "Classification": "Классификация",
+    "Royalty": "Роялти",
+    "Charge a handling fee when a user resells a project originally created by you. You can set a ratio of less than 10%, which cannot be changed after creating a collection.": "Взимайте комиссию за обработку, когда пользователь перепродает изначально созданный вами проект. Вы можете установить соотношение менее 10%, которое нельзя будет изменить после создания коллекции.",
+    "Supports JPG/PNG, with files smaller than 2M": "Поддержка JPG/PNG с файлами размером менее 2M"
+  },
+  "loading": {
+    "Uploading Image": "Загрузка изображения"
+  },
+  "requireText": {
+    "Please input field": "Введите поле",
+    "Name already existed": "Имя уже существует",
+    "Please enter a valid amount.": "Пожалуйста, введите действительную сумму.",
+    "You don't have enough %asset%": "Вам недостаточно %asset%"
+  },
+  "nftDetail": {
+    "Contract address": "Адрес контракта",
+    "Token ID": "Идентификатор токена",
+    "Token standard": "Стандарт токена",
+    "Owner": "Владелец",
+    "Creator": "Создатель"
+  },
+  "listing": {
+    "Sales method": "Метод продажи",
+    "listing": "объявление",
+    "Listing price": "Цена по листингу",
+    "Duration": "Продолжительность",
+    "Fixed price": "Измененная цена",
+    "Auction": "Аукцион",
+    "Min amount": "Минимальная сумма",
+    "Time buffer": "Буфер времени",
+    "Bid buffer": "Буфер ставок",
+    "SELL TO HIGHEST BIDDER": "ПРОДАТЬ САМОМУ ВЫСОКОМУ ПОКУПАТЕЛЮ ",
+    "List NFT and sell NFT in the trading market": "Листинг NFT и продажа NFT на торговом рынке",
+    "Days": "дней"
+  },
+  "tooltip": {
+    "The total bid amount for which the bidder can directly purchase the auctioned items and close the auction as a result.": "Общая сумма ставки, за которую участник торгов может напрямую приобрести выставленные на аукцион предметы и в результате закрыть аукцион.",
+    "The minimum bid amount for the auction.": "Минимальная сумма ставки для аукциона.",
+    "This is a buffer e.g. x seconds. If a new winning bid is made less than x seconds before expirationTimestamp, the expirationTimestamp is increased by x seconds.": "Это буфер, например. х секунд. Если новая выигрышная ставка сделана менее чем за x секунд до окончания срока действия ExpirationTimestamp, значение expirationTimestamp увеличивается на x секунд.",
+    "This is a buffer in basis points e.g. x%. To be considered as a new winning bid, a bid must be at least x% greater than the current winning bid.": "Это буфер в базисных пунктах, например. Икс%. Чтобы считаться новой выигрышной ставкой, ставка должна быть как минимум на x% выше текущей выигрышной ставки."
+  },
+  "modal": {
+    "Are you sure you want to continue?": "Вы уверены что хотите продолжить?",
+    "Confirm purchase": "Подтвердите покупку",
+    "Do you want to remove this NFT？After delisting, it will no longer be displayed in the trading market": "Хотите удалить этот NFT? После исключения из листинга он больше не будет отображаться на торговом рынке",
+    "Tip": "Кончик",
+    "Languages": "Языки"
+  },
+  "notification": {
+    "Transaction submitted": "Транзакция отправлена",
+    "NFT bought successfully": "NFT успешно куплен",
+    "%asset% approved successfully": "%asset% успешно одобрен",
+    "Listing cancelled": "Объявление отменено",
+    "NFT approved": "одобрено NFT",
+    "NFT listed": "В списке NFT",
+    "Placed a bid": "Сделал ставку"
+  }
+}
