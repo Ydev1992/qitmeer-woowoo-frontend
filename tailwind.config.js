@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         pingfang: 'Noto Sans SC',
+        Mont: 'Montserrat',
       },
     },
   },

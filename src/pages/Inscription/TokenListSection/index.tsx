@@ -12,7 +12,9 @@ export default function TokenListSection() {
     tableBodyContent.push(
       <tr key={i}>
         <td>
-          <div className="pr-[20px]"><p className="txt-white font-[700]">{i}</p></div>
+          <div className="pr-[20px]">
+            <p className="txt-white font-[700]">{i}</p>
+          </div>
         </td>
 
         <td>
@@ -52,11 +54,15 @@ export default function TokenListSection() {
         </td>
 
         <td>
-          <div><p className="txt-red font-[500]">-2.91%</p></div>
+          <div>
+            <p className="txt-red font-[500]">-2.91%</p>
+          </div>
         </td>
 
         <td>
-          <div><p className="txt-white font-[400]">72</p></div>
+          <div>
+            <p className="txt-white font-[400]">72</p>
+          </div>
         </td>
 
         <td>
@@ -69,9 +75,7 @@ export default function TokenListSection() {
         </td>
 
         <td>
-          <div className="pl-[30px]">
-            {FavoriteSVG}
-          </div>
+          <div className="pl-[30px]">{FavoriteSVG}</div>
         </td>
       </tr>
     );
@@ -99,70 +103,61 @@ export default function TokenListSection() {
               placeholder="Search coin"
               className="bg-transparent flex-1 outline-none border-none leading-[1.6] min-w-0"
             />
-          </div>  
+          </div>
         </div>
       </div>
       {/* Table body */}
       <div className="w-full overflow-x-auto">
         <table className="w-full token-list-table">
           <thead className="w-full">
-            <th colSpan={2} className="min-w-[150px]">
-              <div><p>Coins</p></div>
-            </th>
-            <th className="min-w-[150px]">
-              <div>
-                <p>Transaction volume</p>
-                <span>{SortOptionSVG}</span>
-              </div>
-            </th>
+            <tr>
+              <td colSpan={2} className="min-w-[150px]">
+                <div>
+                  <p>Coins</p>
+                </div>
+              </td>
+              <td className="min-w-[150px]">
+                <div>
+                  <p>Transaction volume</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </td>
 
-            <th className="min-w-[200px]">
-              <div>
-                <p>
-                  Price
-                </p>
-                <span>{SortOptionSVG}</span>
-              </div>
-            </th>
+              <th className="min-w-[200px]">
+                <div>
+                  <p>Price</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </th>
 
-            <th className="min-w-[150px]">
-              <div>
+              <th className="min-w-[150px]">
+                <div>
+                  <p>Market value</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </th>
 
-                <p>
-                  Market value
-                </p>
-                <span>{SortOptionSVG}</span>
-              </div>
-            </th>
-
-            <th className="min-w-[100px]">
-              <div>
-                <p>
-                  Rise and fall range
-                </p>
-                <span>{SortOptionSVG}</span>
-              </div>
-            </th>
-            <th className="min-w-[100px]">
-              <div>
-                <p>
-                  Number of transactions
-                </p>
-                <span>{SortOptionSVG}</span>
-              </div>
-            </th>
-            <th colSpan={2} className="min-w-[100px]">
-              <div>
-                <p>
-                  Holders
-                </p>
-                <span>{SortOptionSVG}</span>
-              </div>
-            </th>
+              <th className="min-w-[100px]">
+                <div>
+                  <p>Rise and fall range</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </th>
+              <th className="min-w-[100px]">
+                <div>
+                  <p>Number of transactions</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </th>
+              <th colSpan={2} className="min-w-[100px]">
+                <div>
+                  <p>Holders</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </th>
+            </tr>
           </thead>
-          <tbody>
-            {tableBodyContent}
-          </tbody>
+          <tbody>{tableBodyContent}</tbody>
         </table>
       </div>
     </div>

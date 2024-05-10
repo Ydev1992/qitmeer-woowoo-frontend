@@ -13,7 +13,9 @@ import PersonalData from "pages/PersonalCenter/PersonalData";
 import PersonalNFTs from "pages/PersonalCenter/PersonalNFTs";
 import CreateCollection from "pages/CreateCollection";
 import CreateNFT from "pages/CreateNFT";
+
 import Inscription from "pages/Inscription";
+import CreateInscription from "pages/Inscription/CreateInscription";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import { useUserData } from "hooks/useUserData";
@@ -32,7 +34,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {mounted && <GlobalHooks />}
+      {/* {mounted && <GlobalHooks />} */}
       <Topbar />
       <Routes>
         <Route path={"/"} element={<HomePage />} />
@@ -43,6 +45,7 @@ function App() {
         <Route path={"/createnft"} element={<CreateNFT />} />
 
         <Route path={"/inscription"} element={<Inscription />} />
+        <Route path={"/createInscription"} element={<CreateInscription />} />
       </Routes>
       <Footer />
     </BrowserRouter>

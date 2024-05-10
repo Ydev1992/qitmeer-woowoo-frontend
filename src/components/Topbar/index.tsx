@@ -31,7 +31,6 @@ export default function Topbar() {
 
   useEffect(() => {
     if (jwtToken === "#" || account) return;
-    console.log("!!!!!!!!!!!!!!!!!", chainId);
     if (!SUPPORTED_CHAIN_IDS.includes(chainId)) {
       disconnect();
       try {
@@ -101,7 +100,7 @@ export default function Topbar() {
           </div>
           <div className="flex items-center">
             <div className="xs:block hidden lg:mr-6 mr-12">
-              <ConnectButton />
+              <ConnectButton  />
             </div>
             <Lang />
             <Hamburger criteria={criteria} setCriteria={setCriteria} />
