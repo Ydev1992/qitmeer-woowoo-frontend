@@ -1,6 +1,7 @@
 import TotalAnalyze from "./TotalAnalyze";
 import AnalyzeBadge from "./AnalyzeBadge";
 import Tabs from "./Tabs";
+import ConfirmPopupDialog from "./components/ConfirmPopupDialog";
 
 export default function CreateInscription() {
   return (

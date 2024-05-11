@@ -1,0 +1,181 @@
+import React, { useState } from "react";
+import "./ConfirmPopupDialog.css";
+import { ConfirmSVG, CopySVG, LinkSVG } from "assets/svgs";
+import { useDispatch } from "react-redux";
+
+interface ConfirmPopupProps {
+  isOpenBuy: boolean;
+  setIsOpenBuy: React.Dispatch<React.SetStateAction<boolean>>;
+  handleBuyOkClick: () => void;
+}
+
+const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
+  const { isOpenBuy, setIsOpenBuy, handleBuyOkClick } = props;
+  const [isCopied, setIsCopied] = useState(false);
+
+  const onCopyAddress = (address: string) => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+    navigator.clipboard.writeText(address);
+  };
+
+  return (
+    <div className="relative  flex items-center justify-center min-h-screen">
+      {isOpenBuy && (
+        <div className="overlay bg-opacity-10 backdrop-blur-sm">
+          <div className="dialog h-[600px] overflow-y-scroll relative font-Mont w-[600px] border-white border-2 rounded-lg bg-black text-white">
+            <h2 className=" text-2xl font-semibold mb-4">Buy now</h2>
+            <button
+              onClick={() => setIsOpenBuy(false)}
+              className="text-4xl absolute right-5 top-3"
+            >
+              &times;
+            </button>
+
+            <div className="flex justify-between mb-6 mt-6">
+              <div className="flex">
+                <img
+                  src="images/inscription/hero2.png"
+                  alt="Image"
+                  className="w-1/5 md:w-1/4 lg:w-1/5 xl:w-1/6 rounded-full bg-gray-700"
+                />
+                <div className="ml-4 w-2/3 md:w-3/4 lg:w-4/5 xl:w-5/6">
+                  <p className="text-3xl text-white">96,300 loli</p>
+                  <p>#62414700</p>
+                </div>
+              </div>
+              <div className="w-[60%] ">
+                <p className="font-medium text-sm">
+                  Unti price:2.28 sats/loli $0.0012
+                </p>
+                <div className="flex items-center justify-between text-lg text-[#C4C4C4]">
+                  <div>From: {isCopied ? "Copied" : "bc1...qwqdka"}</div>
+                  <div
+                    className="w-5 flex justify-center cursor-pointer"
+                    onClick={() => onCopyAddress("bc17gasklfdsk3242lkmqwqdka")}
+                  >
+                    {isCopied ? ConfirmSVG : CopySVG}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2>Fees</h2>
+            <div className="flex justify-between mt-2 mb-2">
+              <p className="text-gray-400">Service fee</p>
+              <p className="text-[#4FC0FF]">Free</p>
+            </div>
+            <div className="font-Mont">
+              <div className="flex justify-between">
+                <h2>Network fee</h2>
+                <p>13,770 sats &asymp; $7.51</p>
+              </div>
+              <div className="flex flex-wrap ">
+                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                  <p>
+                    <img
+                      className="w-[20%] m-auto"
+                      src="/icons/bicycle.png"
+                      alt="bicycle"
+                    />
+                  </p>
+                  <p className="text-white text-lg font-semibold">Slow</p>
+                  <p className="text-gray-400">45 sats/vB</p>
+                  <p className="text-gray-400">$6.26</p>
+                </div>
+
+                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                  <p>
+                    <img
+                      className="w-[20%] m-auto"
+                      src="/icons/car.png"
+                      alt="bicycle"
+                    />
+                  </p>
+                  <p className="text-white text-lg font-semibold">Slow</p>
+                  <p className="text-gray-400">45 sats/vB</p>
+                  <p className="text-gray-400">$6.26</p>
+                </div>
+
+                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                  <p>
+                    <img
+                      className="w-[20%] m-auto"
+                      src="/icons/rocket.png"
+                      alt="bicycle"
+                    />
+                  </p>
+                  <p className="text-white text-lg font-semibold">Slow</p>
+                  <p className="text-gray-400">45 sats/vB</p>
+                  <p className="text-gray-400">$6.26</p>
+                </div>
+
+                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                  <p>
+                    <img
+                      className="w-[20%] m-auto"
+                      src="/icons/setting.png"
+                      alt="bicycle"
+                    />
+                  </p>
+                  <p className="text-white text-lg font-semibold">Slow</p>
+                  <p className="text-gray-400">45 sats/vB</p>
+                  <p className="text-gray-400">$6.26</p>
+                </div>
+              </div>
+              <div className="flex justify-between">
+                <p>Total price</p>
+                <div className="text-right">
+                  <div className="flex">
+                    <img width={30} src="images/networks/bsc.png" />
+                    <p>0.002198765 BTC</p>
+                  </div>
+                  <p className="text-gray-500">$119.63</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-between">
+              <p>Available balance</p>
+              <div className="flex justify-between">
+                <p className="font-semibold text-red-600 mr-5">0 BTC</p>
+                <a className="text-gradient ml-5" href="#">
+                  Swap
+                </a>
+                <a className="text-gradient ml-3" href="#">
+                  Add funds
+                </a>
+              </div>
+            </div>
+            <div className="flex w-full text-right justify-between">
+              <div></div>
+              <div className="flex w-[40%]">
+                <button
+                  className="border-2 text-white border-gray-300 rounded-lg m-2 cursor-pointer md:flex-grow
+                hover:bg-gray-600py-2 px-4"
+                  onClick={() => {
+                    setIsOpenBuy(false);
+                  }}
+                >
+                  Cancel
+                </button>
+
+                <button
+                  className="text-white rounded-lg m-2 cursor-pointer md:flex-grow
+                bg-gradient-to-r border-pink-300 border-opacity-70 from-blue-500 to-pink-500 font-semibold py-2 px-4"
+                  onClick={() => {
+                    handleBuyOkClick();
+                  }}
+                >
+                  OK
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default BuyPopupDialog;

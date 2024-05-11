@@ -1,7 +1,14 @@
+import React, { useState } from "react";
 import BRCCard from "./BRCCard";
 import { useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
+
+import { toast } from "react-toastify";
+import Notification from "components/Notification";
+
+import ConfirmPopupDialog from "../components/ConfirmPopupDialog";
+import BuyPopupDialog from "../components/BuyPopupDialog";
 
 const brcTokens = [
   { id: "#62114778", name: "64, 000 loli", price: 0.001 },
@@ -26,6 +33,27 @@ const brcTokens = [
 
 export default function BRCCardList() {
   const { t } = useTranslation();
+
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpenBuy, setIsOpenBuy] = useState<boolean>(false);
+
+  const handleBuyClick = () => {
+    setIsOpen(true);
+  };
+  const handleConfirmClick = () => {
+    setIsOpen(false);
+    setIsOpenBuy(true);
+  };
+
+  const handleBuyOkClick = () => {
+    setIsOpenBuy(false);
+    toast(
+      <Notification
+        type={"success"}
+        msg={"BRC-20 token has been purchased successfully."}
+      />
+    );
+  };
 
   const node: any = useRef();
   const dispatch: any = useDispatch();
@@ -56,7 +84,7 @@ export default function BRCCardList() {
               key={i}
               className="mx-2 xl:md:sm:w-[calc(100%/6-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/3-16px)] w-[calc(100%-16px)]"
             >
-              <BRCCard brcToken={brcToken} />
+              <BRCCard brcToken={brcToken} handleBuyClick={handleBuyClick} />
             </div>
           );
         })}
@@ -76,6 +104,18 @@ export default function BRCCardList() {
       ) : (
         ""
       )} */}
+
+      <ConfirmPopupDialog
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        handleConfirmClick={handleConfirmClick}
+      />
+
+      <BuyPopupDialog
+        isOpenBuy={isOpenBuy}
+        setIsOpenBuy={setIsOpenBuy}
+        handleBuyOkClick={handleBuyOkClick}
+      />
     </div>
   );
 }

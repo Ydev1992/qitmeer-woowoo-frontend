@@ -118,7 +118,10 @@ export default function PersonalNFTs() {
   const { lang } = useContext(ProjectContext);
 
   const wrappedLists: any = history
-    .filter((tx: any) => tx.type.toLowerCase() === type || type === "transactionhistory")
+    .filter(
+      (tx: any) =>
+        tx.type.toLowerCase() === type || type === "transactionhistory"
+    )
     .map((tx: any) => {
       let currency: any = Object.keys(tokens[813]).find(
         (key, i) => tokens[813][key].address.toLowerCase() === tx.currency
@@ -165,7 +168,11 @@ export default function PersonalNFTs() {
 
   return (
     <div className="relative px-3 py-[80px] z-0 tracking-normal overflow-hidden min-h-screen">
-      <img src={"/images/buynft/vectors/1.png"} alt={""} className="absolute top-0 left-0 w-full" />
+      <img
+        src={"/images/buynft/vectors/1.png"}
+        alt={""}
+        className="absolute top-0 left-0 w-full"
+      />
       <img
         src={"/images/buynft/vectors/2.png"}
         alt={""}
@@ -181,7 +188,8 @@ export default function PersonalNFTs() {
               <StyledImage
                 src={userInfo?.avatar ?? ""}
                 onError={(e: any) =>
-                  (e.target.src = "/images/personalcenter/personaldata/avatar.png")
+                  (e.target.src =
+                    "/images/personalcenter/personaldata/avatar.png")
                 }
                 alt={""}
                 className="!w-[60px] !h-[60px] rounded-full"
@@ -234,7 +242,9 @@ export default function PersonalNFTs() {
                   <Button
                     type="category"
                     className={`h-[36px] !rounded-lg mr-3 whitespace-nowrap ${
-                      data.link === type?.toLowerCase() ? "!bg-white !text-black font-semibold" : ""
+                      data.link === type?.toLowerCase()
+                        ? "!bg-white !text-black font-semibold"
+                        : ""
                     }`}
                   >
                     {data.name}
@@ -253,10 +263,13 @@ export default function PersonalNFTs() {
               values={filters.map((filter) => filter.name)}
               value={filters.indexOf(
                 filters.find(
-                  (data: any) => data.link.replaceAll(" ", "").toLowerCase() === type
+                  (data: any) =>
+                    data.link.replaceAll(" ", "").toLowerCase() === type
                 ) as any
               )}
-              setValue={(i: any) => navigate(`/personalnfts/${filters[i].link}`)}
+              setValue={(i: any) =>
+                navigate(`/personalnfts/${filters[i].link}`)
+              }
               className="w-[280px] text-base"
             />
           </div>

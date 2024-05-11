@@ -1,8 +1,15 @@
+import React, { useState } from "react";
 import { SkeletonComponent } from "components/SkeletonComponent";
 import { useTranslation } from "react-i18next";
 
-export default function BRCCard({ brcToken }: { brcToken: any }) {
+interface BRCCardProps {
+  brcToken: any;
+  handleBuyClick: any;
+}
+
+const BRCCard: React.FC<BRCCardProps> = (props) => {
   const { t } = useTranslation();
+  const { brcToken, handleBuyClick } = props;
 
   const { id, name, price } = brcToken;
 
@@ -27,29 +34,27 @@ export default function BRCCard({ brcToken }: { brcToken: any }) {
             </p>
             <p className="font-semibold">$12312</p>
             <div className="flex mt-3 p-2 rounded-[12px] border-white backdrop-blur text-lg">
-              <p>
+              <div>
                 <span className="text-white">0.00144 BTC</span>
                 <p className="font-semibold">$12312</p>
-              </p>
+              </div>
             </div>
             <div className="flex mt-4">
               <button
                 className="border-2 text-white text-xl border-gray-300 rounded-full m-2 cursor-pointer md:flex-grow
                 hover:bg-gradient-to-r hover:border-pink-300 hover:border-opacity-70 hover:from-blue-500 hover:to-pink-500 font-semibold py-2 px-4"
-                onClick={() => {}}
+                onClick={() => {
+                  handleBuyClick();
+                }}
               >
                 Buy now
               </button>
-              {/* <button
-                className="overflow-auto rounded-2xl border-2 m-2 cursor-pointer  md:flex-grow p-3"
-                onClick={() => {}}
-              >
-                inscription
-              </button> */}
             </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default BRCCard;
