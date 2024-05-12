@@ -27,14 +27,15 @@ export default function HeroSection() {
             type={"secondary"}
             className="w-[162px] mr-3 font-lg xs:mb-0 mb-2"
             onClick={() => {
-              if (!signer)
-                toast(
-                  <Notification
-                    type={"fail"}
-                    msg={"Please link to the wallet to create your NFT"}
-                  />
-                );
-              else navigate("/createnft");
+              // if (!signer)
+              //   toast(
+              //     <Notification
+              //       type={"fail"}
+              //       msg={"Please link to the wallet to create your NFT"}
+              //     />
+              //   );
+              // else navigate("/createnft");
+              navigate("/createInscription");
             }}
           >
             {t("actions.Inscription")}

@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { useUserETHBalance, useUserInfo } from "state/hooks";
 import StyledImage from "components/StyledImage";
 
+import { useLocation } from "react-router-dom";
+
 export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
@@ -39,6 +41,20 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
   const ethBalance = useUserETHBalance();
   const userInfo = useUserInfo();
 
+  const location = useLocation();
+
+  const handleConnectOKX = () => {
+    if (typeof window.okxwallet === "undefined") {
+      alert("OKX is uninstalled!");
+      return;
+    }
+    async function connectWallet() {
+      let result = await okxwallet.bitcoinSignet.connect();
+    }
+    connectWallet();
+
+  }
+
   return (
     <>
       <WalletSelector open={walletOpen} setOpen={setWalletOpen} />
@@ -48,7 +64,11 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
           border="1px"
           className={`${fullWidth ? "w-full" : "w-[200px]"} z-10`}
           itemClassName="p-[6px_12px] w-[calc(100%-4px)] tracking-normal relative"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            setOpen(!open);
+          }
+
+          }
         >
           <div className="flex justify-between items-center w-full overflow-hidden whitespace-nowrap text-ellipsis">
             <div className="flex items-center flex-1 overflow-hidden whitespace-nowrap text-ellipsis">
@@ -68,9 +88,8 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
             </div>
           </div>
           <div
-            className={`absolute top-16 right-0 ${fullWidth ? 'w-full' : ''} rounded-lg border border-white p-[8px_24px] backdrop-blur bg-[#0000001A] ${
-              open ? "flex" : "hidden"
-            } flex-col items-start`}
+            className={`absolute top-16 right-0 ${fullWidth ? 'w-full' : ''} rounded-lg border border-white p-[8px_24px] backdrop-blur bg-[#0000001A] ${open ? "flex" : "hidden"
+              } flex-col items-start`}
             ref={menuRef}
           >
             {menus.map((data: any, i) => {
@@ -92,7 +111,14 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
           type={"primary"}
           border={"2px"}
           itemClassName="p-3 bg-[#FFFFFF1A] w-[calc(100%-4px)] tracking-normal"
-          onClick={() => setWalletOpen(true)}
+          onClick={() => {
+            if (location.pathname === "/") {
+              setWalletOpen(true)
+            } else {
+              handleConnectOKX();
+            }
+
+          }}
           className={`${fullWidth ? "w-full" : ""}`}
         >
           {t("topbar.Connect Wallet")}

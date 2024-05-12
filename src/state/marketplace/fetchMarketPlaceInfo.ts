@@ -196,6 +196,7 @@ export async function getNFTInfo(address: string, tokenId: number, chainId = 813
           })
         : { data: null },
     ]);
+
     const creatorInfo = creatorAndInfo[0].data;
     const info = creatorAndInfo[1].data;
     const ownerInfo = creatorAndInfo[2].data;
