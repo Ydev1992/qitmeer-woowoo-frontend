@@ -1,4 +1,11 @@
-export default function AnalyzeBadge() {
+import React from "react";
+import { Brc20Token } from "./Brc20TokenInterface";
+
+interface BadgeProps {
+  brc20Token: Brc20Token;
+}
+
+const AnalyzeBadge: React.FC<BadgeProps> = ({ brc20Token }) => {
   return (
     <div className="flex mt-5" style={{ flexWrap: "wrap" }}>
       <div className="flex mx-auto bg-white/10 rounded-xl w-md  py-2 pl-4 pr-6 overflow-hidden">
@@ -62,4 +69,6 @@ export default function AnalyzeBadge() {
       </div>
     </div>
   );
-}
+};
+
+export default AnalyzeBadge;

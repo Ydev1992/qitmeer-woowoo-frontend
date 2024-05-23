@@ -3,12 +3,14 @@ import logger from "redux-logger";
 
 import userReducer from "./user";
 import marketplaceReducer from "./marketplace";
+import inscriptionSlice from "./inscription";
 
 const store = configureStore({
-  devTools: import.meta.env.NODE_ENV !== "production",
+  devTools: true,
   reducer: {
     user: userReducer,
     marketplace: marketplaceReducer,
+    inscription: inscriptionSlice,
   },
   // middleware: (getDefaultMiddleware) =>
   //   import.meta.env.NODE_ENV !== "production"
@@ -17,3 +19,6 @@ const store = configureStore({
 });
 
 export default store;
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

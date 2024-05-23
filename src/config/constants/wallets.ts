@@ -20,34 +20,35 @@ export const wallets: WalletConfig<ConnectorNames>[] = [
     title: "Metamask",
     description: "wallet.Most Popular Decentralized Wallets",
     icon: "/images/connectors/Metamask.svg",
-    installed: typeof window !== "undefined" && Boolean(window.ethereum?.isMetaMask),
+    installed:
+      typeof window !== "undefined" && Boolean(window.ethereum?.isMetaMask),
     connectorId: ConnectorNames.MetaMask,
     deepLink: "https://metamask.app.link/dapp/earn.brewlabs.info/",
     downloadLink: "https://metamask.app.link/dapp/earn.brewlabs.info/",
   },
-  // {
-  //   id: "binance",
-  //   title: "Binance Wallet",
-  //   description: "Connect to your Binance Wallet",
-  //   icon: "/images/wallets/binance.png",
-  //   installed: typeof window !== "undefined" && Boolean(window.BinanceChain),
-  //   connectorId: ConnectorNames.BSC,
-  //   guide: {
-  //     desktop: "https://www.bnbchain.org/en/binance-wallet",
-  //   },
-  //   downloadLink: {
-  //     desktop: isFirefox
-  //       ? "https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search"
-  //       : "https://chrome.google.com/webstore/detail/binance-wallet/fhbohimaelbohpjbbldcngcnapndodjp",
-  //   },
-  // },
-  // {
-  //   id: "coinbase",
-  //   title: "Coinbase Wallet",
-  //   description: "Connect to your Coinbase Wallet",
-  //   icon: "/images/wallets/coinbase.png",
-  //   connectorId: ConnectorNames.WalletLink,
-  // },
+  {
+    id: "binance",
+    title: "Binance Wallet",
+    description: "Connect to your Binance Wallet",
+    icon: "/images/wallets/binance.png",
+    installed: typeof window !== "undefined" && Boolean(window.BinanceChain),
+    connectorId: ConnectorNames.BSC,
+    guide: {
+      desktop: "https://www.bnbchain.org/en/binance-wallet",
+    },
+    downloadLink: {
+      desktop: isFirefox
+        ? "https://addons.mozilla.org/en-US/firefox/addon/binance-chain/?src=search"
+        : "https://chrome.google.com/webstore/detail/binance-wallet/fhbohimaelbohpjbbldcngcnapndodjp",
+    },
+  },
+  {
+    id: "coinbase",
+    title: "Coinbase Wallet",
+    description: "Connect to your Coinbase Wallet",
+    icon: "/images/wallets/coinbase.png",
+    connectorId: ConnectorNames.WalletLink,
+  },
   // {
   //   id: "trust",
   //   title: "Trust Wallet",

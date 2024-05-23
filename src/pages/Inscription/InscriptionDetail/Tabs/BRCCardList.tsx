@@ -31,7 +31,13 @@ const brcTokens = [
   { id: "#62114778", name: "64, 000 loli", price: 0.001 },
 ];
 
-export default function BRCCardList() {
+import { Brc20Token } from "../Brc20TokenInterface";
+
+interface BRCCardListProps {
+  brc20Token: Brc20Token;
+}
+
+const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
   const { t } = useTranslation();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -118,4 +124,6 @@ export default function BRCCardList() {
       />
     </div>
   );
-}
+};
+
+export default BRCCardList;

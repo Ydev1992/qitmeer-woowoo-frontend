@@ -36,7 +36,8 @@ export default function AuctionBidPanel({ nftInfo }: any) {
   // const account = '0x8D4496a0F0932e38A7e9ebeb76c33Ec88141dd1a'
   const bidInfo = useFetchBidInfo(nftInfo.id);
   let currency: any = Object.keys(tokens[nftInfo.chainId]).find(
-    (key, i) => tokens[nftInfo.chainId][key].address.toLowerCase() === nftInfo.currency
+    (key, i) =>
+      tokens[nftInfo.chainId][key].address.toLowerCase() === nftInfo.currency
   );
   currency = tokens[nftInfo.chainId][currency];
   const price = useTokenPrice(currency?.address, currency?.chainId);
@@ -61,7 +62,8 @@ export default function AuctionBidPanel({ nftInfo }: any) {
       setPending(true);
       const nftContract = getMarketplaceContract(signer, chainId);
 
-      const estimateGas: any = await nftContract.estimateGas.collectAuctionPayout(nftInfo.id);
+      const estimateGas: any =
+        await nftContract.estimateGas.collectAuctionPayout(nftInfo.id);
 
       console.log(estimateGas);
 
@@ -102,7 +104,8 @@ export default function AuctionBidPanel({ nftInfo }: any) {
       setPending(true);
       const nftContract = getMarketplaceContract(signer, chainId);
 
-      const estimateGas: any = await nftContract.estimateGas.collectAuctionTokens(nftInfo.id);
+      const estimateGas: any =
+        await nftContract.estimateGas.collectAuctionTokens(nftInfo.id);
 
       console.log(estimateGas);
 
@@ -155,27 +158,45 @@ export default function AuctionBidPanel({ nftInfo }: any) {
           bidInfo={bidInfo}
         />
       )}
-      {nftInfo && currency && <BuyModal open={buyOpen} setOpen={setBuyOpen} nftInfo={nftInfo} />}
+      {nftInfo && currency && (
+        <BuyModal open={buyOpen} setOpen={setBuyOpen} nftInfo={nftInfo} />
+      )}
       {nftInfo && (
-        <CancelListingModal open={offShelfOpen} setOpen={setOffShelfOpen} nftInfo={nftInfo} />
+        <CancelListingModal
+          open={offShelfOpen}
+          setOpen={setOffShelfOpen}
+          nftInfo={nftInfo}
+        />
       )}
       {currency ? (
         <div className="flex justify-between mt-2 sm:flex-row flex-col">
           <div>
             <div className="text-[#C4C4C4]">Price</div>
             <div className="flex items-center">
-              <img src={currency.logo} alt={""} className="w-6 h-6 rounded-full" />
+              <img
+                src={currency.logo}
+                alt={""}
+                className="w-6 h-6 rounded-full"
+              />
               <div className="text-[28px] font-semibold ml-2">
-                {(nftInfo.floorPrice / Math.pow(10, currency.decimals)).toFixed(4)}{" "}
+                {(nftInfo.floorPrice / Math.pow(10, currency.decimals)).toFixed(
+                  4
+                )}{" "}
                 {currency.symbol}
               </div>
               <div className="text-[#C4C4C4] ml-2">
-                ≈ $ {((nftInfo.floorPrice * price) / Math.pow(10, currency.decimals)).toFixed(2)}
+                ≈ ${" "}
+                {(
+                  (nftInfo.floorPrice * price) /
+                  Math.pow(10, currency.decimals)
+                ).toFixed(2)}
               </div>
             </div>
             <div className="text-[#C4C4C4]">
               Minimum Buy ={" "}
-              {Number(formatUnits(nftInfo.minimumBidAmount, currency.decimals)).toFixed(2)}{" "}
+              {Number(
+                formatUnits(nftInfo.minimumBidAmount, currency.decimals)
+              ).toFixed(2)}{" "}
               {currency.symbol}
             </div>
           </div>
@@ -232,19 +253,19 @@ export default function AuctionBidPanel({ nftInfo }: any) {
               {t("actions.Remove from auction")}
             </Button>
           )
-        ) : (nftInfo?.winningBid?.bidder === account.toLowerCase() &&
-            !nftInfo?.paidOutAuctionTokens) ? (
-            <Button
-                type={"secondary"}
-                className="mt-4 w-full"
-                onClick={() => {
-                  onCollectAuctionTokens();
-                }}
-                disabled={pending}
-                pending={pending}
-            >
-              {t("actions.Collect Auction Tokens")}
-            </Button>
+        ) : nftInfo?.winningBid?.bidder === account.toLowerCase() &&
+          !nftInfo?.paidOutAuctionTokens ? (
+          <Button
+            type={"secondary"}
+            className="mt-4 w-full"
+            onClick={() => {
+              onCollectAuctionTokens();
+            }}
+            disabled={pending}
+            pending={pending}
+          >
+            {t("actions.Collect Auction Tokens")}
+          </Button>
         ) : !isEnded ? (
           <>
             <Button

@@ -1,12 +1,31 @@
-import { CloseSVG, ConfirmSVG, CrossCircleSVG, WhiteLoadingSVG } from "assets/svgs";
+import {
+  CloseSVG,
+  ConfirmSVG,
+  CrossCircleSVG,
+  WhiteLoadingSVG,
+} from "assets/svgs";
 import { toast } from "react-toastify";
 import { getBlockExplorerLink, getEllipsis } from "utils/functions";
 
-const Notification = ({ type, msg, txhash }: { type: string; msg: string; txhash?: any }) => {
+const Notification = ({
+  type,
+  msg,
+  txhash,
+}: {
+  type: string;
+  msg: string;
+  txhash?: any;
+}) => {
   const icons: any = {
     loading: <div className="[&>svg]:w-5 [&>svg]:h-5">{WhiteLoadingSVG}</div>,
-    success: <div className="text-[#05C28C] [&>svg]:w-5 [&>svg]:h-5">{ConfirmSVG}</div>,
-    fail: <div className="text-[#E3493F] [&>svg]:w-5 [&>svg]:h-5">{CrossCircleSVG}</div>,
+    success: (
+      <div className="text-[#05C28C] [&>svg]:w-5 [&>svg]:h-5">{ConfirmSVG}</div>
+    ),
+    fail: (
+      <div className="text-[#E3493F] [&>svg]:w-5 [&>svg]:h-5">
+        {CrossCircleSVG}
+      </div>
+    ),
   };
   return (
     <div className="bg-black text-white rounded border border-[#656565] p-4 tracking-tight">
@@ -25,7 +44,8 @@ const Notification = ({ type, msg, txhash }: { type: string; msg: string; txhash
           target="_blank"
           className="text-[#929292] text-sm underline ml-9 font-semibold"
         >
-          <span className="tracking-normal font-bold">View Tx</span>: {getEllipsis(txhash, 6, 4)}
+          <span className="tracking-normal font-bold">View Tx</span>:{" "}
+          {getEllipsis(txhash, 6, 4)}
         </a>
       ) : (
         ""

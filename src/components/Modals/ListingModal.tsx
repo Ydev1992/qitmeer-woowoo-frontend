@@ -50,7 +50,10 @@ const ListingModal = ({
   const { data: signer } = useSigner();
   const { chainId }: any = useWeb3React();
   const { pending, setPending }: any = useContext(ProjectContext);
-  const { allowance, fetchAllowance } = useNFTAllowance(nftInfo.address, MARKETPLACE_ADDR[chainId]);
+  const { allowance, fetchAllowance } = useNFTAllowance(
+    nftInfo.address,
+    MARKETPLACE_ADDR[chainId]
+  );
   const navigate = useNavigate();
   const { fetchInfos: fetchUserInfos } = useUserFetchData();
   const { fetchInfos: fetchMarketInfos } = useMarketFetchData();
@@ -70,8 +73,15 @@ const ListingModal = ({
   async function onApprove() {
     setPending(true);
     try {
-      const nftContract = getCollectionContract(nftInfo.address, signer, chainId);
-      const tx = await nftContract.setApprovalForAll(MARKETPLACE_ADDR[chainId], true);
+      const nftContract = getCollectionContract(
+        nftInfo.address,
+        signer,
+        chainId
+      );
+      const tx = await nftContract.setApprovalForAll(
+        MARKETPLACE_ADDR[chainId],
+        true
+      );
       toast(
         <Notification
           type={"loading"}
@@ -82,7 +92,11 @@ const ListingModal = ({
       await tx.wait();
       fetchAllowance();
       toast(
-        <Notification type={"success"} msg={t("notification.NFT approved")} txhash={tx.hash} />
+        <Notification
+          type={"success"}
+          msg={t("notification.NFT approved")}
+          txhash={tx.hash}
+        />
       );
     } catch (e) {
       handleWalletError(e, showError);
@@ -94,7 +108,15 @@ const ListingModal = ({
   async function onAuctionList() {
     try {
       setConfirmClicked(true);
-      if (!amount || !endDate || !account || !timeBuffer || !minAmount || !bidBuffer) return;
+      if (
+        !amount ||
+        !endDate ||
+        !account ||
+        !timeBuffer ||
+        !minAmount ||
+        !bidBuffer
+      )
+        return;
       setPending(true);
       console.log(nftInfo);
       const nftContract = getMarketplaceContract(signer, chainId);
@@ -110,7 +132,9 @@ const ListingModal = ({
         Math.floor(Date.now() / 1000),
         Math.floor(endDate.getTime() / 1000),
       ];
-      const estimateGas: any = await nftContract.estimateGas.createAuction(params);
+      const estimateGas: any = await nftContract.estimateGas.createAuction(
+        params
+      );
 
       const tx = {
         gasLimit: Math.ceil(estimateGas * GAS_MULTIPLE).toString(),
@@ -125,7 +149,11 @@ const ListingModal = ({
       );
       await listingTx.wait();
       toast(
-        <Notification type={"success"} msg={t("notification.NFT listed")} txhash={listingTx.hash} />
+        <Notification
+          type={"success"}
+          msg={t("notification.NFT listed")}
+          txhash={listingTx.hash}
+        />
       );
       setOpen(false);
       fetchUserInfos(account, chainId);
@@ -156,7 +184,9 @@ const ListingModal = ({
         Math.floor(endDate.getTime() / 1000),
         false,
       ];
-      const estimateGas: any = await nftContract.estimateGas.createListing(params);
+      const estimateGas: any = await nftContract.estimateGas.createListing(
+        params
+      );
 
       console.log(estimateGas);
 
@@ -173,7 +203,11 @@ const ListingModal = ({
       );
       await listingTx.wait();
       toast(
-        <Notification type={"success"} msg={t("notification.NFT listed")} txhash={listingTx.hash} />
+        <Notification
+          type={"success"}
+          msg={t("notification.NFT listed")}
+          txhash={listingTx.hash}
+        />
       );
       setOpen(false);
       fetchUserInfos(account, chainId);
@@ -193,16 +227,19 @@ const ListingModal = ({
       if (!amount || !endDate || !account) return;
       setPending(true);
       const nftContract = getMarketplaceContract(signer, chainId);
-      const estimateGas: any = await nftContract.estimateGas.updateListing(nftInfo.id, [
-        nftInfo.address,
-        nftInfo.tokenId,
-        1,
-        [currencies[selectedCurrency].address],
-        [parseUnits(amount, currencies[selectedCurrency].decimals)],
-        nftInfo.startTimestamp,
-        Math.floor(endDate.getTime() / 1000),
-        false,
-      ]);
+      const estimateGas: any = await nftContract.estimateGas.updateListing(
+        nftInfo.id,
+        [
+          nftInfo.address,
+          nftInfo.tokenId,
+          1,
+          [currencies[selectedCurrency].address],
+          [parseUnits(amount, currencies[selectedCurrency].decimals)],
+          nftInfo.startTimestamp,
+          Math.floor(endDate.getTime() / 1000),
+          false,
+        ]
+      );
 
       console.log(estimateGas);
 
@@ -229,7 +266,11 @@ const ListingModal = ({
       );
       await listingTx.wait();
       toast(
-        <Notification type={"success"} msg={t("notification.NFT listed")} txhash={listingTx.hash} />
+        <Notification
+          type={"success"}
+          msg={t("notification.NFT listed")}
+          txhash={listingTx.hash}
+        />
       );
       setOpen(false);
       fetchUserInfos(account, chainId);
@@ -287,7 +328,9 @@ const ListingModal = ({
             </div>
             {type === "listing" ? (
               <div className="flex justify-between items-center my-2">
-                <div className="text-grey mr-8">{t("listing.Sales method")}</div>
+                <div className="text-grey mr-8">
+                  {t("listing.Sales method")}
+                </div>
                 <Dropdown
                   value={saleType}
                   setValue={setSaleType}
@@ -422,7 +465,9 @@ const ListingModal = ({
             )}
 
             <div className="flex justify-between my-2 xs:flex-row flex-col">
-              <div className="text-grey mr-8 mt-3.5 ">{t("listing.Duration")}</div>
+              <div className="text-grey mr-8 mt-3.5 ">
+                {t("listing.Duration")}
+              </div>
               <div className="xs:mt-0 mt-2">
                 <DatePicker
                   selected={endDate}
@@ -442,12 +487,18 @@ const ListingModal = ({
             type={"secondary"}
             className="w-full mt-6 font-semibold text-xl"
             onClick={() =>
-              type === "listing" ? (saleType === 0 ? onList() : onAuctionList()) : onUpdate()
+              type === "listing"
+                ? saleType === 0
+                  ? onList()
+                  : onAuctionList()
+                : onUpdate()
             }
             disabled={pending}
             pending={pending}
           >
-            {type === "listing" ? t("actions.List for sale") : t("actions.Update listing")}
+            {type === "listing"
+              ? t("actions.List for sale")
+              : t("actions.Update listing")}
           </Button>
         ) : (
           <Button
@@ -460,14 +511,21 @@ const ListingModal = ({
             {t("actions.Approve NFT")}
           </Button>
         )}
-        <button onClick={() => setOpen(false)} className="absolute top-6 right-6">
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-6 right-6"
+        >
           <span className="sr-only">{t("actions.Close")}</span>
           {XMarkSVG}
         </button>
       </div>
       {saleType === 1
         ? tooltips.map((tooltip, i) => (
-            <ReactTooltip anchorId={tooltip.id} place="top" content={t(tooltip.text)} />
+            <ReactTooltip
+              anchorId={tooltip.id}
+              place="top"
+              content={t(tooltip.text)}
+            />
           ))
         : ""}
     </Modal>

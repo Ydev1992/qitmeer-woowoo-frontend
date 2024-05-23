@@ -26,11 +26,20 @@ import { fetchNFTInfoAsync } from "state/marketplace";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nftInfo: any }) => {
+const BuyModal = ({
+  open,
+  setOpen,
+  nftInfo,
+}: {
+  open: boolean;
+  setOpen: any;
+  nftInfo: any;
+}) => {
   const { t } = useTranslation();
 
   let currency: any = Object.keys(tokens[nftInfo.chainId]).find(
-    (key) => tokens[nftInfo.chainId][key].address.toLowerCase() === nftInfo.currency
+    (key) =>
+      tokens[nftInfo.chainId][key].address.toLowerCase() === nftInfo.currency
   );
   currency = tokens[nftInfo.chainId][currency];
   const infos = {
@@ -39,16 +48,22 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
     data: [
       {
         name: t("listing.Listing price"),
-        detail: `${nftInfo.floorPrice / Math.pow(10, currency.decimals)} ${currency.symbol}`,
+        detail: `${nftInfo.floorPrice / Math.pow(10, currency.decimals)} ${
+          currency.symbol
+        }`,
       },
       {
         name: t("nft.Created by"),
-        detail: nftInfo?.creator?.nickname ?? getEllipsis(nftInfo?.creator?.wallet),
+        detail:
+          nftInfo?.creator?.nickname ?? getEllipsis(nftInfo?.creator?.wallet),
       },
     ],
   };
 
-  const { allowance, fetchAllowance } = useTokenAllowance(currency.address, MARKETPLACE_ADDR[813]);
+  const { allowance, fetchAllowance } = useTokenAllowance(
+    currency.address,
+    MARKETPLACE_ADDR[813]
+  );
   const { pending, setPending }: any = useContext(ProjectContext);
   const { data: signer } = useSigner();
   const { chainId }: any = useWeb3React();
@@ -58,8 +73,10 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
   const { fetchInfos: fetchUserInfos } = useUserFetchData();
   const { fetchInfos: fetchMarketInfos } = useMarketFetchData();
 
-  const isNative = currency.address === "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
-  const isAllowed = isNative || BigInt(allowance.toString()) >= BigInt(nftInfo.floorPrice);
+  const isNative =
+    currency.address === "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+  const isAllowed =
+    isNative || BigInt(allowance.toString()) >= BigInt(nftInfo.floorPrice);
 
   const showError = useCallback((errorMsg: string) => {
     if (errorMsg) toast(<Notification type={"fail"} msg={errorMsg} />);
@@ -68,7 +85,11 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
   async function onApprove() {
     setPending(true);
     try {
-      const tokenContract = getErc20TokenContract(currency.address, signer, chainId);
+      const tokenContract = getErc20TokenContract(
+        currency.address,
+        signer,
+        chainId
+      );
       const estimateGas: any = await tokenContract.estimateGas.approve(
         MARKETPLACE_ADDR[chainId],
         ethers.constants.MaxUint256
@@ -175,7 +196,11 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
         gasLimit: Math.ceil(estimateGas * GAS_MULTIPLE).toString(),
         value: isNative ? nftInfo.floorPrice : 0,
       };
-      const buyTx = await nftContract.bidInAuction(nftInfo.id, nftInfo.floorPrice, tx);
+      const buyTx = await nftContract.bidInAuction(
+        nftInfo.id,
+        nftInfo.floorPrice,
+        tx
+      );
       toast(
         <Notification
           type={"loading"}
@@ -205,7 +230,9 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
   return (
     <Modal open={open} setOpen={setOpen}>
       <div className="relative w-[calc(100vw-24px)] max-w-[653px] rounded-[12px] bg-black sm:p-6 p-[24px_12px] shadow-[0px_0px_46px_0px_#FFFFFF33] border-[2px] border-[#656565]  relative">
-        <div className="text-2xl font-medium tracking-normal">{t("modal.Confirm purchase")}</div>
+        <div className="text-2xl font-medium tracking-normal">
+          {t("modal.Confirm purchase")}
+        </div>
         <div className="flex mt-5 sm:flex-row flex-col">
           <div className="w-[240px] h-[240px]">
             <StyledImage src={nftInfo.image} className="rounded-lg" />
@@ -216,9 +243,14 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
               <div className="mt-2">
                 {infos.data.map((data, i) => {
                   return (
-                    <div key={i} className="flex justify-between mt-4 leading-none">
+                    <div
+                      key={i}
+                      className="flex justify-between mt-4 leading-none"
+                    >
                       <div className="text-[#C4C4C4]">{data.name}</div>
-                      <div className={`font-semibold ${i == 3 ? "text-xl" : ""}`}>
+                      <div
+                        className={`font-semibold ${i == 3 ? "text-xl" : ""}`}
+                      >
                         {data.detail}
                       </div>
                     </div>
@@ -248,7 +280,9 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
                 type={"secondary"}
                 className="flex-1 font-semibold text-xl h-12"
                 disabled={pending}
-                onClick={() => (nftInfo.type === "listing" ? onListBuy() : onAuctionBuy())}
+                onClick={() =>
+                  nftInfo.type === "listing" ? onListBuy() : onAuctionBuy()
+                }
                 pending={pending}
               >
                 {t("actions.Buy now")}
@@ -266,7 +300,10 @@ const BuyModal = ({ open, setOpen, nftInfo }: { open: boolean; setOpen: any; nft
             {!pending ? "Approve" : "Approving"} {currency.symbol}
           </Button>
         )}
-        <button onClick={() => setOpen(false)} className="absolute top-6 right-6">
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-6 right-6"
+        >
           <span className="sr-only">{t("actions.Close")}</span>
           {XMarkSVG}
         </button>

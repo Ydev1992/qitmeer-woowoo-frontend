@@ -45,29 +45,42 @@ const PlaceBidModal = ({
   bidInfo: any;
 }) => {
   let currency: any = Object.keys(tokens[nftInfo.chainId]).find(
-    (key) => tokens[nftInfo.chainId][key].address.toLowerCase() === nftInfo.currency
+    (key) =>
+      tokens[nftInfo.chainId][key].address.toLowerCase() === nftInfo.currency
   );
   currency = tokens[nftInfo.chainId][currency];
 
   const { chainId }: any = useWeb3React();
   const { address: account } = useAccount();
 
-  const { balance } = useTokenBalance(account as string, currency.address, chainId);
+  const { balance } = useTokenBalance(
+    account as string,
+    currency.address,
+    chainId
+  );
 
   const { pending, setPending }: any = useContext(ProjectContext);
 
   const [amount, setAmount] = useState("");
   let bestBid = nftInfo.minimumBidAmount;
   if (bidInfo.length) {
-    const temp = [...bidInfo].sort((a: any, b: any) => Number(b.bidAmount) - Number(a.bidAmount));
+    const temp = [...bidInfo].sort(
+      (a: any, b: any) => Number(b.bidAmount) - Number(a.bidAmount)
+    );
     bestBid = temp[0].bidAmount;
   }
 
   bestBid = Number(formatUnits(bestBid, currency.decimals));
 
   const prices = [
-    { name: "Balance", amount: Number(formatUnits(balance, currency.decimals)) },
-    { name: "Price", amount: Number(formatUnits(nftInfo.floorPrice, currency.decimals)) },
+    {
+      name: "Balance",
+      amount: Number(formatUnits(balance, currency.decimals)),
+    },
+    {
+      name: "Price",
+      amount: Number(formatUnits(nftInfo.floorPrice, currency.decimals)),
+    },
     { name: "Best offer", amount: bestBid },
   ];
 
@@ -83,16 +96,25 @@ const PlaceBidModal = ({
   const showError = useCallback((errorMsg: string) => {
     if (errorMsg) toast(<Notification type={"fail"} msg={errorMsg} />);
   }, []);
-  const isNative = currency.address === "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+  const isNative =
+    currency.address === "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
 
-  const { allowance, fetchAllowance } = useTokenAllowance(currency.address, MARKETPLACE_ADDR[813]);
+  const { allowance, fetchAllowance } = useTokenAllowance(
+    currency.address,
+    MARKETPLACE_ADDR[813]
+  );
 
-  const isAllowed = isNative || BigInt(allowance.toString()) >= BigInt(nftInfo.floorPrice);
+  const isAllowed =
+    isNative || BigInt(allowance.toString()) >= BigInt(nftInfo.floorPrice);
 
   async function onApprove() {
     setPending(true);
     try {
-      const tokenContract = getErc20TokenContract(currency.address, signer, chainId);
+      const tokenContract = getErc20TokenContract(
+        currency.address,
+        signer,
+        chainId
+      );
       const estimateGas: any = await tokenContract.estimateGas.approve(
         MARKETPLACE_ADDR[chainId],
         ethers.constants.MaxUint256
@@ -159,7 +181,11 @@ const PlaceBidModal = ({
             : _amount
           : 0,
       };
-      const listingTx = await nftContract.bidInAuction(nftInfo.auctionId, _amount, tx);
+      const listingTx = await nftContract.bidInAuction(
+        nftInfo.auctionId,
+        _amount,
+        tx
+      );
       toast(
         <Notification
           type={"loading"}
@@ -192,7 +218,9 @@ const PlaceBidModal = ({
   return (
     <Modal open={open} setOpen={setOpen}>
       <div className="relative w-[calc(100vw-24px)] max-w-[653px] rounded-[12px] bg-black sm:p-6 p-[24px_12px] shadow-[0px_0px_46px_0px_#FFFFFF33] border-[2px] border-[#656565]  relative">
-        <div className="text-2xl font-medium tracking-normal">{t("actions.Place a bid")}</div>
+        <div className="text-2xl font-medium tracking-normal">
+          {t("actions.Place a bid")}
+        </div>
 
         <div className="flex mt-5 sm:flex-row flex-col">
           <div className="w-[240px] h-[240px]">
@@ -207,7 +235,8 @@ const PlaceBidModal = ({
               <div className="flex justify-between mt-4 leading-none">
                 <div className="text-[#C4C4C4]">{t("nft.Created by")}</div>
                 <div className={`font-semibold`}>
-                  {nftInfo?.creator?.nickname ?? getEllipsis(nftInfo?.creator?.wallet)}
+                  {nftInfo?.creator?.nickname ??
+                    getEllipsis(nftInfo?.creator?.wallet)}
                 </div>
               </div>
             </div>
@@ -232,7 +261,8 @@ const PlaceBidModal = ({
             decimals={6}
             isValid={
               (!confirmClicked || amount) &&
-              Number(amount) <= Number(balance) / Math.pow(10, currency.decimals)
+              Number(amount) <=
+                Number(balance) / Math.pow(10, currency.decimals)
             }
             requireText={
               Number(amount) > Number(balance) / Math.pow(10, currency.decimals)
@@ -264,7 +294,10 @@ const PlaceBidModal = ({
             {!pending ? "Approve" : "Approving"} {currency.symbol}
           </Button>
         )}
-        <button onClick={() => setOpen(false)} className="absolute top-6 right-6">
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-6 right-6"
+        >
           <span className="sr-only">Close</span>
           {XMarkSVG}
         </button>
