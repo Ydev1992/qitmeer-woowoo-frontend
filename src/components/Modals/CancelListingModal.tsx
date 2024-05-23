@@ -146,7 +146,10 @@ const CancelListingModal = ({
               </Button>
             </div>
 
-            <button onClick={() => setOpen(false)} className="absolute top-6 right-6">
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-6 right-6"
+            >
               <span className="sr-only">Close</span>
               {XMarkSVG}
             </button>

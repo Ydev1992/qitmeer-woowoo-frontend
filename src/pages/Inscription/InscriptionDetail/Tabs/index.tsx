@@ -2,7 +2,13 @@ import React, { useState } from "react";
 
 import BRCCardList from "./BRCCardList";
 
-const Tabs: React.FC = () => {
+import { Brc20Token } from "../Brc20TokenInterface";
+
+interface TabsProps {
+  brc20Token: Brc20Token;
+}
+
+const Tabs: React.FC<TabsProps> = ({ brc20Token }) => {
   const [activeTab, setActiveTab] = useState<number>(1);
 
   const handleTabClick = (tab: number) => {
@@ -30,7 +36,7 @@ const Tabs: React.FC = () => {
         </button>
       </div>
       <div className="mt-2 p-4">
-        {activeTab === 1 && <BRCCardList />}
+        {activeTab === 1 && <BRCCardList brc20Token={brc20Token} />}
         {activeTab === 2 && <div>Content for Tab 2</div>}
       </div>
     </div>

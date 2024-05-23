@@ -71,10 +71,20 @@ export default function CreateNFT() {
   async function onConfirm() {
     try {
       setConfirmClicked(true);
-      if (!name || !uploadedLogo || !description || name.length > 10 || description.length > 100)
+      if (
+        !name ||
+        !uploadedLogo ||
+        !description ||
+        name.length > 10 ||
+        description.length > 100
+      )
         return;
       setPending(true);
-      const nftContract = getCollectionContract(collections[collection].address, signer, chainId);
+      const nftContract = getCollectionContract(
+        collections[collection].address,
+        signer,
+        chainId
+      );
 
       let newTokenId = Number(await nftContract.totalSupply()) + 1;
       while (true as any) {
@@ -100,9 +110,21 @@ export default function CreateNFT() {
           }),
       });
       const tx = await nftContract.mint(account, newTokenId, path.url);
-      toast(<Notification type={"loading"} msg="Transaction submitted" txhash={tx.hash} />);
+      toast(
+        <Notification
+          type={"loading"}
+          msg="Transaction submitted"
+          txhash={tx.hash}
+        />
+      );
       await tx.wait();
-      toast(<Notification type={"success"} msg="NFT Minted Successfully" txhash={tx.hash} />);
+      toast(
+        <Notification
+          type={"success"}
+          msg="NFT Minted Successfully"
+          txhash={tx.hash}
+        />
+      );
       dispatch(fetchUserCollectionBalanceAsync(account));
       navigate(`/nft/813/${collections[collection].address}/${newTokenId}`);
     } catch (e) {
@@ -115,7 +137,11 @@ export default function CreateNFT() {
   console.log(values);
   return (
     <div className="relative px-3 py-[80px] z-0 tracking-normal overflow-hidden min-h-screen">
-      <img src={"/images/buynft/vectors/1.png"} alt={""} className="absolute top-0 left-0 w-full" />
+      <img
+        src={"/images/buynft/vectors/1.png"}
+        alt={""}
+        className="absolute top-0 left-0 w-full"
+      />
       <img
         src={"/images/buynft/vectors/2.png"}
         alt={""}
@@ -127,7 +153,9 @@ export default function CreateNFT() {
             {ChevronLeftSVG}
           </Link>
           <div className="ml-4">
-            <div className="text-[32px] font-semibold">{t("actions.Create NFT")}</div>
+            <div className="text-[32px] font-semibold">
+              {t("actions.Create NFT")}
+            </div>
           </div>
         </div>
         <div className="w-full max-w-[1000px] mx-auto text-[#858585]">
@@ -150,20 +178,31 @@ export default function CreateNFT() {
                     <input {...getInputProps()} />
                     {isUploadingLogo ? (
                       <div className="flex h-[200px] w-full flex-col items-center justify-center">
-                        <Puff width={45} height={45} color={"#ffffff9e"} secondaryColor="black" />
+                        <Puff
+                          width={45}
+                          height={45}
+                          color={"#ffffff9e"}
+                          secondaryColor="black"
+                        />
                         <div className="mt-2 text-sm text-[#ffffff9e]">
                           <LoadingText text={t("loading.Uploading Image")} />
                         </div>
                       </div>
                     ) : localLogo ? (
                       <div className="rounded w-[200px] h-[200px] flex justify-center items-center overflow-hidden p-4">
-                        <img src={localLogo} alt={""} className="w-full rounded" />
+                        <img
+                          src={localLogo}
+                          alt={""}
+                          className="w-full rounded"
+                        />
                       </div>
                     ) : (
                       <div className="flex items-center h-[58px]">
                         <div className="gradient-text text-[32px] w-fit">+</div>
                         <div className="text-[#858585] text-sm ml-2 font-pingfang">
-                          {t("createNFT.Supports JPG/PNG, with files smaller than 2M")}
+                          {t(
+                            "createNFT.Supports JPG/PNG, with files smaller than 2M"
+                          )}
                         </div>
                       </div>
                     )}
@@ -171,7 +210,10 @@ export default function CreateNFT() {
                 )}
               </Dropzone>
             </div>
-            <RequireAlert text={"Require Upload Image"} value={!confirmClicked || uploadedLogo} />
+            <RequireAlert
+              text={"Require Upload Image"}
+              value={!confirmClicked || uploadedLogo}
+            />
           </div>
 
           <div className="mt-7">
@@ -207,7 +249,11 @@ export default function CreateNFT() {
               {t("createNFT.Network")}
               <RequireIcon />
             </div>
-            <Dropdown values={["Qitmeer"]} value={network} setValue={setNetwork} />
+            <Dropdown
+              values={["Qitmeer"]}
+              value={network}
+              setValue={setNetwork}
+            />
           </div>
 
           <div className="mt-7 z-10 relative">
@@ -238,7 +284,10 @@ export default function CreateNFT() {
             <div className="text-xl mb-2">{t("createNFT.Characteristic")}</div>
             {traitTypes.map((type, i) => {
               return (
-                <div className="flex sm:flex-row flex-col mb-2 text-white" key={i}>
+                <div
+                  className="flex sm:flex-row flex-col mb-2 text-white"
+                  key={i}
+                >
                   <StyledInput
                     value={type}
                     setValue={(e: any) => {

@@ -145,7 +145,13 @@ export default function CreateCollection() {
         Number(royalty ?? 0) * 100,
         name
       );
-      toast(<Notification type={"loading"} msg="Transaction submitted" txhash={tx.hash} />);
+      toast(
+        <Notification
+          type={"loading"}
+          msg="Transaction submitted"
+          txhash={tx.hash}
+        />
+      );
       await tx.wait();
       await axios.post(
         `/api/collections`,
@@ -154,12 +160,18 @@ export default function CreateCollection() {
           logo: uploadedLogo,
           banner: uploadedBanner,
           description,
-          classification: selectedClassification.map((index: any) => classifications[index]),
+          classification: selectedClassification.map(
+            (index: any) => classifications[index]
+          ),
         },
         { headers: { Authorization: `Bearer ${jwtToken}` } }
       );
       toast(
-        <Notification type={"success"} msg="Collection successfully created." txhash={tx.hash} />
+        <Notification
+          type={"success"}
+          msg="Collection successfully created."
+          txhash={tx.hash}
+        />
       );
       fetchUserInfos(account as `0x${string}`, chainId);
       fetchMarketInfos(chainId);
@@ -188,7 +200,11 @@ export default function CreateCollection() {
 
   return (
     <div className="relative px-3 py-[80px] z-0 tracking-normal overflow-hidden min-h-screen">
-      <img src={"/images/buynft/vectors/1.png"} alt={""} className="absolute top-0 left-0 w-full" />
+      <img
+        src={"/images/buynft/vectors/1.png"}
+        alt={""}
+        className="absolute top-0 left-0 w-full"
+      />
       <img
         src={"/images/buynft/vectors/2.png"}
         alt={""}
@@ -200,7 +216,9 @@ export default function CreateCollection() {
             {ChevronLeftSVG}
           </Link>
           <div className="ml-4">
-            <div className="text-[32px] font-semibold">{t("actions.Create a collection")}</div>
+            <div className="text-[32px] font-semibold">
+              {t("actions.Create a collection")}
+            </div>
             <div className="text-[#C4C4C4]">
               {t(
                 "createCollection.Create, plan, and manage an exclusive NFT series for sharing and sales."
@@ -228,20 +246,31 @@ export default function CreateCollection() {
                     <input {...getInputProps()} />
                     {isUploadingLogo ? (
                       <div className="flex h-[200px] w-full flex-col items-center justify-center">
-                        <Puff width={45} height={45} color={"#ffffff9e"} secondaryColor="black" />
+                        <Puff
+                          width={45}
+                          height={45}
+                          color={"#ffffff9e"}
+                          secondaryColor="black"
+                        />
                         <div className="mt-2 text-sm text-[#ffffff9e]">
                           <LoadingText text={t("loading.Uploading Image")} />
                         </div>
                       </div>
                     ) : localLogo ? (
                       <div className="rounded w-[200px] h-[200px] flex justify-center items-center overflow-hidden p-4">
-                        <img src={localLogo} alt={""} className="w-full rounded" />
+                        <img
+                          src={localLogo}
+                          alt={""}
+                          className="w-full rounded"
+                        />
                       </div>
                     ) : (
                       <div className="flex items-center h-[58px]">
                         <div className="gradient-text text-[32px] w-fit">+</div>
                         <div className="text-[#858585] text-sm ml-2 font-pingfang">
-                          {t("createCollection.Supports JPG/PNG, with files smaller than 2M")}
+                          {t(
+                            "createCollection.Supports JPG/PNG, with files smaller than 2M"
+                          )}
                         </div>
                       </div>
                     )}
@@ -249,7 +278,10 @@ export default function CreateCollection() {
                 )}
               </Dropzone>
             </div>
-            <RequireAlert text="Require upload image" value={!confirmClicked || uploadedLogo} />
+            <RequireAlert
+              text="Require upload image"
+              value={!confirmClicked || uploadedLogo}
+            />
           </div>
           <div className="mt-6">
             <div className="text-xl">
@@ -270,20 +302,31 @@ export default function CreateCollection() {
                     <input {...getInputProps()} />
                     {isUploadingBanner ? (
                       <div className="flex h-[200px] w-full flex-col items-center justify-center">
-                        <Puff width={45} height={45} color={"#ffffff9e"} secondaryColor="black" />
+                        <Puff
+                          width={45}
+                          height={45}
+                          color={"#ffffff9e"}
+                          secondaryColor="black"
+                        />
                         <div className="mt-2 text-sm text-[#ffffff9e]">
                           <LoadingText text={t("loading.Uploading Image")} />
                         </div>
                       </div>
                     ) : localBanner ? (
                       <div className="rounded w-full h-[200px] flex justify-center items-center overflow-hidden">
-                        <img src={localBanner} alt={""} className="w-full rounded" />
+                        <img
+                          src={localBanner}
+                          alt={""}
+                          className="w-full rounded"
+                        />
                       </div>
                     ) : (
                       <div className="flex items-center h-[58px]">
                         <div className="gradient-text text-[32px] w-fit">+</div>
                         <div className="text-[#858585] text-sm ml-2 font-pingfang">
-                          {t("createCollection.Supports JPG/PNG, with files smaller than 2M")}
+                          {t(
+                            "createCollection.Supports JPG/PNG, with files smaller than 2M"
+                          )}
                         </div>
                       </div>
                     )}
@@ -291,7 +334,10 @@ export default function CreateCollection() {
                 )}
               </Dropzone>
             </div>
-            <RequireAlert text="Require upload image" value={!confirmClicked || uploadedBanner} />
+            <RequireAlert
+              text="Require upload image"
+              value={!confirmClicked || uploadedBanner}
+            />
           </div>
           <div className="mt-6">
             <div className="text-xl mb-2">
@@ -306,11 +352,15 @@ export default function CreateCollection() {
               maxLength={20}
               pending={isNameLoading}
               requireText={
-                !isNameValid ? "requireText.Name already existed" : "requireText.Please input field"
+                !isNameValid
+                  ? "requireText.Name already existed"
+                  : "requireText.Please input field"
               }
             />
             <div className="font-pingfang">
-              {t("createCollection.The name cannot be changed after creating a collection.")}
+              {t(
+                "createCollection.The name cannot be changed after creating a collection."
+              )}
             </div>
           </div>
 
@@ -387,7 +437,11 @@ export default function CreateCollection() {
               {t("createNFT.Network")}
               <RequireIcon />
             </div>
-            <Dropdown values={["Qitmeer"]} value={network} setValue={setNetwork} />
+            <Dropdown
+              values={["Qitmeer"]}
+              value={network}
+              setValue={setNetwork}
+            />
           </div>
 
           <div className="mt-6">

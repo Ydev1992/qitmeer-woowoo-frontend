@@ -46,9 +46,13 @@ const ProjectContextProvider = ({ children }: any) => {
       connect({ connector });
       if (jwtToken) {
         try {
-          const { data: result }: any = await axios.post("/api/auth/login", null, {
-            headers: { Authorization: `Bearer ${jwtToken}` },
-          });
+          const { data: result }: any = await axios.post(
+            "/api/auth/login",
+            null,
+            {
+              headers: { Authorization: `Bearer ${jwtToken}` },
+            }
+          );
           if (result?.success) {
             mmPending = false;
             return;

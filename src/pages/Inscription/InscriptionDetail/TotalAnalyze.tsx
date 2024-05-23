@@ -1,4 +1,36 @@
-export default function AnalyzeBadge() {
+import React, { useRef, useEffect, useState } from "react";
+import { Brc20Token } from "./Brc20TokenInterface";
+
+interface BadgeProps {
+  brc20Token: Brc20Token;
+}
+
+const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  // State to store the width
+  const [width, setWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const updateWidth = () => {
+      if (elementRef.current) {
+        setWidth(elementRef.current.getBoundingClientRect().width);
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, []);
+
+  const getMintRateClassName = () => {
+    const wid = Math.max(1, Number(width) * Number(brc20Token.mintRate) * 100);
+    return `h-full bg-white rounded-full w-[` + wid + `qx]`;
+  };
+
   return (
     <div className="flex-col md:flex-row w-[100%] flex bg-gra">
       <div className="flex flex-col md:flex-row w-[100%] justify-center items-center  ">
@@ -8,7 +40,7 @@ export default function AnalyzeBadge() {
         />
         <div className="flex-1w-[90%] pl-5 pr-5 md:h-auto md:flex-grow">
           <div className=" w-[100%] flex justify-between">
-            <p className="">Loli</p>
+            <p className="">{brc20Token.token}</p>
             <p className="">
               <button className="p-2 bg-gray-500 rounded-full hover:bg-gray-400 hover:outline-none">
                 <svg
@@ -27,11 +59,19 @@ export default function AnalyzeBadge() {
             </p>
           </div>
           <div className="mt-2 mb-2 h-1 w-full bg-gray-500 rounded-full">
-            <div className="h-full bg-white rounded-full w-[25%]"></div>
+            <div
+              ref={elementRef}
+              style={{
+                width: `${Math.max(1, Number(brc20Token.mintRate) * 100)}%`,
+              }}
+              className={getMintRateClassName()}
+            ></div>
           </div>
           <div className=" w-[100%] flex justify-between">
-            <p className="">Cast: 7, 876.543</p>
-            <p className="">Total win volume: 7, 876.543</p>
+            <p className="">Cast: {brc20Token.mintAmount.toString()}</p>
+            <p className="">
+              Total win volume: {brc20Token.totalSupply.toString()}
+            </p>
           </div>
         </div>
         <div className=" flex md:flex-row justify-center items-center ">
@@ -51,4 +91,6 @@ export default function AnalyzeBadge() {
       </div>
     </div>
   );
-}
+};
+
+export default TotalAnalyze;

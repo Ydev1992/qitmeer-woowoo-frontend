@@ -63,7 +63,8 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
       setPending(true);
       const nftContract = getMarketplaceContract(signer, chainId);
 
-      const estimateGas: any = await nftContract.estimateGas.collectAuctionPayout(nftInfo.id);
+      const estimateGas: any =
+        await nftContract.estimateGas.collectAuctionPayout(nftInfo.id);
 
       console.log(estimateGas);
 
@@ -104,7 +105,8 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
       setPending(true);
       const nftContract = getMarketplaceContract(signer, chainId);
 
-      const estimateGas: any = await nftContract.estimateGas.collectAuctionTokens(nftInfo.id);
+      const estimateGas: any =
+        await nftContract.estimateGas.collectAuctionTokens(nftInfo.id);
 
       console.log(estimateGas);
 
@@ -169,7 +171,9 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
         className="cursor-pointer"
         onClick={(e) => {
           if (!buttonRef.current.contains(e.target) && nftInfo)
-            navigate(`/nft/${nftInfo.chainId}/${nftInfo.address}/${nftInfo.tokenId}`);
+            navigate(
+              `/nft/${nftInfo.chainId}/${nftInfo.address}/${nftInfo.tokenId}`
+            );
         }}
       >
         <div className="gradient-border-hover relative mb-4 py-0.5 nftcard-hover-effect">
@@ -178,7 +182,11 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
               {!nftInfo ? (
                 <SkeletonComponent className="!w-full !max-w-full !h-full flex" />
               ) : (
-                <StyledImage src={nftInfo.image} alt={""} className="rounded-[12px]" />
+                <StyledImage
+                  src={nftInfo.image}
+                  alt={""}
+                  className="rounded-[12px]"
+                />
               )}
             </div>
             <div className="text-xl font-medium py-3">
@@ -194,9 +202,9 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
               </div>
               <div className="text-white font-semibold">
                 {nft.currency !== ethers.constants.AddressZero
-                  ? `${(nft.floorPrice / Math.pow(10, currency.decimals)).toFixed(4)} ${
-                      currency.symbol
-                    }`
+                  ? `${(
+                      nft.floorPrice / Math.pow(10, currency.decimals)
+                    ).toFixed(4)} ${currency.symbol}`
                   : "Not Listed"}
               </div>
             </div>
@@ -208,13 +216,15 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
                 {!nftInfo ? (
                   <SkeletonComponent />
                 ) : (
-                  nftInfo?.creator?.nickname ?? getEllipsis(nftInfo?.creator?.wallet)
+                  nftInfo?.creator?.nickname ??
+                  getEllipsis(nftInfo?.creator?.wallet)
                 )}
               </div>
             </div>
             <div ref={buttonRef}>
               {account ? (
-                nftInfo?.owner?.wallet?.toLowerCase() === account.toLowerCase() ? (
+                nftInfo?.owner?.wallet?.toLowerCase() ===
+                account.toLowerCase() ? (
                   <Button
                     type={"primary"}
                     className="font-lg font-semibold w-full mt-5"
@@ -226,7 +236,8 @@ export default function AuctionNFTCard({ nft }: { nft: any }) {
                   >
                     {t("actions.List for sale")}
                   </Button>
-                ) : nftInfo?.listingCreator?.toLowerCase() === account.toLowerCase() ? (
+                ) : nftInfo?.listingCreator?.toLowerCase() ===
+                  account.toLowerCase() ? (
                   nftInfo.winningBid ? (
                     <>
                       {!nftInfo.paidOutBidAmount ? (

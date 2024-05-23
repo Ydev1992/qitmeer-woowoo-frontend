@@ -48,8 +48,8 @@ export default () => {
     server: {
       proxy: {
         '/api': {
-          target: 'https://test.woowow.io/',
-          // target: 'http://localhost:3000/',
+          // target: 'https://test.woowow.io/',
+          target: 'http://localhost:3000/',
           changeOrigin: true, 
         }
       }

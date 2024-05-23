@@ -1,33 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { SearchSVG, SortOptionSVG, FavoriteSVG } from "assets/svgs";
 import { DogeSVG, BitcoinSVG } from "assets/Token";
+import { useNavigate } from "react-router-dom";
 import CollectionCarousel from "pages/HomePage/CollectionCarousel";
+
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBrc20Tokens } from "state/inscription";
+import { RootState, AppDispatch } from "state";
 
 import "./style.css";
 export default function TokenListSection() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const brc20Tokens = useSelector(
+    (state: RootState) => state.inscription.brc20Tokens
+  );
+
+  useEffect(() => {
+    dispatch(fetchBrc20Tokens());
+  }, [dispatch]);
+
   const { t } = useTranslation();
   let tableBodyContent: any[] = [];
-  for (let i = 0; i < 8; i++)
+  let i = 1;
+  brc20Tokens.map((brc20Token, index) => {
     tableBodyContent.push(
-      <tr key={i}>
+      <tr
+        key={index}
+        onClick={() => {
+          navigate("/inscriptionDetail", {
+            state: { brc20Token },
+          });
+        }}
+        className="cursor-pointer hover:bg-gray-400 hover:bg-opacity-10"
+      >
         <td>
           <div className="pr-[20px]">
-            <p className="txt-white font-[700]">{i}</p>
+            <p className="txt-white font-[700]">{i++}</p>
           </div>
         </td>
 
         <td>
           <div className="flex flex-row gap-[6px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
-            <p className="txt-gray font-[600]">DOGE</p>
+            <p className="txt-gray font-[600]">{brc20Token.token}</p>
           </div>
         </td>
 
         <td>
           <div className="flex flex-row gap-[4px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
-            <p className="txt-white font-[500]">2.91 BTC</p>
+            <p className="txt-white font-[500]">
+              {brc20Token.totalSupply.toString()}
+            </p>
           </div>
           <div className="mt-1">
             <p className="txt-gray font-[400]">$ 14,678.123</p>
@@ -61,13 +87,17 @@ export default function TokenListSection() {
 
         <td>
           <div>
-            <p className="txt-white font-[400]">72</p>
+            <p className="txt-white font-[400]">
+              {brc20Token.transactionCount.toString()}
+            </p>
           </div>
         </td>
 
         <td>
           <div className="gap-[4px]">
-            <p className="txt-white font-[500] text-right">38</p>
+            <p className="txt-white font-[500] text-right">
+              {brc20Token.holder.toString()}
+            </p>
           </div>
           <div className="mt-1">
             <p className="txt-green font-[500] text-right">+5.55%</p>
@@ -79,6 +109,7 @@ export default function TokenListSection() {
         </td>
       </tr>
     );
+  });
   return (
     <div className=" w-full flex flex-col gap-8 justify-center items-center">
       {/* Table Title & Actions */}

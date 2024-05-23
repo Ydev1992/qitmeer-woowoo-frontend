@@ -10,7 +10,7 @@ export default function Inscription() {
   const { t } = useTranslation();
   useMarketData();
   const [selectedCategories, setSelectedCategories] = useState([]);
-  
+
   return (
     <>
       <div className="relative px-3 pt-[80px] z-0 pb-[80px]  overflow-hidden">
@@ -28,7 +28,7 @@ export default function Inscription() {
           src={"/images/home/vectors/3.png"}
           alt={""}
           className="absolute top-[1357px] left-0"
-        />  
+        />
         <img
           src={"/images/home/vectors/4.png"}
           alt={""}
