@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Brc20Token } from "./Brc20TokenInterface";
+import { useNavigate } from "react-router-dom";
 
 interface BadgeProps {
   brc20Token: Brc20Token;
@@ -10,6 +11,7 @@ const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
 
   // State to store the width
   const [width, setWidth] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -83,7 +85,9 @@ const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
           </button>
           <button
             className="overflow-auto border-none bg-gradient-to-r from-blue-500 to-pink-400 rounded-2xl border-2 m-2 cursor-pointer  md:flex-grow p-3"
-            onClick={() => {}}
+            onClick={() => {
+              navigate("/listForSale");
+            }}
           >
             inscription
           </button>
