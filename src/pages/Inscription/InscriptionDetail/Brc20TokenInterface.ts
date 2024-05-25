@@ -1,7 +1,7 @@
 export interface Brc20Token {
   token: string;
   deployTime: Number;
-  inscriptionId: string;
+  tokenInscriptionId: string;
   inscriptionNumber: Number;
   totalSupply: Number;
   mintAmount: Number;

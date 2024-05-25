@@ -44,7 +44,7 @@ export default function TokenListSection() {
         <td>
           <div className="flex flex-row gap-[6px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
-            <p className="txt-gray font-[600]">{brc20Token.token}</p>
+            <p className="txt-gray font-[600]">{brc20Token.symbol}</p>
           </div>
         </td>
 

@@ -12,7 +12,7 @@ const InscribingTabs = () => {
   };
 
   return (
-    <div className="md:w-1/2 w-full">
+    <div className="w-full">
       <div className="flex">
         <button
           className={`font-mont mx-1 text-[18px] text-white rounded-sm p-3 bg-white   focus:outline-none ${
