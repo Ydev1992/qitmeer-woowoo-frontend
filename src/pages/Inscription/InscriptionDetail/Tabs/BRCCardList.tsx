@@ -82,6 +82,7 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
             >
               <BRCCard
                 inscriptionDatum={inscriptionDatum}
+                brc20Token={brc20Token}
                 handleBuyClick={handleBuyClick}
               />
             </div>
