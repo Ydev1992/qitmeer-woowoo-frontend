@@ -10,11 +10,17 @@ interface BRCCardProps {
   handleBuyClick: any;
 }
 
+const myRoundBy2 = (x: Number) => {
+  return Math.round(100 * Number(x)) / 100;
+};
+
 const BRCCard: React.FC<BRCCardProps> = (props) => {
   const { t } = useTranslation();
   const { inscriptionDatum, handleBuyClick, brc20Token } = props;
 
   const { inscriptionNumber, amount, symbol, ownerAddress } = inscriptionDatum;
+
+  const tmpVal = Math.random() + 1;
 
   return (
     <>
@@ -36,7 +42,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
             </div>
             <p>
               <span className="text-white">
-                {Math.round(Number(brc20Token.lastPrice))}
+                {Math.round(Number(brc20Token.lastPrice) * tmpVal)}
               </span>{" "}
               sats/loli
             </p>
@@ -45,9 +51,11 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
             </p>
             <div className="flex mt-3 p-2 rounded-[12px] border-white backdrop-blur text-lg">
               <div>
-                <span className="text-white">{amount * 6000} BTC</span>
+                <span className="text-white">
+                  {myRoundBy2(amount * 600)} BTC
+                </span>
                 <p className="font-semibold">
-                  $ {amount * Number(brc20Token.lastPrice)}
+                  $ {myRoundBy2(amount * Number(brc20Token.lastPrice))}
                 </p>
               </div>
             </div>
