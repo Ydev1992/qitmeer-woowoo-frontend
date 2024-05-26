@@ -16,6 +16,8 @@ import CreateNFT from "pages/CreateNFT";
 
 import Inscription from "pages/Inscription";
 import InscriptionDetail from "pages/Inscription/InscriptionDetail";
+import ListForSale from "pages/Inscription/InscriptionDetail/ListForSale";
+import Inscribing from "pages/Inscription/Inscribing";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import { useUserData } from "hooks/useUserData";
@@ -46,6 +48,8 @@ function App() {
 
         <Route path={"/inscription"} element={<Inscription />} />
         <Route path={"/inscriptionDetail"} element={<InscriptionDetail />} />
+        <Route path={"/listForSale"} element={<ListForSale />} />
+        <Route path={"createInscription"} element={<Inscribing />} />
       </Routes>
       <Footer />
     </BrowserRouter>

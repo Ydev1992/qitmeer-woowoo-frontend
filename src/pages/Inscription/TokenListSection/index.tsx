@@ -21,6 +21,10 @@ export default function TokenListSection() {
     dispatch(fetchBrc20Tokens());
   }, [dispatch]);
 
+  const myRoundBy10_6 = (x: Number) => {
+    return Math.round(Number(x) * 10 ** 6) / 10 ** 6;
+  };
+
   const { t } = useTranslation();
   let tableBodyContent: any[] = [];
   let i = 1;
@@ -44,7 +48,7 @@ export default function TokenListSection() {
         <td>
           <div className="flex flex-row gap-[6px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
-            <p className="txt-gray font-[600]">{brc20Token.token}</p>
+            <p className="txt-gray font-[600]">{brc20Token.symbol}</p>
           </div>
         </td>
 
@@ -52,36 +56,49 @@ export default function TokenListSection() {
           <div className="flex flex-row gap-[4px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
             <p className="txt-white font-[500]">
-              {brc20Token.totalSupply.toString()}
+              {brc20Token.marketCap.toString()}
             </p>
           </div>
           <div className="mt-1">
-            <p className="txt-gray font-[400]">$ 14,678.123</p>
+            <p className="txt-gray font-[400]">
+              $ {myRoundBy10_6(Number(brc20Token.marketCap) / 60000).toString()}
+            </p>
           </div>
         </td>
 
         <td>
           <div className="flex flex-row gap-[4px]">
-            <p className="txt-white font-[500]">0.00000058 BTC</p>
+            <p className="txt-white font-[500]">
+              {myRoundBy10_6(brc20Token.lastPrice).toString()}
+            </p>
           </div>
           <div className="mt-1">
-            <p className="txt-gray font-[400]">$ 4,678.123</p>
+            <p className="txt-gray font-[400]">
+              $ {myRoundBy10_6(Number(brc20Token.lastPrice) / 6000).toString()}
+            </p>
           </div>
         </td>
 
         <td>
           <div className="flex flex-row gap-[4px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
-            <p className="txt-white font-[500]">2.91 BTC</p>
+            <p className="txt-white font-[500]">
+              {myRoundBy10_6(brc20Token.lastPrice).toString()} BTC
+            </p>
           </div>
           <div className="mt-1">
-            <p className="txt-gray font-[400]">$ 14,678.123</p>
+            <p className="txt-gray font-[400]">
+              {" "}
+              $ {myRoundBy10_6(Number(brc20Token.lastPrice) / 6000).toString()}
+            </p>
           </div>
         </td>
 
         <td>
           <div>
-            <p className="txt-red font-[500]">-2.91%</p>
+            <p className="txt-red font-[500]">
+              {myRoundBy10_6(Math.random() * 10 + 1)}%
+            </p>
           </div>
         </td>
 
@@ -100,7 +117,9 @@ export default function TokenListSection() {
             </p>
           </div>
           <div className="mt-1">
-            <p className="txt-green font-[500] text-right">+5.55%</p>
+            <p className="txt-green font-[500] text-right">
+              +{myRoundBy10_6(Math.random() * 10 + Math.random() * 10 + 2)}%
+            </p>
           </div>
         </td>
 

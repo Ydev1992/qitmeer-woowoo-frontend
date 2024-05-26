@@ -10,8 +10,8 @@ interface ConfirmPopupProps {
 const ConfirmPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
   const { isOpen, setIsOpen, handleConfirmClick } = props;
   return (
-    <div className="relative  flex items-center justify-center min-h-screen">
-      {isOpen && (
+    isOpen && (
+      <div className="relative  flex items-center justify-center min-h-screen">
         <div className="overlay bg-opacity-10 backdrop-blur-sm">
           <div className="dialog font-Mont w-[370px] border-white border-2 rounded-lg bg-black text-white">
             <h2 className=" text-2xl font-semibold mb-4">Trading alert</h2>
@@ -42,8 +42,8 @@ const ConfirmPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
             </div>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    )
   );
 };
 

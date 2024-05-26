@@ -22,8 +22,8 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
   };
 
   return (
-    <div className="relative  flex items-center justify-center min-h-screen">
-      {isOpenBuy && (
+    isOpenBuy && (
+      <div className="relative  flex items-center justify-center min-h-screen">
         <div className="overlay bg-opacity-10 backdrop-blur-sm">
           <div className="dialog h-[600px] overflow-y-scroll relative font-Mont w-[600px] border-white border-2 rounded-lg bg-black text-white">
             <h2 className=" text-2xl font-semibold mb-4">Buy now</h2>
@@ -173,8 +173,8 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
             </div>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    )
   );
 };
 

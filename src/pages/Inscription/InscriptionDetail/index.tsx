@@ -11,7 +11,7 @@ export default function InscriptionDetail() {
   const { state } = location as { state: { brc20Token: Brc20Token } };
 
   return (
-    <div className="relative px-3 py-[80px] z-0 tracking-normal overflow-hidden min-h-screen">
+    <div className="relative px-3 py-[80px] z-0 overflow-hidden">
       <img
         src={"/images/buynft/vectors/1.png"}
         alt={""}

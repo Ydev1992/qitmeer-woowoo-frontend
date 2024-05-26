@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import BRCCard from "./BRCCard";
 import { useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
 
 import { toast } from "react-toastify";
 import Notification from "components/Notification";
@@ -10,26 +9,9 @@ import Notification from "components/Notification";
 import ConfirmPopupDialog from "../components/ConfirmPopupDialog";
 import BuyPopupDialog from "../components/BuyPopupDialog";
 
-const brcTokens = [
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-  { id: "#62114778", name: "64, 000 loli", price: 0.001 },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { fetchInscriptionData } from "state/inscription";
+import { RootState, AppDispatch } from "state";
 
 import { Brc20Token } from "../Brc20TokenInterface";
 
@@ -42,6 +24,11 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isOpenBuy, setIsOpenBuy] = useState<boolean>(false);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const inscriptionData = useSelector(
+    (state: RootState) => state.inscription.inscriptionData
+  );
 
   const handleBuyClick = () => {
     setIsOpen(true);
@@ -62,7 +49,6 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
   };
 
   const node: any = useRef();
-  const dispatch: any = useDispatch();
 
   const handleScroll = useCallback(() => {
     const { scrollTop, scrollHeight, clientHeight } = node.current;
@@ -70,6 +56,10 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
       console.log("reached bottom hook in scroll component");
     }
   }, [node]);
+
+  useEffect(() => {
+    dispatch(fetchInscriptionData(brc20Token.tokenInscriptionId));
+  }, [dispatch]);
 
   useEffect(() => {
     if (node.current) {
@@ -84,13 +74,17 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
         className={`flex flex-wrap pt-4 w-[calc(100%+16px)] -ml-2  rounded-[12px] bg-transparent`}
         ref={node}
       >
-        {brcTokens.map((brcToken: any, i: number) => {
+        {inscriptionData.map((inscriptionDatum: any, i: number) => {
           return (
             <div
               key={i}
               className="mx-2 xl:md:sm:w-[calc(100%/6-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/3-16px)] w-[calc(100%-16px)]"
             >
-              <BRCCard brcToken={brcToken} handleBuyClick={handleBuyClick} />
+              <BRCCard
+                inscriptionDatum={inscriptionDatum}
+                brc20Token={brc20Token}
+                handleBuyClick={handleBuyClick}
+              />
             </div>
           );
         })}
