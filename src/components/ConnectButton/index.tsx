@@ -2,21 +2,40 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect, useRef } from "react";
 import Button from "../Button";
 import WalletSelector from "components/WalletSelector";
-import { useAccount, useDisconnect, useNetwork, useSigner } from "wagmi";
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useNetwork,
+  useSigner,
+} from "wagmi";
 import { WalletSVG } from "assets/svgs";
 import { Link } from "react-router-dom";
 import { useUserETHBalance, useUserInfo } from "state/hooks";
 import StyledImage from "components/StyledImage";
 
+import { OKXConnector } from "@okwallet/wagmi-okx-connector";
+
 import { useLocation } from "react-router-dom";
+
+import Modal from "./Modal";
 
 export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [walletOpen, setWalletOpen] = useState(false);
-  const { address: _account } = useAccount();
+  const { address: _account, isConnected } = useAccount();
   const { data: signer } = useSigner();
+
+  const myOKXConnector: Partial<any> = {
+    connector: new OKXConnector(),
+  };
+
+  const { connect } = useConnect(myOKXConnector);
   const { disconnect } = useDisconnect();
+
+  const [okxOpen, setOkxOpen] = useState<boolean>(false);
+
   const { chain } = useNetwork();
 
   const menus = [
@@ -43,15 +62,13 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
 
   const location = useLocation();
 
-  const handleConnectOKX = () => {
-    if (typeof (window as any).okxwallet === "undefined") {
-      alert("OKX is uninstalled!");
-      return;
-    }
-    async function connectWallet() {
-      let result = await (window as any).okxwallet.bitcoinSignet.connect();
-    }
-    connectWallet();
+  const openOkxModal = () => setOkxOpen(true);
+  const closeOkxModal = () => setOkxOpen(false);
+
+  const [activeTab, setActiveTab] = useState<number>(1);
+
+  const handleTabClick = (tab: number) => {
+    setActiveTab(tab);
   };
 
   return (
@@ -123,7 +140,7 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
             if (location.pathname === "/") {
               setWalletOpen(true);
             } else {
-              handleConnectOKX();
+              openOkxModal();
             }
           }}
           className={`${fullWidth ? "w-full" : ""}`}
@@ -131,6 +148,104 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
           {t("topbar.Connect Wallet")}
         </Button>
       )}
+      <Modal isOpen={okxOpen} onClose={closeOkxModal}>
+        <div className="text-white text-[18px] flex justify-between">
+          <h2 className="my-auto">Connect Wallet</h2>
+          <button className="text-[30px]" onClick={closeOkxModal}>
+            &times;
+          </button>
+        </div>
+        <div className="flex mt-3 border-b-[#2D2D2D] border-b">
+          <button
+            className={`px-4 py-2 font-Mont text-[16px]  focus:outline-none ${
+              activeTab === 1
+                ? "active:text-white border-b-white border-b"
+                : "text-[#A0A0A0]"
+            }`}
+            onClick={() => handleTabClick(1)}
+          >
+            OKX Wallet
+          </button>
+          <button
+            className={`px-4 py-2 font-Mont text-[16px]  focus:outline-none ${
+              activeTab === 2
+                ? "active:text-white border-b-white border-b"
+                : "text-[#A0A0A0]"
+            }`}
+            onClick={() => handleTabClick(2)}
+          >
+            Other
+          </button>
+        </div>
+        <div className="mt-2">
+          {activeTab === 1 && (
+            <>
+              <div className="flex px-[20px] h-[64px] rounded-xl bg-white bg-opacity-10 justify-between">
+                <div className="my-auto flex justify-start">
+                  <img
+                    src="images/okx.png"
+                    className=" w-[30px] h-[30px] "
+                  ></img>
+                  <p className="my-auto ml-1">OKX</p>
+                </div>
+                <Button
+                  type={"smallConnect"}
+                  border={"2px"}
+                  itemClassName="p-3 bg-transparent w-[calc(100%-4px)] tracking-normal"
+                  onClick={() => {
+                    connect();
+                  }}
+                >
+                  {t("topbar.Connect Wallet")}
+                </Button>
+              </div>
+              <div className="flex my-3 py-3 px-[20px] h-[154px] rounded-xl bg-white bg-opacity-10 justify-between">
+                <div className="flex justify-start">
+                  <img
+                    src="images/okx.png"
+                    className=" w-[30px] h-[30px] "
+                  ></img>
+                  <div className="ml-1">
+                    <p>OKX app</p>
+                    <p className="text-[12px] mt-3 text-[#C5C5C5]">
+                      Scan QR code to connect your wallet
+                    </p>
+                    <p className="text-[12px] mt-5 text-[#C5C5C5]">
+                      Not installed yet? <br />
+                      <a
+                        className="text-white"
+                        href="https://www.okx.com/download"
+                        target="blank"
+                      >
+                        Download now
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="w-[82px] h-[82px] bg-[#D9D9D9]"></div>
+              </div>
+            </>
+          )}
+          {activeTab === 2 && (
+            <div className="flex px-[20px] h-[64px] rounded-xl bg-white bg-opacity-10 justify-between">
+              <div className="my-auto flex justify-start">
+                <img src="images/okx.png" className=" w-[30px] h-[30px] "></img>
+                <p className="my-auto ml-1">OKX</p>
+              </div>
+              <Button
+                type={"smallConnect"}
+                border={"2px"}
+                itemClassName="p-3 bg-transparent w-[calc(100%-4px)] tracking-normal"
+                onClick={() => {
+                  connect();
+                }}
+              >
+                {t("topbar.Connect Wallet")}
+              </Button>
+            </div>
+          )}
+        </div>
+      </Modal>
     </>
   );
 }

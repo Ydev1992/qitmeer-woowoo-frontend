@@ -22,4 +22,5 @@ export interface Brc20Token {
   inscriptionId: string;
   inscriptionNumber: Number;
   mintRate: Number;
+  logoUrl: string;
 }
