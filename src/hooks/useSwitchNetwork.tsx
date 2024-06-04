@@ -53,7 +53,13 @@ export function useSwitchNetwork() {
         switchNetworkLocal(chainId);
       });
     },
-    [isConnected, _switchNetworkAsync, isLoading, setLoading, switchNetworkLocal]
+    [
+      isConnected,
+      _switchNetworkAsync,
+      isLoading,
+      setLoading,
+      switchNetworkLocal,
+    ]
   );
 
   const switchNetwork = useCallback(

@@ -38,11 +38,11 @@ const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
       <div className="flex flex-col md:flex-row w-[100%] justify-center items-center  ">
         <img
           className="w-[80px] bg-gray-700 h-auto p-2 inline float-left rounded-full text-indigo-500"
-          src="/images/inscription/hero1.png"
+          src={brc20Token.logoUrl}
         />
         <div className="flex-1w-[90%] pl-5 pr-5 md:h-auto md:flex-grow">
           <div className=" w-[100%] flex justify-between">
-            <p className="">{brc20Token.token}</p>
+            <p className="">{brc20Token.symbol}</p>
             <p className="">
               <button className="p-2 bg-gray-500 rounded-full hover:bg-gray-400 hover:outline-none">
                 <svg

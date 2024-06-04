@@ -30,7 +30,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
             <p className="">#{inscriptionNumber}</p>
             <div className="flex items-center justify-between mb-4 mt-4">
               <img
-                src="images/inscription/hero2.png"
+                src={brc20Token.logoUrl}
                 alt="Image"
                 className="w-1/5 md:w-1/4 lg:w-1/5 xl:w-1/6"
               />

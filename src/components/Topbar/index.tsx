@@ -3,7 +3,7 @@ import SearchInput from "components/SearchInput";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Hamburger from "./Hamburger";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAccount, useConnect, useDisconnect, useSigner } from "wagmi";
 import { useWeb3React } from "contexts/wagmi";
 import { SUPPORTED_CHAIN_IDS } from "config/constants/networks";
@@ -13,6 +13,7 @@ import { useSwitchNetwork } from "hooks/useSwitchNetwork";
 import Notification from "components/Notification";
 import Lang from "components/Lang";
 import { ProjectContext } from "contexts/ProjectContext";
+// import OKXConnectButton from "components/ConnectButton/OKXConnectButton";
 
 export default function Topbar() {
   const [criteria, setCriteria] = useState("");
@@ -28,9 +29,11 @@ export default function Topbar() {
   const { onConnect, jwtToken } = useContext(ProjectContext);
 
   const account = signer ? _account : "";
+  const location = useLocation();
 
   useEffect(() => {
     if (jwtToken === "#" || account) return;
+    if (location.pathname !== "/") return;
     if (!SUPPORTED_CHAIN_IDS.includes(chainId)) {
       disconnect();
       try {
@@ -100,7 +103,7 @@ export default function Topbar() {
           </div>
           <div className="flex items-center">
             <div className="xs:block hidden lg:mr-6 mr-12">
-              <ConnectButton  />
+              <ConnectButton />
             </div>
             <Lang />
             <Hamburger criteria={criteria} setCriteria={setCriteria} />

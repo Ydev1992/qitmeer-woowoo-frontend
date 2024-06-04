@@ -38,7 +38,11 @@ function WalletSelector({ open, setOpen }: WalletSelectorProps) {
 
   return (
     <AnimatePresence>
-      <Dialog open={open} className="relative z-[1000]" onClose={() => setOpen(false)}>
+      <Dialog
+        open={open}
+        className="relative z-[1000]"
+        onClose={() => setOpen(false)}
+      >
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 text-center">
             <div className="relative w-full max-w-[400px] bg-black rounded-[12px] border-[2px] border-[#656565]">
@@ -74,7 +78,9 @@ function WalletSelector({ open, setOpen }: WalletSelectorProps) {
                       <li key={wallet.id} className="py-2.5">
                         <button
                           disabled={
-                            isLoading || !connectors.find((c) => c.id === wallet.connectorId)?.ready
+                            isLoading ||
+                            !connectors.find((c) => c.id === wallet.connectorId)
+                              ?.ready
                           }
                           onClick={() => {
                             const selectedConnector = connectors.find(
@@ -87,19 +93,25 @@ function WalletSelector({ open, setOpen }: WalletSelectorProps) {
                           <img src={wallet.icon} alt="" />
                           <div className="ml-4 flex-col text-left">
                             <p className="font-bold">{wallet.title}</p>
-                            <p className="text-xs text-[#C5C5C5]">{t(wallet.description)}</p>
+                            <p className="text-xs text-[#C5C5C5]">
+                              {t(wallet.description)}
+                            </p>
                           </div>
                           <div className="ml-auto">
-                            {isLoading && wallet.connectorId === pendingConnector?.id && (
-                              <div role="status">{LoadingSVG}</div>
-                            )}
+                            {isLoading &&
+                              wallet.connectorId === pendingConnector?.id && (
+                                <div role="status">{LoadingSVG}</div>
+                              )}
                           </div>
                         </button>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <button onClick={() => setOpen(false)} className="absolute top-6 right-6">
+                <button
+                  onClick={() => setOpen(false)}
+                  className="absolute top-6 right-6"
+                >
                   <span className="sr-only">Close</span>
                   {XMarkSVG}
                 </button>
