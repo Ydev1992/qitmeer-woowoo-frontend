@@ -15,8 +15,11 @@ import { useUserETHBalance, useUserInfo } from "state/hooks";
 import StyledImage from "components/StyledImage";
 
 import { OKXConnector } from "@okwallet/wagmi-okx-connector";
+import WalletConnect from "@walletconnect/client";
 
 import { useLocation } from "react-router-dom";
+import QRCodeModal from "@walletconnect/qrcode-modal";
+import QRCode from "react-qr-code";
 
 import Modal from "./Modal";
 
@@ -36,7 +39,72 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
 
   const [okxOpen, setOkxOpen] = useState<boolean>(false);
 
-  const { chain } = useNetwork();
+  const myDappURL = "https://localhost:5173/";
+  const encodedDappUrl = encodeURIComponent(myDappURL);
+  const deepLink = "okx://wallet/dapp/url?dappUrl=" + encodedDappUrl;
+  const encodedUrl =
+    "https://www.okx.com/download?deeplink=" + encodeURIComponent(deepLink);
+
+  const ua = navigator.userAgent;
+  const isIOS = /iphone|ipad|ipod|ios/i.test(ua);
+  const isAndroid = /android|XiaoMi|MiuiBrowser/i.test(ua);
+  const isMobile = isIOS || isAndroid;
+  const isOKApp = /OKApp/i.test(ua);
+
+  if (isMobile && !isOKApp) {
+    // const encodedUrl =
+    //   "https://www.okx.com/download?deeplink=" +
+    //   encodeURIComponent(
+    //     "okx://wallet/dapp/url?dappUrl=" +
+    //       encodeURIComponent(window.location.href)
+    //   );
+    // window.location.href = encodedUrl;
+  } else if ((window as any).okxwallet) {
+    // const accounts = await(window as any).okxwallet.request({
+    //   method: "eth_requestAccounts",
+    // });
+  }
+
+  const qrConnector = new WalletConnect({
+    bridge: encodedUrl, // Required
+  });
+
+  if (!qrConnector.connected) {
+    // Create a new session
+    qrConnector.createSession();
+
+    // // Display QR Code modal
+    // QRCodeModal.open(qrConnector.uri, () => {
+    //   console.log("QR Code Modal closed");
+    // });
+  }
+
+  qrConnector.on("connect", (error, payload) => {
+    if (error) {
+      throw error;
+    }
+
+    // Close QR Code Modal
+    QRCodeModal.close();
+
+    // Get provided accounts and chainId
+    const { accounts } = payload.params[0];
+  });
+
+  qrConnector.on("session_update", (error, payload) => {
+    if (error) {
+      throw error;
+    }
+
+    // Get updated accounts and chainId
+    const { accounts } = payload.params[0];
+  });
+
+  qrConnector.on("disconnect", (error, payload) => {
+    if (error) {
+      throw error;
+    }
+  });
 
   const menus = [
     { text: t("menus.Personal data"), action: "", link: "personaldata" },
@@ -46,16 +114,17 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
     { text: t("menus.Exit"), action: disconnect, link: "exit" },
   ];
 
-  const account = signer ? _account : "";
-
   const menuRef: any = useRef();
+
   useEffect(() => {
     document.addEventListener("mouseup", function (event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setOpen(false);
       }
     });
-  }, []);
+
+    if (isConnected) closeOkxModal();
+  }, [isConnected]);
 
   const ethBalance = useUserETHBalance();
   const userInfo = useUserInfo();
@@ -74,17 +143,19 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
   return (
     <>
       <WalletSelector open={walletOpen} setOpen={setWalletOpen} />
-      {account ? (
+      {isConnected ? (
         <Button
           type={"primary"}
           border="1px"
           className={`${fullWidth ? "w-full" : "w-[200px]"} z-10`}
           itemClassName="p-[6px_12px] w-[calc(100%-4px)] tracking-normal relative"
           onClick={() => {
-            setOpen(!open);
+            disconnect();
+            // setOpen(!open);
           }}
         >
-          <div className="flex justify-between items-center w-full overflow-hidden whitespace-nowrap text-ellipsis">
+          Disconnect
+          {/* <div className="flex justify-between items-center w-full overflow-hidden whitespace-nowrap text-ellipsis">
             <div className="flex items-center flex-1 overflow-hidden whitespace-nowrap text-ellipsis">
               <div className="ml-0.5">{WalletSVG}</div>
               <div className="ml-1.5 overflow-hidden whitespace-nowrap text-ellipsis">{`${(
@@ -129,7 +200,7 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
                 </Link>
               );
             })}
-          </div>
+          </div> */}
         </Button>
       ) : (
         <Button
@@ -180,13 +251,13 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
         <div className="mt-2">
           {activeTab === 1 && (
             <>
-              <div className="flex px-[20px] h-[64px] rounded-xl bg-white bg-opacity-10 justify-between">
+              <div className="flex px-[10px] h-[64px] rounded-xl bg-white bg-opacity-10 justify-between">
                 <div className="my-auto flex justify-start">
                   <img
                     src="images/okx.png"
-                    className=" w-[30px] h-[30px] "
+                    className=" w-[32px] h-[32px] "
                   ></img>
-                  <p className="my-auto ml-1">OKX</p>
+                  <p className="my-auto ml-1 text-[16px]">OKX</p>
                 </div>
                 <Button
                   type={"smallConnect"}
@@ -199,14 +270,14 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
                   {t("topbar.Connect Wallet")}
                 </Button>
               </div>
-              <div className="flex my-3 py-3 px-[20px] h-[154px] rounded-xl bg-white bg-opacity-10 justify-between">
-                <div className="flex justify-start">
+              <div className="flex my-3 py-3 px-[10px] h-[154px] rounded-xl bg-white bg-opacity-10 justify-between">
+                <div className="flex justify-start w-[226px]">
                   <img
                     src="images/okx.png"
-                    className=" w-[30px] h-[30px] "
+                    className=" w-[32px] h-[32px] "
                   ></img>
                   <div className="ml-1">
-                    <p>OKX app</p>
+                    <p className="text-[16px]">OKX app</p>
                     <p className="text-[12px] mt-3 text-[#C5C5C5]">
                       Scan QR code to connect your wallet
                     </p>
@@ -222,7 +293,13 @@ export default function ConnectButton({ fullWidth }: { fullWidth?: boolean }) {
                     </p>
                   </div>
                 </div>
-                <div className="w-[82px] h-[82px] bg-[#D9D9D9]"></div>
+                <div className="w-[95px] h-[95px] rounded-xl flex bg-[#D9D9D9]">
+                  <QRCode
+                    value={qrConnector.uri}
+                    size={82}
+                    className="m-auto"
+                  />
+                </div>
               </div>
             </>
           )}

@@ -33,6 +33,7 @@ export default function Topbar() {
 
   useEffect(() => {
     if (jwtToken === "#" || account) return;
+    if (location.pathname !== "/") return;
     if (!SUPPORTED_CHAIN_IDS.includes(chainId)) {
       disconnect();
       try {
