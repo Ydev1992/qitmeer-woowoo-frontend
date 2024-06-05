@@ -22,6 +22,7 @@ import Inscribing from "pages/Inscription/Inscribing";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useUserData } from "hooks/useUserData";
 import { useMarketData } from "hooks/useMarketData";
+import QuickPricing from "pages/Inscription/InscriptionDetail/QuickPricing";
 
 function GlobalHooks() {
   return null;
@@ -49,6 +50,7 @@ function App() {
         <Route path={"/inscription"} element={<Inscription />} />
         <Route path={"/inscriptionDetail"} element={<InscriptionDetail />} />
         <Route path={"/listForSale"} element={<ListForSale />} />
+        <Route path={"/quickPricing"} element={<QuickPricing />} />
         <Route path={"createInscription"} element={<Inscribing />} />
       </Routes>
       <Footer />

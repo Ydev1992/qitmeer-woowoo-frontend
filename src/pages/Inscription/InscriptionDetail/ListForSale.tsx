@@ -8,10 +8,36 @@ import {
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "components/Button";
+import ExitInscribingPopupDialog from "./components/ExitInscribingPopupDialog";
+
+import { toast } from "react-toastify";
+import Notification from "components/Notification";
+
+const salesList = [
+  { price: 1000, id: "#50284184" },
+  { price: 300, id: "#20284184" },
+  { price: 210, id: "#90284184" },
+  { price: 5021, id: "#80284184" },
+  { price: 211, id: "#70284184" },
+  { price: 1000, id: "#50284184" },
+  { price: 300, id: "#20284184" },
+  { price: 210, id: "#90284184" },
+  { price: 5021, id: "#80284184" },
+  { price: 211, id: "#70284184" },
+];
 
 const ListForSale = () => {
   const navigate = useNavigate();
   const [hasRecords, sethasRecords] = useState<boolean>(false);
+
+  const [isOpenExitModal, setIsOpenExitModal] = useState<boolean>(false);
+
+  const handleExitOkClick = () => {
+    setIsOpenExitModal(false);
+    navigate(-1);
+  };
+
+  const handleInscribeTransfer = () => {};
 
   return (
     <>
@@ -19,28 +45,30 @@ const ListForSale = () => {
         <img
           src={"/images/home/vectors/1.png"}
           alt={""}
-          className="absolute top-0 left-0"
+          className="absolute top-0 left-0 z-0"
         />
         <img
           src={"/images/home/vectors/2.png"}
           alt={""}
-          className="absolute top-[267px] left-0"
+          className="absolute top-[267px] z-0 left-0"
         />
         <img
           src={"/images/home/vectors/3.png"}
           alt={""}
-          className="absolute top-[1357px] left-0"
+          className="absolute top-[1357px] z-0 left-0"
         />
         <img
           src={"/images/home/vectors/4.png"}
           alt={""}
-          className="absolute top-[2184px] left-0"
+          className="absolute top-[2184px] z-0 left-0"
         />
         <div className="max-w-[1240px] z-10 mx-auto flex flex-col gap-16">
-          <div>
+          <div className="cursor-pointer  z-20">
             <button
-              onClick={() => navigate(-1)}
-              className="flex justify-between"
+              onClick={() => {
+                setIsOpenExitModal(true);
+              }}
+              className="flex z-20 justify-between"
             >
               <FontAwesomeIcon
                 icon={faArrowLeft}
@@ -94,20 +122,51 @@ const ListForSale = () => {
                 className="h-fit m-auto"
                 itemClassName="p-[8px_24px] bg-transparent w-[calc(100%-4px)] text-lg"
                 onClick={() => {
-                  navigate("/listForSale");
+                  navigate("/quickPricing");
                 }}
               >
                 Inscribe transfer
               </Button>
             </div>
           </div>
-          <div className="w-full h-[555px] flex">
-            {hasRecords ? (
-              <table>
-                <thead></thead>
-                <tbody></tbody>
-              </table>
-            ) : (
+
+          {salesList.length ? (
+            <div className="w-full flex flex-wrap z-20">
+              <div className="w-[179px] m-1 h-[157px] flex rounded-lg bg-white bg-opacity-[15%]">
+                <div
+                  className="m-auto text-center cursor-pointer"
+                  onClick={() => {
+                    handleInscribeTransfer();
+                  }}
+                >
+                  <p className="text-white font-bold text-[30px]">+</p>
+                  <p className="font-Mont text-[14px] text-[#C4C4C4]">去铭刻</p>
+                </div>
+              </div>
+
+              {salesList.map((salesItem) => {
+                return (
+                  <div className="w-[179px] m-1 text-center flex flex-col h-[157px] rounded-lg bg-white bg-opacity-[15%]">
+                    <p className="flex mt-5 mx-auto">
+                      <img
+                        src="images/cryptoImage.png"
+                        className="w-[24px] my-auto h-[24px]"
+                      ></img>
+                      <span className="text-white font-Mont my-auto text-[20px]">
+                        {salesItem.price}
+                      </span>
+                    </p>
+                    <div className="h-0 w-[80%] mx-auto my-3 border border-[#333333]"></div>
+                    <p className="text-white font-Mont text-[16px]">
+                      {salesItem.id}
+                    </p>
+                    <input type="checkbox" className="my-3" />
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="w-full h-[555px] flex">
               <div className="m-auto w-auto text-center">
                 <p className="text-[24px]">🧐</p>
                 <p className="font-mont text-[14px] text-[#C4c4c4]">
@@ -117,8 +176,8 @@ const ListForSale = () => {
                   Inscription transfer
                 </button>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -140,7 +199,7 @@ const ListForSale = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex">
             <div className="text-right font-mont">
               <p className="text-[#C4C4C4] text-[14px]">Your profits</p>
               <div className="flex">
@@ -153,9 +212,21 @@ const ListForSale = () => {
                 </p>
               </div>
             </div>
+            <button
+              className="text-white rounded-[41px] m-2 cursor-pointer md:flex-grow
+                  bg-gradient-to-r border-pink-300 border-opacity-70 from-blue-500 to-pink-500 font-semibold py-2 px-4"
+              onClick={() => {}}
+            >
+              List for sale
+            </button>
           </div>
         </div>
       </div>
+      <ExitInscribingPopupDialog
+        isOpenBuy={isOpenExitModal}
+        setIsOpenBuy={setIsOpenExitModal}
+        handleBuyOkClick={handleExitOkClick}
+      />
     </>
   );
 };
