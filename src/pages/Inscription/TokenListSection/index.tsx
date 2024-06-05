@@ -5,6 +5,8 @@ import { DogeSVG, BitcoinSVG } from "assets/Token";
 import { useNavigate } from "react-router-dom";
 import CollectionCarousel from "pages/HomePage/CollectionCarousel";
 
+import { SkeletonComponent } from "components/SkeletonComponent";
+
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBrc20Tokens } from "state/inscription";
 import { RootState, AppDispatch } from "state";
@@ -16,6 +18,36 @@ export default function TokenListSection() {
   const brc20Tokens = useSelector(
     (state: RootState) => state.inscription.brc20Tokens
   );
+  const skeletonContent: any[] = [];
+  for (let i = 1; i <= 20; ++i)
+    skeletonContent.push(
+      <tr key={i}>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+        <td className="text-center">
+          <SkeletonComponent className="w-full h-[30px]" />
+        </td>
+      </tr>
+    );
 
   useEffect(() => {
     dispatch(fetchBrc20Tokens());
@@ -37,7 +69,7 @@ export default function TokenListSection() {
             state: { brc20Token },
           });
         }}
-        className="cursor-pointer hover:bg-gray-400 hover:bg-opacity-10"
+        className="cursor-pointer  hover:bg-gray-400 hover:bg-opacity-10"
       >
         <td>
           <div className="pr-[20px]">
@@ -70,12 +102,12 @@ export default function TokenListSection() {
 
         <td>
           <div className="flex flex-row gap-[4px]">
-            <p className="txt-white font-[500]">
+            <p className="txt-white mx-auto font-[500]">
               {myRoundBy10_6(brc20Token.lastPrice).toString()}
             </p>
           </div>
-          <div className="mt-1">
-            <p className="txt-gray font-[400]">
+          <div className="mt-1 flex">
+            <p className="txt-gray mx-auto font-[400]">
               $ {myRoundBy10_6(Number(brc20Token.lastPrice) / 6000).toString()}
             </p>
           </div>
@@ -131,6 +163,7 @@ export default function TokenListSection() {
       </tr>
     );
   });
+
   return (
     <div className=" w-full flex flex-col gap-8 justify-center items-center">
       {/* Table Title & Actions */}
@@ -163,53 +196,62 @@ export default function TokenListSection() {
         <table className="w-full token-list-table">
           <thead className="w-full">
             <tr>
-              <td colSpan={2} className="min-w-[150px]">
-                <div>
-                  <p>Coins</p>
+              <td className="min-w-[50px]">
+                <div className="flex">
+                  <p>No</p>
+                  <span>{SortOptionSVG}</span>
                 </div>
               </td>
               <td className="min-w-[150px]">
-                <div>
+                <div className="flex">
+                  <p>Coins</p>
+                  <span>{SortOptionSVG}</span>
+                </div>
+              </td>
+              <td className="min-w-[150px]">
+                <div className="flex">
                   <p>Transaction volume</p>
                   <span>{SortOptionSVG}</span>
                 </div>
               </td>
 
               <th className="min-w-[200px]">
-                <div>
+                <div className="flex">
                   <p>Price</p>
                   <span>{SortOptionSVG}</span>
                 </div>
               </th>
 
               <th className="min-w-[150px]">
-                <div>
+                <div className="flex">
                   <p>Market value</p>
                   <span>{SortOptionSVG}</span>
                 </div>
               </th>
 
               <th className="min-w-[100px]">
-                <div>
+                <div className="flex">
                   <p>Rise and fall range</p>
                   <span>{SortOptionSVG}</span>
                 </div>
               </th>
               <th className="min-w-[100px]">
-                <div>
+                <div className="flex">
                   <p>Number of transactions</p>
                   <span>{SortOptionSVG}</span>
                 </div>
               </th>
               <th colSpan={2} className="min-w-[100px]">
-                <div>
+                <div className="flex">
                   <p>Holders</p>
                   <span>{SortOptionSVG}</span>
                 </div>
               </th>
             </tr>
           </thead>
-          <tbody>{tableBodyContent}</tbody>
+          <tbody>
+            {brc20Tokens.length ? tableBodyContent : skeletonContent}
+          </tbody>
         </table>
       </div>
     </div>
