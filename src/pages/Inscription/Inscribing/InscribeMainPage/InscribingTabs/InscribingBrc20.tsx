@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const InscribingBrc20 = () => {
+import Brc20State from "../Interfaces/Brc20State";
+import Brc20InscConfirmDialog from "../components/Brc20InscConfirmDialog";
+
+interface MyComponentProps {
+  brc20State: Brc20State;
+  setBrc20State: (brc20State: Brc20State) => void;
+}
+
+const InscribingBrc20: React.FC<MyComponentProps> = ({
+  brc20State,
+  setBrc20State,
+}) => {
   const { t } = useTranslation();
 
-  const [op, setOp] = useState<string>("mint");
-  const [tick, setTick] = useState<string>("");
-  const [mintCount, setMintCount] = useState<Number>(1);
-  const [mintAmount, setMintAmount] = useState<Number>(1000);
+  const { op, tick, mintCount, mintAmount } = brc20State;
 
-  useEffect(() => {
-    alert(Number.MAX_SAFE_INTEGER);
-  }, []);
+  const [confirmDialogShow, setConfirmDialogShow] = useState<boolean>(false);
+
+  useEffect(() => {}, []);
+
+  const handleConfirmClicked = () => {
+    setConfirmDialogShow(true);
+  };
+
+  const handleConfirmOkClicked = () => {
+    setConfirmDialogShow(false);
+  };
 
   return (
     <div className="">
@@ -22,10 +38,15 @@ const InscribingBrc20 = () => {
         <span
           className="mr-5 cursor-pointer"
           onClick={() => {
-            setOp("mint");
+            setBrc20State({ ...brc20State, op: "mint" });
           }}
         >
-          <input type="checkbox" checked={op === "mint"} className="mr-1" />
+          <input
+            type="checkbox"
+            checked={op === "mint"}
+            onChange={(e) => {}}
+            className="mr-1"
+          />
           <span className={op === "mint" ? "text-white" : " text-gray-400"}>
             Mint
           </span>
@@ -33,10 +54,15 @@ const InscribingBrc20 = () => {
         <span
           className="mr-3 cursor-pointer"
           onClick={() => {
-            setOp("transfer");
+            setBrc20State({ ...brc20State, op: "transfer" });
           }}
         >
-          <input type="checkbox" checked={op === "transfer"} className="mr-1" />
+          <input
+            type="checkbox"
+            checked={op === "transfer"}
+            onChange={(e) => {}}
+            className="mr-1"
+          />
           <span className={op === "transfer" ? "text-white" : " text-gray-400"}>
             Transfer
           </span>
@@ -44,10 +70,15 @@ const InscribingBrc20 = () => {
         <span
           className="cursor-pointer"
           onClick={() => {
-            setOp("deploy");
+            setBrc20State({ ...brc20State, op: "deploy" });
           }}
         >
-          <input type="checkbox" checked={op === "deploy"} className="mr-1" />
+          <input
+            type="checkbox"
+            checked={op === "deploy"}
+            onChange={(e) => {}}
+            className="mr-1"
+          />
           <span className={op === "deploy" ? "text-white" : " text-gray-400"}>
             Deploy
           </span>
@@ -58,8 +89,11 @@ const InscribingBrc20 = () => {
           <p className="text-[14px] ">Ticker</p>
           <input
             type="text"
+            value={tick}
+            onChange={(e) => {
+              setBrc20State({ ...brc20State, tick: e.target.value });
+            }}
             className="text-[14px] outline-none border border-opacity-30 border-white  bg-transparent w-full p-2 rounded"
-            defaultValue={"Loli"}
           />
           <p className="text-[#F02C2C] text-[14px]">Minted: 37.37%</p>
         </div>
@@ -67,8 +101,14 @@ const InscribingBrc20 = () => {
           <p className="text-[14px] ">Mint amount</p>
           <input
             type="text"
+            value={mintAmount}
+            onChange={(e) => {
+              setBrc20State({
+                ...brc20State,
+                mintAmount: Number(e.target.value),
+              });
+            }}
             className="text-[14px] outline-none border border-opacity-30 border-white  bg-transparent w-full p-2 rounded"
-            defaultValue={"1000"}
           />
           <p className="text-[#A0A0A0] text-[14px]">
             Max available amount:1,000
@@ -88,7 +128,10 @@ const InscribingBrc20 = () => {
                 min={1}
                 max={1200}
                 onChange={(e) => {
-                  setMintCount(Number(e.target.value));
+                  setBrc20State({
+                    ...brc20State,
+                    mintCount: Number(e.target.value),
+                  });
                 }}
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
               />
@@ -111,7 +154,10 @@ const InscribingBrc20 = () => {
               type="number"
               onChange={(e) => {
                 const cnt = Math.min(Math.max(Number(e.target.value), 1), 1200);
-                setMintCount(cnt);
+                setBrc20State({
+                  ...brc20State,
+                  mintCount: cnt,
+                });
               }}
               className={`text-[14px] bg-transparent outline-none p-2 ml-3s w-[98px] border rounded-lg border-[#767676] text-left`}
               value={mintCount.toString()}
@@ -119,6 +165,42 @@ const InscribingBrc20 = () => {
           </div>
         </div>
       </div>
+      <div className="font-Mont text-white mt-7">
+        <p className="text-[14px]">Recipient address</p>
+        <input
+          type="text"
+          defaultValue={
+            "bc1p7uxsmqw6rflmtu8u450grhnf9x6au9mcn88crkzk75jas686qxyq4ad3wv"
+          }
+          className="m-2 w-[95%] rounded-xl text-[14px] border border-[#767676] text-center p-2 bg-transparent outline-none"
+        />
+        <p>
+          Minimum UTXO value : 330 sats{" "}
+          <span className="bg-gradient-to-r text-[15px] from-[#4FC0FF] to-[#C23FFF] font-bold bg-clip-text text-transparent">
+            {" View more > "}{" "}
+          </span>
+        </p>
+      </div>
+      <div className="mt-10 text-white text-[18px] font-Mont flex justify-center w-[60%] items-center ">
+        <button
+          className="overflow-auto border-2 w-[45%] border-gray-500 rounded-2xl m-2 cursor-pointer p-3"
+          onClick={() => {}}
+        >
+          Cancel
+        </button>
+        <button
+          onClick={() => handleConfirmClicked()}
+          className="overflow-auto w-[45%] border-none bg-gradient-to-r from-[#4FC0FF] to-[#C23FFF] rounded-2xl border-2 m-2 cursor-pointer  md:flex-grow p-3"
+        >
+          Confirm
+        </button>
+      </div>
+      <Brc20InscConfirmDialog
+        isOpenBuy={confirmDialogShow}
+        setIsOpenBuy={setConfirmDialogShow}
+        handleBuyOkClick={handleConfirmOkClicked}
+        brc20State={brc20State}
+      />
     </div>
   );
 };

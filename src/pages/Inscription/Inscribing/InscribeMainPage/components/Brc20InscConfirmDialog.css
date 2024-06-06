@@ -1,0 +1,53 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Custom CSS for gradient text */
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(100, 100, 255, 1) 0%,
+    rgba(200, 200, 200, 1) 25%,
+    rgba(200, 0, 164, 1) 50%,
+    rgba(255, 0, 255, 1) 75%,
+    rgba(255, 0, 255, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: underline;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
