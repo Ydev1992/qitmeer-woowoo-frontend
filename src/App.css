@@ -14,7 +14,8 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-::-webkit-scrollbar {
+
+*:not(#inscriptionPrevList)::-webkit-scrollbar {
   display: none !important;
 }
 
@@ -23,7 +24,7 @@ body {
     linear-gradient(130deg, #4fc0ff 0%, #c23fff 100%);
   background-position: 0px 11px, 100% 11px;
   background-repeat: no-repeat;
-  background-size: 2px calc(100% - 11px - 11px) ;  
+  background-size: 2px calc(100% - 11px - 11px);
   border-radius: 12px;
   border: none;
 }
@@ -32,7 +33,7 @@ body {
   display: block;
   position: absolute;
   width: 100%;
-  height:12px;
+  height: 12px;
   top: 0;
   left: 0px;
   border: 2px solid #4fc0ff;
@@ -46,7 +47,7 @@ body {
   display: block;
   position: absolute;
   width: 100%;
-  height:12px;
+  height: 12px;
   bottom: 0px;
   left: 0px;
   border: 2px solid #c23fff;

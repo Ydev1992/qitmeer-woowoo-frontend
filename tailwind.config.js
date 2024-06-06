@@ -1,19 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
       screens: {
-        xs: '450px',
+        xs: "450px",
       },
       colors: {
-        success: '#2FD35D',
-        danger: '#f44336',
-        grey: '#C4C4C4',
+        success: "#2FD35D",
+        danger: "#f44336",
+        grey: "#C4C4C4",
       },
       fontFamily: {
-        pingfang: 'Noto Sans SC',
-        Mont: 'Montserrat',
+        pingfang: "Noto Sans SC",
+        Mont: "Montserrat",
       },
     },
   },

@@ -4,11 +4,40 @@ import InscribingBrc20 from "./InscribingBrc20";
 import InscribingImage from "./InscribingImage";
 import InscribingText from "./InscribingText";
 
-const InscribingTabs = () => {
+import Brc20State from "../Interfaces/Brc20State";
+import ImageState from "../Interfaces/ImageState";
+
+interface MyComponentProps {
+  brc20State: Brc20State;
+  setBrc20State: (Brc20State: Brc20State) => void;
+  setInscMode: (inscMode: string) => void;
+  imageState: ImageState;
+  setImageState: (imageState: ImageState) => void;
+}
+
+const InscribingTabs: React.FC<MyComponentProps> = ({
+  brc20State,
+  setBrc20State,
+  setInscMode,
+  imageState,
+  setImageState,
+}) => {
   const [activeTab, setActiveTab] = useState<number>(1);
 
   const handleTabClick = (tab: number) => {
     setActiveTab(tab);
+    switch (tab) {
+      case 1:
+        setInscMode("BRC-20");
+        break;
+      case 2:
+        setInscMode("IMAGE");
+        setImageState({ imageURL: null });
+        break;
+      case 3:
+        setInscMode("TEXT");
+        break;
+    }
   };
 
   return (
@@ -40,8 +69,18 @@ const InscribingTabs = () => {
         </button>
       </div>
       <div className="mt-2 p-4">
-        {activeTab === 1 && <InscribingBrc20 />}
-        {activeTab === 2 && <InscribingImage />}
+        {activeTab === 1 && (
+          <InscribingBrc20
+            brc20State={brc20State}
+            setBrc20State={setBrc20State}
+          />
+        )}
+        {activeTab === 2 && (
+          <InscribingImage
+            imageState={imageState}
+            setImageState={setImageState}
+          />
+        )}
         {activeTab === 3 && <InscribingText />}
       </div>
     </div>
