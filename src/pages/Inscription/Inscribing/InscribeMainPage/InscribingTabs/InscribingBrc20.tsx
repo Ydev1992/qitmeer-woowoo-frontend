@@ -4,10 +4,18 @@ import { useTranslation } from "react-i18next";
 import Brc20State from "../Interfaces/Brc20State";
 import Brc20InscConfirmDialog from "../components/Brc20InscConfirmDialog";
 
+import { useDispatch, useSelector } from "react-redux";
+import { fetchExistanceOfToken, fetchMintRateOfToken } from "state/inscBrc20";
+import { RootState, AppDispatch } from "state";
+
 interface MyComponentProps {
   brc20State: Brc20State;
   setBrc20State: (brc20State: Brc20State) => void;
 }
+
+const roundToFour = (x: number) => {
+  return Math.round(x * 10 ** 4) / 10 ** 4;
+};
 
 const InscribingBrc20: React.FC<MyComponentProps> = ({
   brc20State,
@@ -19,7 +27,19 @@ const InscribingBrc20: React.FC<MyComponentProps> = ({
 
   const [confirmDialogShow, setConfirmDialogShow] = useState<boolean>(false);
 
-  useEffect(() => {}, []);
+  const dispatch = useDispatch<AppDispatch>();
+  const isDeployed = useSelector(
+    (state: RootState) => state.inscBrc20.isDeployed
+  );
+  const mintedRate: number = useSelector((state: RootState) => {
+    return state.inscBrc20.mintedRate;
+  });
+
+  useEffect(() => {
+    if (tick.length !== 4) return;
+    dispatch(fetchExistanceOfToken(tick));
+    dispatch(fetchMintRateOfToken(tick));
+  }, [dispatch, tick]);
 
   const handleConfirmClicked = () => {
     setConfirmDialogShow(true);
@@ -27,6 +47,31 @@ const InscribingBrc20: React.FC<MyComponentProps> = ({
 
   const handleConfirmOkClicked = () => {
     setConfirmDialogShow(false);
+  };
+
+  const getMessageForTickerInfo = () => {
+    if (tick.length !== 4)
+      return "Enter the 4-character ticker, such as 'ordi'";
+    if (op === "mint") {
+      if (isDeployed) return `Minted: ${roundToFour(mintedRate)}%`;
+      else return `${tick} isn’t deployed yet. Check if the ticker is correct.`;
+    } else if (op === "transfer") {
+      if (isDeployed) return `Available balance: ${roundToFour(mintedRate)}%`;
+      else return `${tick} isn’t deployed yet. Check if the ticker is correct.`;
+    } else {
+      return "";
+    }
+  };
+
+  const disableConfirmButton = () => {
+    if (tick.length !== 4) return true;
+
+    if (op === "mint") {
+      if (mintAmount <= 0) return true;
+      if (mintCount <= 0) return true;
+      if (!isDeployed) return true;
+    }
+    return false;
   };
 
   return (
@@ -95,7 +140,9 @@ const InscribingBrc20: React.FC<MyComponentProps> = ({
             }}
             className="text-[14px] outline-none border border-opacity-30 border-white  bg-transparent w-full p-2 rounded"
           />
-          <p className="text-[#F02C2C] text-[14px]">Minted: 37.37%</p>
+          <p className="text-[#F02C2C] text-[14px]">
+            {getMessageForTickerInfo()}
+          </p>
         </div>
         <div className="my-5">
           <p className="text-[14px] ">Mint amount</p>
@@ -105,7 +152,9 @@ const InscribingBrc20: React.FC<MyComponentProps> = ({
             onChange={(e) => {
               setBrc20State({
                 ...brc20State,
-                mintAmount: Number(e.target.value),
+                mintAmount: Number.isNaN(Number(e.target.value))
+                  ? 0
+                  : Number(e.target.value),
               });
             }}
             className="text-[14px] outline-none border border-opacity-30 border-white  bg-transparent w-full p-2 rounded"
@@ -189,8 +238,13 @@ const InscribingBrc20: React.FC<MyComponentProps> = ({
           Cancel
         </button>
         <button
+          disabled={disableConfirmButton()}
           onClick={() => handleConfirmClicked()}
-          className="overflow-auto w-[45%] border-none bg-gradient-to-r from-[#4FC0FF] to-[#C23FFF] rounded-2xl border-2 m-2 cursor-pointer  md:flex-grow p-3"
+          className={`${
+            disableConfirmButton()
+              ? "bg-gray-600"
+              : "cursor-pointer bg-gradient-to-r"
+          } overflow-auto w-[45%] border-none  from-[#4FC0FF] to-[#C23FFF] rounded-2xl border-2 m-2 md:flex-grow p-3`}
         >
           Confirm
         </button>
