@@ -4,6 +4,7 @@ import logger from "redux-logger";
 import userReducer from "./user";
 import marketplaceReducer from "./marketplace";
 import inscriptionSlice from "./inscription";
+import inscBrc20Slice from "./inscBrc20";
 
 const store = configureStore({
   devTools: true,
@@ -11,6 +12,7 @@ const store = configureStore({
     user: userReducer,
     marketplace: marketplaceReducer,
     inscription: inscriptionSlice,
+    inscBrc20: inscBrc20Slice,
   },
   // middleware: (getDefaultMiddleware) =>
   //   import.meta.env.NODE_ENV !== "production"

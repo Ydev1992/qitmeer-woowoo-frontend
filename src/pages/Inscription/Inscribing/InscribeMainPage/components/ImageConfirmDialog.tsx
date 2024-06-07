@@ -59,7 +59,7 @@ const ImageConfirmDialog: React.FC<ConfirmPopupProps> = (props) => {
 
             <div className="mt-3 text-white text-[16px] justify-items-end font-Mont flex w-full items-center ">
               <button
-                className=" border-2 w-[20%] grid border-gray-500 rounded-2xl cursor-pointer p-3"
+                className="border-2 w-[20%] grid border-gray-500 rounded-2xl cursor-pointer p-3"
                 onClick={() => {
                   setIsOpenBuy(false);
                 }}
