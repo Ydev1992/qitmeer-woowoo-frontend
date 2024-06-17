@@ -3,30 +3,56 @@ import Brc20State from "../Interfaces/Brc20State";
 
 import "./preview.css";
 import ImageState from "../Interfaces/ImageState";
+import TextState from "../Interfaces/TextState";
 
 interface MyComponentProps {
   inscMode: string;
   brc20State: Brc20State;
   imageState: ImageState;
+  textState: TextState;
 }
 
 const Preview: React.FC<MyComponentProps> = ({
   inscMode,
   brc20State,
   imageState,
+  textState,
 }) => {
   const { t } = useTranslation();
   const { op, tick, mintCount, mintAmount } = brc20State;
+  const { mode, text } = textState;
 
   const getPreviewList = () => {
     let prevList = [];
-    for (let i = 0; i < mintCount; i++) {
-      prevList.push(
-        <p
-          key={i}
-          className="rounded-lg p-[8px] my-1 bg-white bg-opacity-10"
-        >{`{"p": "brc-20", "op": "${op}", "tick": "${tick}", "amt": "${mintAmount}"}`}</p>
-      );
+    if (inscMode === "BRC-20") {
+      for (let i = 0; i < mintCount; i++) {
+        prevList.push(
+          <p
+            key={i}
+            className="rounded-lg p-[8px] my-1 bg-white bg-opacity-10"
+          >{`{"p": "brc-20", "op": "${op}", "tick": "${tick}", "amt": "${mintAmount}"}`}</p>
+        );
+      }
+    } else if (inscMode === "TEXT") {
+      if (mode === "Single") {
+        prevList.push(
+          <p key={0} className="rounded-lg p-[8px] my-1 bg-white bg-opacity-10">
+            {text}
+          </p>
+        );
+      } else if (mode === "Bulk") {
+        let chunkedText = text.split("\n");
+        for (let i = 0; i < chunkedText.length; ++i) {
+          prevList.push(
+            <p
+              key={i}
+              className="rounded-lg p-[8px] my-1 bg-white bg-opacity-10"
+            >
+              {chunkedText[i]}
+            </p>
+          );
+        }
+      }
     }
     return prevList;
   };
