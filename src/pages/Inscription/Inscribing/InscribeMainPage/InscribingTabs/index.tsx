@@ -6,6 +6,8 @@ import InscribingText from "./InscribingText";
 
 import Brc20State from "../Interfaces/Brc20State";
 import ImageState from "../Interfaces/ImageState";
+import TextState from "../Interfaces/TextState";
+import { text } from "@fortawesome/fontawesome-svg-core";
 
 interface MyComponentProps {
   brc20State: Brc20State;
@@ -13,6 +15,8 @@ interface MyComponentProps {
   setInscMode: (inscMode: string) => void;
   imageState: ImageState;
   setImageState: (imageState: ImageState) => void;
+  textState: TextState;
+  setTextState: (textState: TextState) => void;
 }
 
 const InscribingTabs: React.FC<MyComponentProps> = ({
@@ -21,6 +25,8 @@ const InscribingTabs: React.FC<MyComponentProps> = ({
   setInscMode,
   imageState,
   setImageState,
+  textState,
+  setTextState,
 }) => {
   const [activeTab, setActiveTab] = useState<number>(1);
 
@@ -81,7 +87,9 @@ const InscribingTabs: React.FC<MyComponentProps> = ({
             setImageState={setImageState}
           />
         )}
-        {activeTab === 3 && <InscribingText />}
+        {activeTab === 3 && (
+          <InscribingText textState={textState} setTextState={setTextState} />
+        )}
       </div>
     </div>
   );

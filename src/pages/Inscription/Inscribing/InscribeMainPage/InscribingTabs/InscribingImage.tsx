@@ -6,7 +6,6 @@ import axios from "axios";
 import { useRef } from "react";
 
 import ImageState from "../Interfaces/ImageState";
-import Brc20InscConfirmDialog from "../components/Brc20InscConfirmDialog";
 import ImageConfirmDialog from "../components/ImageConfirmDialog";
 
 interface MyComponentProps {

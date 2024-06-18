@@ -6,6 +6,7 @@ import InscribingTabs from "./InscribingTabs";
 
 import Brc20State from "./Interfaces/Brc20State";
 import ImageState from "./Interfaces/ImageState";
+import TextState from "./Interfaces/TextState";
 
 export default function Inscribing() {
   const { t } = useTranslation();
@@ -23,6 +24,11 @@ export default function Inscribing() {
     imageURL: null,
   });
 
+  const [textState, setTextState] = useState<TextState>({
+    mode: "Single",
+    text: "",
+  });
+
   return (
     <>
       <div className="max-w-[1240px]  md:flex grid z-10 mx-auto">
@@ -33,12 +39,15 @@ export default function Inscribing() {
             imageState={imageState}
             setImageState={setImageState}
             setInscMode={setInscMode}
+            textState={textState}
+            setTextState={setTextState}
           />
         </div>
         <Preview
           inscMode={inscMode}
           brc20State={brc20State}
           imageState={imageState}
+          textState={textState}
         />
       </div>
     </>
