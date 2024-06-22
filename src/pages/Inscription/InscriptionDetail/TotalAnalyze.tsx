@@ -109,6 +109,7 @@ const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
       <TokenDetailDialog
         isOpenBuy={isOpenDetailModal}
         setIsOpenBuy={setIsOpenDetailModal}
+        brc20Token={brc20Token}
       />
     </div>
   );
