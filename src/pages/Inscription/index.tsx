@@ -29,6 +29,7 @@ export default function Inscription() {
           alt={""}
           className="absolute top-[1357px] left-0"
         />
+
         <img
           src={"/images/home/vectors/4.png"}
           alt={""}

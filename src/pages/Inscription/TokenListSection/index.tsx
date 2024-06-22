@@ -57,6 +57,14 @@ export default function TokenListSection() {
     return Math.round(Number(x) * 10 ** 6) / 10 ** 6;
   };
 
+  const myRoundBy10_4 = (x: Number) => {
+    return Math.round(Number(x) * 10 ** 4) / 10 ** 4;
+  };
+
+  const myRoundBy10_2 = (x: Number) => {
+    return Math.round(Number(x) * 10 ** 2) / 10 ** 2;
+  };
+
   const { t } = useTranslation();
   let tableBodyContent: any[] = [];
   let i = 1;
@@ -82,7 +90,7 @@ export default function TokenListSection() {
             <div className="flex justify-center items-center">
               <img src={brc20Token.logoUrl} className="w-[30px] h-[30px]" />
             </div>
-            <p className="txt-gray font-[600]">{brc20Token.symbol}</p>
+            <p className="txt-gray font-[600]">{brc20Token.slug}</p>
           </div>
         </td>
 
@@ -90,12 +98,15 @@ export default function TokenListSection() {
           <div className="flex flex-row gap-[4px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
             <p className="txt-white font-[500]">
-              {brc20Token.marketCap.toString()}
+              {myRoundBy10_4(Number(brc20Token.totalVolume)).toString()}
             </p>
           </div>
           <div className="mt-1">
             <p className="txt-gray font-[400]">
-              $ {myRoundBy10_6(Number(brc20Token.marketCap) / 60000).toString()}
+              ${" "}
+              {myRoundBy10_2(
+                Number(brc20Token.totalVolume) * Number(brc20Token.BTCPrice)
+              ).toString()}
             </p>
           </div>
         </td>
@@ -103,12 +114,13 @@ export default function TokenListSection() {
         <td>
           <div className="flex flex-row gap-[4px]">
             <p className="txt-white mx-auto font-[500]">
-              {myRoundBy10_6(brc20Token.lastPrice).toString()}
+              {myRoundBy10_6(Number(brc20Token.floorPrice) * 1e8).toString()}{" "}
+              sats
             </p>
           </div>
           <div className="mt-1 flex">
             <p className="txt-gray mx-auto font-[400]">
-              $ {myRoundBy10_6(Number(brc20Token.lastPrice) / 6000).toString()}
+              $ {myRoundBy10_2(Number(brc20Token.lastPrice)).toString()}
             </p>
           </div>
         </td>
@@ -117,21 +129,36 @@ export default function TokenListSection() {
           <div className="flex flex-row gap-[4px]">
             <div className="flex justify-center items-center">{BitcoinSVG}</div>
             <p className="txt-white font-[500]">
-              {myRoundBy10_6(brc20Token.lastPrice).toString()} BTC
+              {myRoundBy10_4(
+                Number(brc20Token.marketCap) / Number(brc20Token.BTCPrice)
+              ).toString()}{" "}
+              BTC
             </p>
           </div>
           <div className="mt-1">
             <p className="txt-gray font-[400]">
               {" "}
-              $ {myRoundBy10_6(Number(brc20Token.lastPrice) / 6000).toString()}
+              ${" "}
+              {Number(brc20Token.marketCap) >= 1e7
+                ? myRoundBy10_2(
+                    Number(brc20Token.marketCap) * 1e-6
+                  ).toString() + "M"
+                : myRoundBy10_2(
+                    Number(brc20Token.marketCap) * 1e-3
+                  ).toString() + "K"}
             </p>
           </div>
         </td>
 
         <td>
           <div>
-            <p className="txt-red font-[500]">
-              {myRoundBy10_6(Math.random() * 10 + 1)}%
+            <p
+              className={
+                "font-[500] " +
+                (Number(brc20Token.oneDayRate) > 0 ? "text-green" : "text-red")
+              }
+            >
+              {myRoundBy10_2(brc20Token.oneDayRate).toString()}%
             </p>
           </div>
         </td>
@@ -151,9 +178,7 @@ export default function TokenListSection() {
             </p>
           </div>
           <div className="mt-1">
-            <p className="txt-green font-[500] text-right">
-              +{myRoundBy10_6(Math.random() * 10 + Math.random() * 10 + 2)}%
-            </p>
+            <p className="txt-green font-[500] text-right">+{10}%</p>
           </div>
         </td>
 

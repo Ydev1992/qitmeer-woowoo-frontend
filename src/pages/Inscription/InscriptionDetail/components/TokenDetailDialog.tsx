@@ -4,12 +4,18 @@ import { ConfirmSVG, CopySVG, LinkSVG } from "assets/svgs";
 import { useDispatch } from "react-redux";
 import Button from "components/Button";
 
+import { Brc20Token } from "../Brc20TokenInterface";
+
 interface ConfirmPopupProps {
   isOpenBuy: boolean;
   setIsOpenBuy: React.Dispatch<React.SetStateAction<boolean>>;
+
+  brc20Token: Brc20Token;
 }
 
 const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
+  const { brc20Token } = props;
+
   const { isOpenBuy, setIsOpenBuy } = props;
   const [isCopiedInscID, setIsCopiedInscID] = useState(false);
   const [isCopiedCreator, setIsCopiedCreator] = useState(false);
@@ -48,11 +54,15 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
             <div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">Total supply</p>
-                <p className="text-white">21,000,000</p>
+                <p className="text-white">
+                  {brc20Token.totalSupply.toString()}
+                </p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">Creation time</p>
-                <p className="text-white">2023/03/12 23</p>
+                <p className="text-white">
+                  {new Date(brc20Token.deployTime.toString()).toString()}
+                </p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">
@@ -62,12 +72,16 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                 </p>
                 <div className="flex">
                   <p className="my-auto text-white">
-                    {isCopiedInscID ? "Copied" : "bc1...qwqdka"}
+                    {isCopiedInscID
+                      ? "Copied"
+                      : brc20Token.tokenInscriptionId.toString().slice(0, 5) +
+                        "..." +
+                        brc20Token.tokenInscriptionId.toString().slice(0, -3)}
                   </p>
                   <div
                     className="w-5 my-auto flex justify-center cursor-pointer"
                     onClick={() =>
-                      onCopyAddressInscID("bc17gasklfdsk3242lkmqwqdka")
+                      onCopyAddressInscID(brc20Token.tokenInscriptionId)
                     }
                   >
                     {isCopiedInscID ? ConfirmSVG : CopySVG}
@@ -78,12 +92,16 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                 <p className="text-[#C4C4C4]">Creator</p>
                 <div className="flex">
                   <p className="my-auto text-white">
-                    {isCopiedCreator ? "Copied" : "bc1...qwqdka"}
+                    {isCopiedCreator
+                      ? "Copied"
+                      : brc20Token.tokenContractAddress.toString().slice(0, 5) +
+                        "..." +
+                        brc20Token.tokenContractAddress.toString().slice(0, -3)}
                   </p>
                   <div
                     className="w-5 my-auto flex justify-center cursor-pointer"
                     onClick={() =>
-                      onCopyAddressCreator("bc17gasklfdsk3242lkmqwqdka")
+                      onCopyAddressCreator(brc20Token.tokenContractAddress)
                     }
                   >
                     {isCopiedCreator ? ConfirmSVG : CopySVG}
@@ -96,7 +114,9 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                   <br />
                   Number
                 </p>
-                <p className="text-white">#789873</p>
+                <p className="text-white">
+                  {brc20Token.tokenInscriptionId.toString()}
+                </p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">
@@ -104,7 +124,7 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                   <br />
                   Number
                 </p>
-                <p className="text-white">#78987334</p>
+                <p className="text-white">#7898733423</p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">
@@ -112,7 +132,9 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                   <br />
                   casting online
                 </p>
-                <p className="text-white">1,000</p>
+                <p className="text-white">
+                  {brc20Token.limitPerMint.toString()}
+                </p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">accuracy</p>
