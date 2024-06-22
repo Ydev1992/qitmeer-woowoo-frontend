@@ -73,7 +73,7 @@ export const fetchBrc20Tokens = createAsyncThunk<
 >("incscription/fetchBrc20Tokens", async (searchTerm, { rejectWithValue }) => {
   try {
     const response = await axios.get<Brc20Token[]>(
-      `/api/brc20-Tokens/searchTokens?search=${searchTerm}&page=1&limit=3`
+      `/api/brc20-Tokens/searchTokens?search=${searchTerm}&page=1&limit=10`
     );
     return response.data;
   } catch (err) {
