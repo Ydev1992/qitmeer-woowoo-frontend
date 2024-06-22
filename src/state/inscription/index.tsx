@@ -68,11 +68,13 @@ const initialState: InscriptionState = { brc20Tokens: [], inscriptionData: [] };
 
 export const fetchBrc20Tokens = createAsyncThunk<
   Brc20Token[],
-  void,
+  string,
   { rejectValue: string }
->("incscription/fetchBrc20Tokens", async (_, { rejectWithValue }) => {
+>("incscription/fetchBrc20Tokens", async (searchTerm, { rejectWithValue }) => {
   try {
-    const response = await axios.get<Brc20Token[]>("/api/brc20-Tokens");
+    const response = await axios.get<Brc20Token[]>(
+      `/api/brc20-Tokens/searchTokens?search=${searchTerm}&page=1&limit=3`
+    );
     return response.data;
   } catch (err) {
     return rejectWithValue("Failed to fetch brc20Tokens");
