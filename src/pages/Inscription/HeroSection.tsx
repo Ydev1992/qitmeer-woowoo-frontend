@@ -3,12 +3,17 @@ import Notification from "components/Notification";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useSigner } from "wagmi";
+import { useSigner, useAccount } from "wagmi";
+import { ethers } from "ethers";
+
+import { updateWholeTokenTickers } from "../../updateServerDataUtils/updateWholeTokenTickers";
 
 export default function HeroSection() {
   const { t } = useTranslation();
   const { data: signer } = useSigner();
   const navigate = useNavigate();
+
+  const { address: _account, isConnected } = useAccount();
 
   return (
     <div className="flex justify-between">
@@ -40,6 +45,22 @@ export default function HeroSection() {
           >
             {t("actions.Inscription")}
           </Button>
+          {isConnected &&
+            _account ===
+              ethers.utils.getAddress(
+                "0x7e1d7990e8a7f2cefb68a5b80e3f5189036726e4"
+              ) && (
+              <Button
+                type={"secondary"}
+                className="w-[162px] mr-3 font-lg xs:mb-0 mb-2"
+                onClick={() => {
+                  const result = updateWholeTokenTickers();
+                  alert(result);
+                }}
+              >
+                Update Server
+              </Button>
+            )}
         </div>
       </div>
       <div className="mt-6 relative lg:block hidden w-[450px] min-w-[450px] h-[370px]">
