@@ -46,8 +46,8 @@ const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
         />
         <div className="flex-1w-[90%] pl-5 pr-5 md:h-auto md:flex-grow">
           <div className=" w-[100%] flex justify-between">
-            <p className="">{brc20Token.symbol}</p>
-            <p className="flex">
+            <p className="">{brc20Token.slug}</p>
+            <div className="flex">
               <button className="p-2 my-auto bg-gray-500 rounded-full hover:bg-gray-400 hover:outline-none">
                 <svg
                   className="w-4 h-4 text-gray-100 stroke-current"
@@ -70,7 +70,7 @@ const TotalAnalyze: React.FC<BadgeProps> = ({ brc20Token }) => {
               >
                 currency details &gt;
               </div>
-            </p>
+            </div>
           </div>
           <div className="mt-2 mb-2 h-1 w-full bg-gray-500 rounded-full">
             <div

@@ -48,15 +48,16 @@ interface Brc20Token {
 }
 
 interface InscriptionDataType {
-  inscriptionId: string;
-  inscriprionNumber: Number;
-  tokenInscriptionId: string;
-  symbol: string;
-  state: string;
-  protocolType: string;
   amount: Number;
-  action: string;
+  inscriptionId: string;
+  isBrc20: boolean;
+  listingTime: Number;
+  listingUrl: string;
+  orderId: Number;
   ownerAddress: string;
+  price: Number;
+  slug: string;
+  unitPrice: Number;
 }
 
 interface InscriptionState {
@@ -87,10 +88,10 @@ export const fetchInscriptionData = createAsyncThunk<
   { rejectValue: string }
 >(
   "incscription/fetchInscriptionData",
-  async (tokenInscriptionId, { rejectWithValue }) => {
+  async (tokenSlug, { rejectWithValue }) => {
     try {
       const response = await axios.get<InscriptionDataType[]>(
-        `/api/brc20-Tokens/getInscriptionData/${tokenInscriptionId}`
+        `/api/brc20-Tokens/getInscriptionData/${tokenSlug}`
       );
       return response.data;
     } catch (err) {
@@ -110,8 +111,6 @@ export const inscriptionSlice = createSlice({
         state.brc20Tokens = action.payload.map((eachToken, index) => {
           return {
             ...eachToken,
-            mintRate:
-              Number(eachToken.mintAmount) / Number(eachToken.totalSupply),
           };
         });
       }

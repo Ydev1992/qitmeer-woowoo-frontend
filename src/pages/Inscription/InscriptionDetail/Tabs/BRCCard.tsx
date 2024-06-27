@@ -10,15 +10,15 @@ interface BRCCardProps {
   handleBuyClick: any;
 }
 
-const myRoundBy2 = (x: Number) => {
-  return Math.round(100 * Number(x)) / 100;
+const myRoundByk = (x: Number, k: number) => {
+  return Math.round(Math.pow(10, k) * Number(x)) / Math.pow(10, k);
 };
 
 const BRCCard: React.FC<BRCCardProps> = (props) => {
   const { t } = useTranslation();
   const { inscriptionDatum, handleBuyClick, brc20Token } = props;
 
-  const { inscriptionNumber, amount, symbol, ownerAddress } = inscriptionDatum;
+  const { orderId, amount, slug, unitPrice, price } = inscriptionDatum;
 
   const tmpVal = Math.random() + 1;
 
@@ -27,7 +27,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
       <div className="cursor-pointer" onClick={(e) => {}}>
         <div className=" relative mb-4 py-0.5 ">
           <div className="font-Mont text-gray-500 border-white border border-opacity-0 hover:border-white hover:border p-4 rounded-[12px] bg-[#FFFFFF1A] backdrop-blur cursor-pointer">
-            <p className="">#{inscriptionNumber}</p>
+            <p className="">#{orderId}</p>
             <div className="flex items-center justify-between mb-4 mt-4">
               <img
                 src={brc20Token.logoUrl}
@@ -36,26 +36,26 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
               />
               <div className="ml-4 w-2/3 md:w-3/4 lg:w-4/5 xl:w-5/6">
                 <p className="text-md text-white">{`${
-                  Math.round(Number(amount * 100)) / 100
-                }  ${symbol}`}</p>
+                  myRoundByk(amount, 2)
+                }  ${slug}`}</p>
               </div>
             </div>
             <p>
               <span className="text-white">
-                {Math.round(Number(brc20Token.lastPrice) * tmpVal)}
+                {myRoundByk(unitPrice*1e8, 2)}
               </span>{" "}
-              sats/loli
+              sats/{slug}
             </p>
             <p className="font-semibold">
-              {Math.round(Number(brc20Token.lastPrice) * amount)}
+            $ {myRoundByk(unitPrice * 60000, 4)}
             </p>
             <div className="flex mt-3 p-2 rounded-[12px] border-white backdrop-blur text-lg">
               <div>
                 <span className="text-white">
-                  {myRoundBy2(amount * 600)} BTC
+                  {myRoundByk(price, 6)} BTC
                 </span>
                 <p className="font-semibold">
-                  $ {myRoundBy2(amount * Number(brc20Token.lastPrice))}
+                  $ {myRoundByk(price * 60000, 4)}
                 </p>
               </div>
             </div>

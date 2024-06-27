@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import BRCCard from "./BRCCard";
+
+import BRCCardSkeleton from "./BRCCardSkeleton";
 import { useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -8,6 +10,8 @@ import Notification from "components/Notification";
 
 import ConfirmPopupDialog from "../components/ConfirmPopupDialog";
 import BuyPopupDialog from "../components/BuyPopupDialog";
+
+import { SkeletonComponent } from "components/SkeletonComponent";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchInscriptionData } from "state/inscription";
@@ -29,6 +33,8 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
   const inscriptionData = useSelector(
     (state: RootState) => state.inscription.inscriptionData
   );
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleBuyClick = () => {
     setIsOpen(true);
@@ -57,8 +63,24 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
     }
   }, [node]);
 
+  const skeletonContent: any[] = [];
+  for (let i = 1; i <= 10; ++i) skeletonContent.push(<BRCCardSkeleton inscriptionDatum={inscriptionData} brc20Token={brc20Token} />);
+
   useEffect(() => {
-    dispatch(fetchInscriptionData(brc20Token.tokenInscriptionId));
+    const fetchData = async () => {
+      // abortController.abort();
+      // const newAbortController = new AbortController();
+      // abortController = newAbortController;
+
+      setIsLoading(true);
+
+      await dispatch(fetchInscriptionData(brc20Token.slug));
+      console.error(inscriptionData);
+      
+      // calcTableBodyContent();
+      setIsLoading(false);
+    };
+    fetchData();
   }, [dispatch]);
 
   useEffect(() => {
@@ -80,11 +102,16 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
               key={i}
               className="mx-2 xl:md:sm:w-[calc(100%/6-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/3-16px)] w-[calc(100%-16px)]"
             >
-              <BRCCard
-                inscriptionDatum={inscriptionDatum}
-                brc20Token={brc20Token}
-                handleBuyClick={handleBuyClick}
-              />
+              {isLoading ? (
+                <BRCCardSkeleton inscriptionDatum={inscriptionDatum}
+                brc20Token={brc20Token} />
+              ) : (
+                <BRCCard
+                  inscriptionDatum={inscriptionDatum}
+                  brc20Token={brc20Token}
+                  handleBuyClick={handleBuyClick}
+                />
+              )}
             </div>
           );
         })}

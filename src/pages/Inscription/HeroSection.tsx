@@ -55,12 +55,11 @@ export default function HeroSection() {
                 className="w-[162px] mr-3 font-lg xs:mb-0 mb-2"
                 onClick={() => {
                   const result = updateWholeTokenTickers();
-                  alert(result);
                 }}
               >
                 Update Server
               </Button>
-            )}
+         )}
         </div>
       </div>
       <div className="mt-6 relative lg:block hidden w-[450px] min-w-[450px] h-[370px]">
