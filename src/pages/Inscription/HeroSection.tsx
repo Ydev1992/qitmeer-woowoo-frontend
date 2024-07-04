@@ -45,11 +45,11 @@ export default function HeroSection() {
           >
             {t("actions.Inscription")}
           </Button>
-          {isConnected &&
+          {/* {isConnected &&
             _account ===
               ethers.utils.getAddress(
                 "0x7e1d7990e8a7f2cefb68a5b80e3f5189036726e4"
-              ) && (
+              ) && ( */}
               <Button
                 type={"secondary"}
                 className="w-[162px] mr-3 font-lg xs:mb-0 mb-2"
@@ -59,7 +59,7 @@ export default function HeroSection() {
               >
                 Update Server
               </Button>
-         )}
+         {/* )} */}
         </div>
       </div>
       <div className="mt-6 relative lg:block hidden w-[450px] min-w-[450px] h-[370px]">

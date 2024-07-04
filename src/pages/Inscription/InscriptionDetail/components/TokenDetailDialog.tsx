@@ -74,9 +74,9 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                   <p className="my-auto text-white">
                     {isCopiedInscID
                       ? "Copied"
-                      : brc20Token.tokenInscriptionId.toString().slice(0, 5) +
+                      : brc20Token.inscriptionId.toString().slice(0, 5) +
                         "..." +
-                        brc20Token.tokenInscriptionId.toString().slice(0, -3)}
+                        brc20Token.inscriptionId.toString().slice(0, -3)}
                   </p>
                   <div
                     className="w-5 my-auto flex justify-center cursor-pointer"
@@ -115,7 +115,7 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                   Number
                 </p>
                 <p className="text-white">
-                  {brc20Token.tokenInscriptionId.toString()}
+                  {brc20Token.inscriptionNumRange.toString()}
                 </p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
@@ -124,7 +124,9 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
                   <br />
                   Number
                 </p>
-                <p className="text-white">#7898733423</p>
+                <p className="text-white">
+                  {brc20Token.inscriptionNumRange.toString()}
+                  </p>
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">
@@ -138,7 +140,8 @@ const TokenDetailDialog: React.FC<ConfirmPopupProps> = (props) => {
               </div>
               <div className="flex text-[16px] my-2 justify-between">
                 <p className="text-[#C4C4C4]">accuracy</p>
-                <p className="text-white">18</p>
+                <p className="text-white">
+                {brc20Token.precision.toString()}</p>
               </div>
             </div>
             <div className="mt-7">

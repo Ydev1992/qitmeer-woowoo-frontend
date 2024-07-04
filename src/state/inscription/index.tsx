@@ -58,6 +58,21 @@ interface InscriptionDataType {
   price: Number;
   slug: string;
   unitPrice: Number;
+
+  //inscription Number 2024-07-03 11:20 am
+  inscriptionNumber: Number,
+  location: String,
+  token: String,
+  state: String,
+  msg: String,
+  tokenType: String,
+  actionType: String,
+  logoUrl: String,
+  txId: String,
+  blockHeight: Number,
+  contentSize: Number,
+  time: String
+
 }
 
 interface InscriptionState {
@@ -74,7 +89,7 @@ export const fetchBrc20Tokens = createAsyncThunk<
 >("incscription/fetchBrc20Tokens", async (searchTerm, { rejectWithValue }) => {
   try {
     const response = await axios.get<Brc20Token[]>(
-      `/api/brc20-Tokens/searchTokens?search=${searchTerm}&page=1&limit=10`
+      `/api/brc20-Tokens/searchTokens?search=${searchTerm}&page=1&limit=2`
     );
     return response.data;
   } catch (err) {

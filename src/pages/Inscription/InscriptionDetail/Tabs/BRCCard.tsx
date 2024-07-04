@@ -18,7 +18,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
   const { t } = useTranslation();
   const { inscriptionDatum, handleBuyClick, brc20Token } = props;
 
-  const { orderId, amount, slug, unitPrice, price } = inscriptionDatum;
+  const { orderId, amount, slug, unitPrice, price, InscriptioNumber } = inscriptionDatum;
 
   const tmpVal = Math.random() + 1;
 
@@ -27,7 +27,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
       <div className="cursor-pointer" onClick={(e) => {}}>
         <div className=" relative mb-4 py-0.5 ">
           <div className="font-Mont text-gray-500 border-white border border-opacity-0 hover:border-white hover:border p-4 rounded-[12px] bg-[#FFFFFF1A] backdrop-blur cursor-pointer">
-            <p className="">#{orderId}</p>
+            <p className="">#{InscriptioNumber}</p>
             <div className="flex items-center justify-between mb-4 mt-4">
               <img
                 src={brc20Token.logoUrl}
