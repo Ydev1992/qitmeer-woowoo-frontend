@@ -37,6 +37,7 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleBuyClick = () => {
+    
     setIsOpen(true);
   };
   const handleConfirmClick = () => {
