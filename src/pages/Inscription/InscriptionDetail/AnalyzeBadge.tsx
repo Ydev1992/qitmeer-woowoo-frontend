@@ -54,7 +54,7 @@ const AnalyzeBadge: React.FC<BadgeProps> = ({ brc20Token }) => {
       <div className="flex mx-auto bg-white/10 rounded-xl w-sm py-2 pl-4 pr-6 overflow-hidden">
         <div className="w-20 font-mont flex flex-col space-y-2">
           <p className="font-medium text-2xl">
-            {myRoundByk(Number(brc20Token.floorPrice)*100000, 4).toString()} {brc20Token.floorPrice.toString()}
+            {myRoundByk(Number(brc20Token.floorPrice)*1e8, 4).toString()}
           </p>
           <p className="font-normal text-xs">floor price</p>
         </div>

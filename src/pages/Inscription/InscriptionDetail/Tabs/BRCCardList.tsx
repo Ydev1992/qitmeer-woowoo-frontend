@@ -36,9 +36,17 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const handleBuyClick = () => {
+  const [timesByFloorPrice, setTimesByFloorPrice] = useState<Number>(0);
+
+  const [selectedInscriptionNumber, setSelectedInscriptionNumber] = useState<number>(-1);
+
+  const handleBuyClick = (type: number) => {
+    if(type == 1) { // confirm
+      setIsOpen(true);
+    } else {
+      setIsOpenBuy(true);
+    }
     
-    setIsOpen(true);
   };
   const handleConfirmClick = () => {
     setIsOpen(false);
@@ -76,9 +84,7 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
       setIsLoading(true);
 
       await dispatch(fetchInscriptionData(brc20Token.slug));
-      console.error(inscriptionData);
       
-      // calcTableBodyContent();
       setIsLoading(false);
     };
     fetchData();
@@ -111,6 +117,10 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
                   inscriptionDatum={inscriptionDatum}
                   brc20Token={brc20Token}
                   handleBuyClick={handleBuyClick}
+                  setTimesByFloorPrice={setTimesByFloorPrice}
+                  currentInscriptionNumber = {i}
+                  setSelectedInscriptionNumber = {setSelectedInscriptionNumber}
+                 
                 />
               )}
             </div>
@@ -136,6 +146,7 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
       <ConfirmPopupDialog
         isOpen={isOpen}
         setIsOpen={setIsOpen}
+        timesByFloorPrice={timesByFloorPrice}
         handleConfirmClick={handleConfirmClick}
       />
 
@@ -143,6 +154,10 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
         isOpenBuy={isOpenBuy}
         setIsOpenBuy={setIsOpenBuy}
         handleBuyOkClick={handleBuyOkClick}
+        inscriptionDatum={inscriptionData[selectedInscriptionNumber]}
+        tokenDecimal={brc20Token.precision}
+        BTCPrice={brc20Token.BTCPrice}
+        logoUrl={brc20Token.logoUrl}
       />
     </div>
   );

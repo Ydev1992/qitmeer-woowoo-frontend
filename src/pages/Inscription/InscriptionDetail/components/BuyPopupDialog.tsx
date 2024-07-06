@@ -3,15 +3,62 @@ import "./ConfirmPopupDialog.css";
 import { ConfirmSVG, CopySVG, LinkSVG } from "assets/svgs";
 import { useDispatch } from "react-redux";
 
+
+
+interface InscriptionDataType {
+  amount: Number;
+  inscriptionId: string;
+  isBrc20: boolean;
+  listingTime: Number;
+  listingUrl: string;
+  orderId: Number;
+  ownerAddress: string;
+  price: Number;
+  slug: string;
+  unitPrice: Number;
+
+  inscriptionNumber: Number,
+  location: String,
+  token: String,
+  state: String,
+  msg: String,
+  tokenType: String,
+  actionType: String,
+  logoUrl: String,
+  txId: String,
+  blockHeight: Number,
+  contentSize: Number,
+  time: String
+
+}
+
+
 interface ConfirmPopupProps {
   isOpenBuy: boolean;
   setIsOpenBuy: React.Dispatch<React.SetStateAction<boolean>>;
   handleBuyOkClick: () => void;
+
+  inscriptionDatum: InscriptionDataType;
+  tokenDecimal: Number;
+  BTCPrice: Number;
+  logoUrl: String;
 }
 
+
+
 const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
+
   const { isOpenBuy, setIsOpenBuy, handleBuyOkClick } = props;
   const [isCopied, setIsCopied] = useState(false);
+
+
+  const { inscriptionDatum } = props;
+
+  const { logoUrl, tokenDecimal, BTCPrice } = props;
+
+  const myRoundByk = (x: Number, k: number) => {
+    return Math.round(Math.pow(10, k) * Number(x)) / Math.pow(10, k);
+  };
 
   const onCopyAddress = (address: string) => {
     setIsCopied(true);
@@ -37,24 +84,25 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
             <div className="flex justify-between mb-6 mt-6">
               <div className="flex">
                 <img
-                  src="images/inscription/hero2.png"
+                  src={logoUrl.toString()}
                   alt="Image"
                   className="w-1/5 md:w-1/4 lg:w-1/5 xl:w-1/6 rounded-full bg-gray-700"
                 />
                 <div className="ml-4 w-2/3 md:w-3/4 lg:w-4/5 xl:w-5/6">
-                  <p className="text-3xl text-white">96,300 loli</p>
-                  <p>#62414700</p>
+                  <p className="text-3xl text-white">{inscriptionDatum.amount.toString()} {inscriptionDatum.slug}</p>
+                  <p>#{inscriptionDatum.inscriptionNumber.toString()}</p>
                 </div>
               </div>
               <div className="w-[60%] ">
                 <p className="font-medium text-sm">
-                  Unti price:2.28 sats/loli $0.0012
+                  Unit price:{myRoundByk((Number(inscriptionDatum.unitPrice)*1e8), 3).toString()} sats
+                  /{inscriptionDatum.slug} ${myRoundByk(Number(inscriptionDatum.unitPrice)*Number(BTCPrice), 5).toString()}
                 </p>
                 <div className="flex items-center justify-between text-lg text-[#C4C4C4]">
-                  <div>From: {isCopied ? "Copied" : "bc1...qwqdka"}</div>
+                  <div>From: {isCopied ? "Copied" : inscriptionDatum.ownerAddress.slice(0, 5) + "..." + inscriptionDatum.ownerAddress.slice(-5)}</div>
                   <div
                     className="w-5 flex justify-center cursor-pointer"
-                    onClick={() => onCopyAddress("bc17gasklfdsk3242lkmqwqdka")}
+                    onClick={() => onCopyAddress(inscriptionDatum.ownerAddress)}
                   >
                     {isCopied ? ConfirmSVG : CopySVG}
                   </div>

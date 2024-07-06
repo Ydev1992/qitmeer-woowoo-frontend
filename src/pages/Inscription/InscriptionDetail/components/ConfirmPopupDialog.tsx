@@ -4,11 +4,20 @@ import "./ConfirmPopupDialog.css";
 interface ConfirmPopupProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  timesByFloorPrice: Number,
   handleConfirmClick: () => void;
 }
 
+
+
 const ConfirmPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
-  const { isOpen, setIsOpen, handleConfirmClick } = props;
+
+  const myRoundByk = (x: Number, k: number) => {
+    return Math.round(Math.pow(10, k) * Number(x)) / Math.pow(10, k);
+  };
+
+
+  const { isOpen, setIsOpen, handleConfirmClick, timesByFloorPrice } = props;
   return (
     isOpen && (
       <div className="relative  flex items-center justify-center min-h-screen">
@@ -16,7 +25,7 @@ const ConfirmPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
           <div className="dialog font-Mont w-[370px] border-white border-2 rounded-lg bg-black text-white">
             <h2 className=" text-2xl font-semibold mb-4">Trading alert</h2>
             <p className="mb-4 text-gray-300">
-              The order price is 228% higher than the floor price. Confirm
+              The order price is {myRoundByk((Number(timesByFloorPrice)*100), 1).toString()}% higher than the floor price. Confirm
               buying?
             </p>
             <div className="flex justify-end">
