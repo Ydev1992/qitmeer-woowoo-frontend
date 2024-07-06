@@ -5,7 +5,14 @@ interface BadgeProps {
   brc20Token: Brc20Token;
 }
 
+
+
 const AnalyzeBadge: React.FC<BadgeProps> = ({ brc20Token }) => {
+
+  const myRoundByk = (x: Number, k: number) => {
+    return Math.round(Math.pow(10, k) * Number(x)) / Math.pow(10, k);
+  };
+
   return (
     <div className="flex mt-5" style={{ flexWrap: "wrap" }}>
       <div className="flex mx-auto bg-white/10 rounded-xl w-md  py-2 pl-4 pr-6 overflow-hidden">
@@ -47,7 +54,7 @@ const AnalyzeBadge: React.FC<BadgeProps> = ({ brc20Token }) => {
       <div className="flex mx-auto bg-white/10 rounded-xl w-sm py-2 pl-4 pr-6 overflow-hidden">
         <div className="w-20 font-mont flex flex-col space-y-2">
           <p className="font-medium text-2xl">
-            {(Math.round(Number(brc20Token.lastPrice)) * 2.1).toString()}
+            {myRoundByk(Number(brc20Token.floorPrice)*1e8, 4).toString()}
           </p>
           <p className="font-normal text-xs">floor price</p>
         </div>
