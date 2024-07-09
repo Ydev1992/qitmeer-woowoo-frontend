@@ -11,6 +11,7 @@ import {
   useNetwork,
   useSigner,
 } from "wagmi";
+
 import { WalletSVG } from "assets/svgs";
 import { Link } from "react-router-dom";
 import { useUserETHBalance, useUserInfo } from "state/hooks";
@@ -202,7 +203,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
               sats/{slug}
             </p>
             <p className="font-semibold">
-            $ {myRoundByk(unitPrice * 60000, 4)}
+            $ {myRoundByk(unitPrice * Number(brc20Token.BTCPrice), 4)}
             </p>
             <div className="flex mt-3 p-2 rounded-[12px] border-white backdrop-blur text-lg">
               <div>
@@ -210,7 +211,7 @@ const BRCCard: React.FC<BRCCardProps> = (props) => {
                   {myRoundByk(price, 6)} BTC
                 </span>
                 <p className="font-semibold">
-                  $ {myRoundByk(price * 60000, 4)}
+                  $ {myRoundByk(price * Number(brc20Token.BTCPrice), 4)}
                 </p>
               </div>
             </div>

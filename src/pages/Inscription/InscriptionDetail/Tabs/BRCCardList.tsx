@@ -73,7 +73,7 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
   }, [node]);
 
   const skeletonContent: any[] = [];
-  for (let i = 1; i <= 10; ++i) skeletonContent.push(<BRCCardSkeleton inscriptionDatum={inscriptionData} brc20Token={brc20Token} />);
+  for (let i = 1; i <= 10; ++i) skeletonContent.push(<BRCCardSkeleton  brc20Token={brc20Token} />);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -99,34 +99,48 @@ const BRCCardList: React.FC<BRCCardListProps> = ({ brc20Token }) => {
 
   return (
     <div>
+      {
+        isLoading ?
       <div
-        className={`flex flex-wrap pt-4 w-[calc(100%+16px)] -ml-2  rounded-[12px] bg-transparent`}
-        ref={node}
-      >
-        {inscriptionData.map((inscriptionDatum: any, i: number) => {
-          return (
-            <div
-              key={i}
-              className="mx-2 xl:md:sm:w-[calc(100%/6-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/3-16px)] w-[calc(100%-16px)]"
-            >
-              {isLoading ? (
-                <BRCCardSkeleton inscriptionDatum={inscriptionDatum}
-                brc20Token={brc20Token} />
-              ) : (
-                <BRCCard
-                  inscriptionDatum={inscriptionDatum}
-                  brc20Token={brc20Token}
-                  handleBuyClick={handleBuyClick}
-                  setTimesByFloorPrice={setTimesByFloorPrice}
-                  currentInscriptionNumber = {i}
-                  setSelectedInscriptionNumber = {setSelectedInscriptionNumber}
-                 
-                />
-              )}
-            </div>
-          );
-        })}
-      </div>
+          className={`flex flex-wrap pt-4 w-[calc(100%+16px)] -ml-2  rounded-[12px] bg-transparent`}
+          ref={node}
+        >
+          {(new Array(10).fill(0)).map((datum: any, i: number) => {
+            return (
+              <div
+                key={i}
+                className="mx-2 xl:md:sm:w-[calc(100%/6-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/3-16px)] w-[calc(100%-16px)]"
+              >
+                  <BRCCardSkeleton
+                  brc20Token={brc20Token} />
+              </div>
+            );
+          })}
+        </div>
+         : 
+          <div
+          className={`flex flex-wrap pt-4 w-[calc(100%+16px)] -ml-2  rounded-[12px] bg-transparent`}
+          ref={node}
+        >
+          {inscriptionData.map((inscriptionDatum: any, i: number) => {
+            return (
+              <div
+                key={i}
+                className="mx-2 xl:md:sm:w-[calc(100%/6-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/3-16px)] w-[calc(100%-16px)]"
+              >
+                  <BRCCard
+                    inscriptionDatum={inscriptionDatum}
+                    brc20Token={brc20Token}
+                    handleBuyClick={handleBuyClick}
+                    setTimesByFloorPrice={setTimesByFloorPrice}
+                    currentInscriptionNumber = {i}
+                    setSelectedInscriptionNumber = {setSelectedInscriptionNumber}
+                  />
+              </div>
+            );
+          })}
+        </div>
+      }
       {/* {paginatedNFTs.length !== nfts.length ? (
         <div className="mt-8 mx-auto max-w-[300px] w-full">
           <Button

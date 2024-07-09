@@ -54,11 +54,18 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
 
   const { inscriptionDatum } = props;
 
+  const [currentSelectedFeeType, setCurrentSelectedFeeType] = useState<Number>(1);
+  const [customFeeAmount, setCustomFeeAmount] = useState<Number>(10);
+
   const { logoUrl, tokenDecimal, BTCPrice } = props;
 
   const myRoundByk = (x: Number, k: number) => {
     return Math.round(Math.pow(10, k) * Number(x)) / Math.pow(10, k);
   };
+
+  const handleFeeSelected = (type: Number) => {
+    setCurrentSelectedFeeType(type);
+  }
 
   const onCopyAddress = (address: string) => {
     setIsCopied(true);
@@ -72,7 +79,7 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
     isOpenBuy && (
       <div className="relative  flex items-center justify-center min-h-screen">
         <div className="overlay bg-opacity-10 backdrop-blur-sm">
-          <div className="dialog h-[600px] overflow-y-scroll relative font-Mont w-[600px] border-white border-2 rounded-lg bg-black text-white">
+          <div className="dialog overflow-y-scroll relative font-Mont w-[600px] border-white border-2 rounded-lg bg-black text-white">
             <h2 className=" text-2xl font-semibold mb-4">Buy now</h2>
             <button
               onClick={() => setIsOpenBuy(false)}
@@ -119,8 +126,8 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
                 <h2>Network fee</h2>
                 <p>13,770 sats &asymp; $7.51</p>
               </div>
-              <div className="flex flex-wrap ">
-                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+              <div className="flex flex-wrap my-3">
+                <div onClick={() => {handleFeeSelected(1)}} className={`p-2 ${currentSelectedFeeType == 1 ? "border border-white" : ""} cursor-pointer text-center rounded-lg bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]`}>
                   <p>
                     <img
                       className="w-[20%] m-auto"
@@ -133,7 +140,7 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
                   <p className="text-gray-400">$6.26</p>
                 </div>
 
-                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                <div onClick={() => {handleFeeSelected(2)}}  className={`p-2 ${currentSelectedFeeType == 2 ? "border border-white" : ""} cursor-pointer text-center rounded-lg bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]`}>
                   <p>
                     <img
                       className="w-[20%] m-auto"
@@ -141,12 +148,12 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
                       alt="bicycle"
                     />
                   </p>
-                  <p className="text-white text-lg font-semibold">Slow</p>
+                  <p className="text-white text-lg font-semibold">Standard</p>
                   <p className="text-gray-400">45 sats/vB</p>
                   <p className="text-gray-400">$6.26</p>
                 </div>
 
-                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                <div onClick={() => {handleFeeSelected(3)}}  className={`p-2 ${currentSelectedFeeType == 3 ? "border border-white" : ""} cursor-pointer text-center rounded-lg bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]`}>
                   <p>
                     <img
                       className="w-[20%] m-auto"
@@ -154,12 +161,12 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
                       alt="bicycle"
                     />
                   </p>
-                  <p className="text-white text-lg font-semibold">Slow</p>
+                  <p className="text-white text-lg font-semibold">Fast</p>
                   <p className="text-gray-400">45 sats/vB</p>
                   <p className="text-gray-400">$6.26</p>
                 </div>
 
-                <div className="p-2 text-center bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]">
+                <div onClick={() => {handleFeeSelected(4)}}  className={`p-2 ${currentSelectedFeeType == 4 ? "border border-white" : ""} cursor-pointer text-center rounded-lg bg-white/20 m-2 mx-2 xl:md:sm:w-[calc(100%/4-16px)] md:sm:w-[calc(100%/4-16px)] sm:w-[calc(100%/2-16px)] w-[calc(100%/2-16px)] h-[150px]`}>
                   <p>
                     <img
                       className="w-[20%] m-auto"
@@ -167,19 +174,32 @@ const BuyPopupDialog: React.FC<ConfirmPopupProps> = (props) => {
                       alt="bicycle"
                     />
                   </p>
-                  <p className="text-white text-lg font-semibold">Slow</p>
-                  <p className="text-gray-400">45 sats/vB</p>
-                  <p className="text-gray-400">$6.26</p>
+                  <p className="text-white text-lg font-semibold">Custom</p>
+                  <p className="text-gray-400">{customFeeAmount.toString()} sats/vB</p>
+                  <p className="text-gray-400">${myRoundByk(Number(customFeeAmount)*1e-8*Number(BTCPrice), 4)}</p>
                 </div>
               </div>
+
+              {currentSelectedFeeType === 4 && <div className="my-3">
+                <p>Set a custom network fee</p>
+                <input className="mt-1 w-full bg-transparent rounded-lg bg-opacity-50 outline-none border border-white p-2" type="number" onChange={(e) => {
+                  if(Number(e.target.value) > 0)
+                    setCustomFeeAmount(Number(e.target.value));
+                  else
+                    setCustomFeeAmount(0);
+                }} value={customFeeAmount.toString()} />
+              </div>}
+
+              <hr className="my-5" />
+
               <div className="flex justify-between">
                 <p>Total price</p>
                 <div className="text-right">
                   <div className="flex">
                     <img width={30} src="images/networks/bsc.png" />
-                    <p>0.002198765 BTC</p>
+                    <p>{myRoundByk(inscriptionDatum.price, 6)} BTC</p>
                   </div>
-                  <p className="text-gray-500">$119.63</p>
+                  <p className="text-gray-500">$ {myRoundByk(Number(inscriptionDatum.price) * Number(BTCPrice), 6)}</p>
                 </div>
               </div>
             </div>

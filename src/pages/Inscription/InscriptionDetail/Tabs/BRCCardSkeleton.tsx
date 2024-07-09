@@ -3,14 +3,13 @@ import { SkeletonComponent } from "components/SkeletonComponentCustom";
 import { Brc20Token } from "../Brc20TokenInterface";
 
 interface BRCCardSkeletonProps {
-  inscriptionDatum: any;
   brc20Token: Brc20Token;
 }
 
 const BRCCardSkeleton: React.FC<BRCCardSkeletonProps> = (props) => {
 
   
-  const { inscriptionDatum, brc20Token } = props;
+  const { brc20Token } = props;
 
   return (
     <>
@@ -26,12 +25,12 @@ const BRCCardSkeleton: React.FC<BRCCardSkeletonProps> = (props) => {
 
               <div className="ml-4 w-2/3 md:w-3/4 lg:w-4/5 xl:w-5/6 flex justify-between">
                 <SkeletonComponent className="w-[70px]" />
-                <p>{inscriptionDatum.slug}</p>
+                <p>{brc20Token.slug}</p>
               </div>
             </div>
             <p className="flex w-full">
                 <SkeletonComponent className="w-[70px]" />
-              sats/{inscriptionDatum.slug}
+              sats/{brc20Token.slug}
             </p>
             <p className="font-semibold">
               <SkeletonComponent className="" />
